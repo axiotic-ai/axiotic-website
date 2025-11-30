@@ -1,0 +1,171 @@
+:root {
+  color-scheme: dark;
+  --bg: #020617;
+  --accent: #22d3ee;
+  --accent-soft: rgba(34, 211, 238, 0.18);
+  --accent-warm: #f97316;
+  --surface: #020617;
+  --surface-alt: #030712;
+  --border: #1f2937;
+  --text: #e5e7eb;
+  --muted: #9ca3af;
+  --radius-lg: 18px;
+  --radius-md: 12px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+    "Segoe UI", sans-serif;
+  background: radial-gradient(circle at top, #020617, #000 55%, #020617 100%);
+  color: var(--text);
+  display: flex;
+  justify-content: center;
+}
+
+.frame {
+  width: 100%;
+  max-width: 1120px;
+  margin: 32px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.stripe {
+  border-radius: var(--radius-lg);
+  background: linear-gradient(
+      135deg,
+      rgba(34, 211, 238, 0.22),
+      transparent 50%
+    ),
+    radial-gradient(circle at top left, #020617, #020617 60%);
+  border: 1px solid var(--border);
+  padding: 18px 22px 18px;
+}
+
+.stripe__label {
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+
+.stripe__columns {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+  gap: 16px;
+  align-items: center;
+}
+
+@media (max-width: 800px) {
+  .stripe__columns {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.stripe__left h1 {
+  margin: 0 0 6px;
+  font-size: clamp(2.2rem, 4vw, 2.8rem);
+  letter-spacing: -0.04em;
+}
+
+.stripe__kicker {
+  margin: 0 0 6px;
+  font-size: 0.95rem;
+  color: var(--accent);
+}
+
+.stripe__mission {
+  margin: 0;
+  font-size: 0.96rem;
+  line-height: 1.7;
+  color: var(--muted);
+}
+
+.stripe__right {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+@media (max-width: 800px) {
+  .stripe__right {
+    justify-content: flex-start;
+  }
+}
+
+.chip {
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  border: 1px solid rgba(148, 163, 184, 0.5);
+  background: rgba(15, 23, 42, 0.9);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  gap: 18px;
+}
+
+@media (max-width: 800px) {
+  .grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.card {
+  border-radius: var(--radius-md);
+  padding: 18px 18px 16px;
+  border: 1px solid var(--border);
+  background: radial-gradient(circle at top left, var(--surface), var(--surface));
+}
+
+.card--thesis {
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.9);
+}
+
+.card--pillars {
+  background: radial-gradient(circle at top left, var(--surface-alt), #020617);
+}
+
+.card h2 {
+  margin: 0 0 8px;
+  font-size: 1.05rem;
+}
+
+.card p {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--muted);
+}
+
+.card ol {
+  margin: 4px 0 0;
+  padding-left: 18px;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: #e5e7eb;
+}
+
+.meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  color: var(--muted);
+  padding-top: 8px;
+  border-top: 1px solid var(--border);
+}
+
+

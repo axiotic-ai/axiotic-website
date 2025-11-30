@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Axiotic.ai — Research Lab</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script defer src="particles-init.js"></script>
+  </head>
+  <body class="bg-slate-900 text-slate-50 font-[Inter]">
+    <div id="particles-js"></div>
+
+    <nav
+      class="fixed top-0 inset-x-0 z-20 border-b border-slate-800 bg-slate-950/90 backdrop-blur"
+    >
+      <div
+        class="max-w-5xl mx-auto px-4 py-3 flex items-center justify-between"
+      >
+        <a
+          href="index.html"
+          class="flex items-center gap-2 text-base font-semibold"
+        >
+          <span
+            class="inline-flex h-6 w-6 items-center justify-center rounded-full bg-gradient-to-tr from-amber-400 to-orange-500 text-slate-900 text-xs"
+          >
+            S
+          </span>
+          <span class="tracking-tight">Axiotic.ai</span>
+        </a>
+        <div class="hidden sm:flex items-center gap-4 text-sm text-slate-200">
+          <a href="index.html" class="hover:text-amber-300">Home</a>
+          <a href="lab.html" class="text-amber-300">Research Lab</a>
+          <a href="consulting.html" class="hover:text-amber-300"
+            >Consulting &amp; Flywheel</a
+          >
+          <a href="team.html" class="hover:text-amber-300">Team</a>
+        </div>
+      </div>
+    </nav>
+
+    <main class="pt-20">
+      <div class="max-w-5xl mx-auto px-4 py-10 space-y-6">
+      <header
+        class="rounded-2xl bg-slate-900/80 border border-slate-800 p-6 text-left shadow-lg"
+      >
+        <p class="text-xs font-semibold uppercase tracking-[0.2em] text-amber-300">
+          Research Lab
+        </p>
+        <h1 class="mt-2 text-3xl sm:text-4xl font-extrabold tracking-tight">
+          Open Research on Efficient AI Systems
+        </h1>
+        <p class="mt-3 text-sm sm:text-base text-slate-200">
+          The Axiotic Lab studies efficient, multimodal, embodied learning
+          through completely open models, datasets, and training recipes.
+        </p>
+        <p class="mt-2 text-xs sm:text-sm text-slate-300">
+          We treat transparency as a design principle: no black boxes, clear
+          evaluations, and research that anyone can build on.
+        </p>
+      </header>
+
+      <section
+        class="rounded-2xl bg-slate-900/70 border border-slate-800 p-6 text-left space-y-3"
+      >
+          <h2>Research Thesis &amp; Pillars</h2>
+          <p class="pillars-intro">
+            We believe current AI is plateauing on generalization and grounded
+            understanding. Breakthroughs will come from new tasks and
+            mechanisms, not just bigger models.
+          </p>
+          <div class="grid gap-4 sm:grid-cols-2">
+            <article class="space-y-1">
+              <h3>1. Improved Learning Tasks</h3>
+              <p>
+                Beyond next‑token prediction: masking, N‑step forecasting, and
+                JEPA‑style objectives that force long‑horizon understanding.
+              </p>
+            </article>
+            <article class="space-y-1">
+              <h3>2. Multimodal Learning</h3>
+              <p>
+                Early‑fusion representation learning across text, vision, audio,
+                and interaction, with careful evaluation design.
+              </p>
+            </article>
+            <article class="space-y-1">
+              <h3>3. Memory &amp; Conditional Recursion</h3>
+              <p>
+                Architectures with explicit memory and adaptive, data‑conditional
+                recurrence to support deeper reasoning.
+              </p>
+            </article>
+            <article class="space-y-1">
+              <h3>4. Hierarchical Attention &amp; Infinite Context</h3>
+              <p>
+                Variable‑resolution attention and feature reuse to enable near
+                infinite context without brute‑force scaling.
+              </p>
+            </article>
+            <article class="space-y-1">
+              <h3>5. Layer‑Wide Attention</h3>
+              <p>
+                Real‑time access across layers so models can route information
+                freely instead of strictly layer‑by‑layer.
+              </p>
+            </article>
+            <article class="space-y-1">
+              <h3>6. AI‑Assisted Data Loops</h3>
+              <p>
+                Data improvement loops where better models generate better data,
+                with transparent data cards and licensing.
+              </p>
+            </article>
+            <article class="space-y-1">
+              <h3>7. Embodied Intelligence</h3>
+              <p>
+                Simulation‑first learning (Isaac, Cosmos, etc.) and sim‑to‑real
+                protocols for interaction‑driven learning.
+              </p>
+            </article>
+            <article class="space-y-1">
+              <h3>8. Evolution &amp; Nature‑Inspired Learning</h3>
+              <p>
+                Evolutionary curricula, adaptive augmentations, and
+                information‑theoretic objectives as a first‑class focus.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section
+          class="rounded-2xl bg-slate-900/60 border border-slate-800 p-6 text-left"
+        >
+          <h2 class="text-lg font-semibold mb-2">Open Science Commitments</h2>
+          <p class="text-sm text-slate-200">
+            We release code, models, and datasets as openly as licensing allows,
+            with clear documentation and ablation‑first writeups. The lab exists
+            to push the field forward, not to hide breakthroughs behind
+            proprietary walls.
+          </p>
+        </section>
+
+        <footer class="mt-6 text-xs text-slate-400 text-right">
+          &copy; 2025 Axiotic.ai — Research Lab.
+        </footer>
+      </div>
+    </main>
+  </body>
+  </html>
+
+

@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title data-key="site.title">Axiotic.ai — Efficient AI for a Post‑Scaling World</title>
+    <link rel="icon" href="images/logo-crop.png">
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
+    <script defer src="particles-init.js"></script>
+    <script defer src="content-loader.js"></script>
+  </head>
+  <body class="bg-slate-900 text-slate-50 font-[Inter]">
+    <div id="particles-js"></div>
+
+    <!-- Fixed Navigation -->
+    <nav
+      class="fixed top-0 inset-x-0 z-50 border-b border-white/5 bg-transparent backdrop-blur-md transition-colors duration-300"
+    >
+      <div
+        class="max-w-5xl mx-auto px-4 py-3 flex items-center justify-between"
+      >
+        <a
+          href="#"
+          class="flex items-center gap-2 text-base font-semibold"
+        >
+          <img src="images/logo-no-name.png" alt="Axiotic" class="h-8 w-auto rounded-full">
+          <span class="tracking-tight" data-key="site.nav.brand">Axiotic.ai</span>
+        </a>
+        <div class="hidden sm:flex items-center gap-6 text-sm text-slate-200">
+          <a href="#lab" class="hover:text-amber-300 transition" data-key="site.nav.links.0.text">Research Lab</a>
+          <a href="#consulting" class="hover:text-amber-300 transition" data-key="site.nav.links.1.text"
+            >White Glove Consulting</a
+          >
+          <a href="#team" class="hover:text-amber-300 transition" data-key="site.nav.links.2.text">Team</a>
+          <a 
+            href="#contact-form" 
+            class="inline-flex items-center justify-center rounded-full bg-amber-400 px-4 py-2 text-xs font-bold text-slate-950 hover:bg-amber-300 transition shadow-sm"
+            data-key="site.nav.cta.text"
+          >
+            Consult with Us
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <!-- Hero Section -->
+      <section class="min-h-screen flex items-center justify-center pt-20">
+        <div class="max-w-4xl mx-auto px-4 text-center space-y-6">
+          <h1
+            class="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-tight gradient-text"
+            data-aos="fade-up"
+            data-key="hero.title"
+          >
+            Beyond Scaling: Smarter Learning, Not Bigger Models
+          </h1>
+          <p 
+            class="text-base sm:text-lg text-slate-200 max-w-2xl mx-auto"
+            data-aos="fade-up" 
+            data-aos-delay="100"
+            data-key="hero.subtitle_primary"
+          >
+            Axiotic.ai creates a tight synergy between a white‑glove
+            consulting practice and an open research lab: we don’t believe in
+            ever‑bigger models; we believe in better architectures, learning
+            tasks, and training algorithms—and in shipping systems that actually
+            work.
+          </p>
+          <p 
+            class="text-xs sm:text-sm text-slate-300 max-w-2xl mx-auto"
+            data-aos="fade-up" 
+            data-aos-delay="200"
+            data-key="hero.subtitle_secondary"
+          >
+            We believe intelligence emerges from structure, interaction, and
+            information — not from piling more parameters on a transformer.
+          </p>
+
+          <div
+            class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4"
+            data-aos="fade-up" 
+            data-aos-delay="300"
+          >
+            <a
+              href="#consulting"
+              class="inline-flex items-center justify-center rounded-lg bg-amber-400 px-6 py-3 text-sm font-semibold text-slate-950 shadow-md hover:bg-amber-300 transition transform hover:scale-105"
+              data-key="hero.cta_primary.text"
+            >
+              Request Consulting: Cost‑Efficient AI Strategy
+            </a>
+            <a
+              href="#lab"
+              class="inline-flex items-center justify-center rounded-lg border border-slate-700 px-6 py-3 text-sm font-semibold text-slate-200 hover:bg-slate-800 transition transform hover:scale-105"
+              data-key="hero.cta_secondary.text"
+            >
+              Learn About Our Research Directions
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Research Lab Section -->
+      <section id="lab" class="py-24 border-t border-slate-800/50">
+        <div class="max-w-5xl mx-auto px-4 space-y-12">
+          <header class="text-center space-y-4" data-aos="fade-up">
+            <p class="text-xs font-semibold uppercase tracking-[0.2em] text-amber-300" data-key="research.header.eyebrow">
+              Research Lab
+            </p>
+            <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight" data-key="research.header.title">
+              Open Research on Efficient AI Systems
+            </h2>
+            <p class="max-w-2xl mx-auto text-base text-slate-300" data-key="research.header.subtitle">
+              The Axiotic Lab studies efficient, multimodal, embodied learning
+              through completely open models, datasets, and training recipes.
+            </p>
+          </header>
+
+          <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4" id="research-pillars-grid">
+            <!-- Pillars will be populated by JS -->
+          </div>
+
+          <div 
+            class="rounded-2xl bg-slate-900/60 border border-slate-800 p-6 text-center"
+            data-aos="fade-up"
+          >
+            <h3 class="text-lg font-semibold mb-2" data-key="research.commitment.title">Open Science Commitment</h3>
+            <p class="text-sm text-slate-300 max-w-2xl mx-auto" data-key="research.commitment.text">
+              We release code, models, and datasets as openly as licensing allows. 
+              The lab exists to push the field forward, not to hide breakthroughs behind proprietary walls.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Flywheel Section -->
+      <section id="flywheel" class="py-24 bg-slate-900 border-t border-slate-800/50">
+        <div class="max-w-5xl mx-auto px-4 space-y-12">
+          <header class="text-center space-y-4" data-aos="fade-up">
+            <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight" data-key="flywheel.title">
+              The Axiotic Flywheel
+            </h2>
+            <p class="max-w-2xl mx-auto text-base text-slate-300" data-key="flywheel.subtitle">
+              A self-reinforcing loop that funds innovation without VC pressure.
+            </p>
+          </header>
+
+          <div class="grid gap-6 md:grid-cols-4" id="flywheel-grid">
+            <!-- Flywheel steps populated by JS -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Consulting Section -->
+      <section id="consulting" class="py-24 bg-slate-900/50 border-t border-slate-800/50">
+        <div class="max-w-5xl mx-auto px-4 space-y-12">
+          <header class="text-center space-y-4" data-aos="fade-up">
+            <p class="text-xs font-semibold uppercase tracking-[0.2em] text-amber-300" data-key="consulting.header.eyebrow">
+              Consulting
+            </p>
+            <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight" data-key="consulting.header.title">
+              White Glove Consulting
+            </h2>
+            <p class="max-w-2xl mx-auto text-base text-slate-300" data-key="consulting.header.subtitle">
+              We design and ship efficient AI systems: compact models, retrieval pipelines, 
+              and training setups paired with the right data generation and evaluation loops.
+            </p>
+          </header>
+
+          <!-- Flagship -->
+          <div 
+            class="rounded-2xl bg-gradient-to-br from-slate-900 via-slate-900 to-slate-950 border border-slate-800 p-8 shadow-xl"
+            data-aos="fade-up"
+          >
+            <h3 class="text-xl font-bold text-white mb-4" data-key="consulting.flagship.title">Flagship Offering: AI Opportunities &amp; Strategy Plan</h3>
+            <p class="text-sm text-slate-300 mb-8 max-w-3xl" data-key="consulting.flagship.description">
+              We start with a free consultation to understand your products, data, and constraints, then co‑design an AI Opportunities &amp; Strategy Plan. You get a clear, honest view of where AI can help, where it won’t, and what it would take to build systems that actually work.
+            </p>
+            <div class="grid md:grid-cols-2 gap-8">
+              <div>
+                <h4 class="text-xs font-bold text-amber-400 uppercase tracking-wider mb-3" data-key="consulting.flagship.col1_title">What We Look At</h4>
+                <ul class="text-sm text-slate-300 space-y-2 list-disc list-inside" id="consulting-flagship-col1">
+                  <!-- Items populated by JS -->
+                </ul>
+              </div>
+              <div>
+                <h4 class="text-xs font-bold text-amber-400 uppercase tracking-wider mb-3" data-key="consulting.flagship.col2_title">What You Get</h4>
+                <ul class="text-sm text-slate-300 space-y-2 list-disc list-inside" id="consulting-flagship-col2">
+                  <!-- Items populated by JS -->
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Service Pillars Grid -->
+          <div class="grid gap-6 sm:grid-cols-2" id="consulting-pillars-grid">
+             <!-- Pillars populated by JS -->
+          </div>
+
+          <!-- Why Us & Contact -->
+          <div class="grid md:grid-cols-2 gap-8 items-start">
+            <div 
+              class="rounded-2xl bg-slate-900/60 border border-slate-800 p-8 h-full"
+              data-aos="fade-right"
+            >
+              <h3 class="text-lg font-bold text-white mb-4" data-key="consulting.why_us.title">Why Axiotic?</h3>
+              <p class="text-sm text-slate-300 leading-relaxed" data-key="consulting.why_us.text">
+                Axiotic.ai is a small, senior team of cutting‑edge ML researchers, production engineers, 
+                governance experts, and people‑focused operators who have shipped real AI systems. 
+                <br><br>
+                That mix lets us move from frontier ideas to white‑glove, purpose‑built systems, 
+                then help you hire, upskill, and govern the teams that run them.
+              </p>
+            </div>
+            <div 
+              class="rounded-2xl bg-slate-900/80 border border-slate-700 p-8 h-full"
+              data-aos="fade-left"
+              id="contact-form"
+            >
+              <h3 class="text-lg font-bold text-white mb-2" data-key="consulting.contact.title">Request a Free Consultation</h3>
+              <p class="text-xs text-slate-400 mb-6" data-key="consulting.contact.subtitle">
+                Share your email; we’ll follow up with a short, focused call.
+              </p>
+              <form class="space-y-4">
+                <div>
+                  <label for="email" class="sr-only">Email</label>
+                  <input type="email" id="email" required placeholder="Email (required)" 
+                    class="w-full rounded-lg border border-slate-700 bg-slate-950 px-4 py-3 text-sm text-slate-100 focus:ring-2 focus:ring-amber-400 outline-none transition"
+                  >
+                </div>
+                <div>
+                  <label for="name" class="sr-only">Name</label>
+                  <input type="text" id="name" placeholder="Name (optional)" 
+                    class="w-full rounded-lg border border-slate-700 bg-slate-950 px-4 py-3 text-sm text-slate-100 focus:ring-2 focus:ring-amber-400 outline-none transition"
+                  >
+                </div>
+                <div>
+                  <label for="notes" class="sr-only">Notes</label>
+                  <textarea id="notes" rows="2" placeholder="Short description (optional)" 
+                    class="w-full rounded-lg border border-slate-700 bg-slate-950 px-4 py-3 text-sm text-slate-100 focus:ring-2 focus:ring-amber-400 outline-none transition"
+                  ></textarea>
+                </div>
+                <button type="submit" class="w-full rounded-lg bg-amber-400 px-6 py-3 text-sm font-bold text-slate-950 hover:bg-amber-300 transition shadow-lg hover:shadow-amber-400/20" data-key="consulting.contact.button">
+                  Request Free Consultation
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Team Section -->
+      <section id="team" class="py-24 border-t border-slate-800/50">
+        <div class="max-w-5xl mx-auto px-4 space-y-12">
+          <header class="text-center space-y-4" data-aos="fade-up">
+            <p class="text-xs font-semibold uppercase tracking-[0.2em] text-amber-300" data-key="team.header.eyebrow">
+              Team
+            </p>
+            <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight" data-key="team.header.title">
+              The Axiotic Core Team
+            </h2>
+            <p class="max-w-2xl mx-auto text-base text-slate-300" data-key="team.header.subtitle">
+              A small, senior group combining deep research, pragmatic engineering, governance, 
+              and education — organized around the Axiotic flywheel.
+            </p>
+          </header>
+
+          <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6" id="team-grid">
+            <!-- Team members populated by JS -->
+          </div>
+        </div>
+      </section>
+      <!-- Name Origin Section -->
+      <section id="name-origin" class="py-16 border-t border-slate-800/50 bg-slate-900/30">
+        <div class="max-w-3xl mx-auto px-4 text-center space-y-6" data-aos="fade-up">
+          <h3 class="text-2xl font-bold text-white" data-key="name_origin.title">Why 'Axiotic'?</h3>
+          <p class="text-base text-slate-300 leading-relaxed" data-key="name_origin.text">
+            The name comes from First Principles (Axioms). In a field crowded with hype, we return to the fundamentals: exploring structure, interaction, and information for the sake of discovery, and building robust systems for the sake of creating real value.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="py-8 text-center text-xs text-slate-500 border-t border-slate-800/50">
+      <p data-key="footer.copyright">&copy; 2025 Axiotic.ai</p>
+    </footer>
+
+    <script>
+      // Initialize AOS
+      AOS.init({
+        duration: 800,
+        once: true,
+        offset: 50,
+      });
+    </script>
+  </body>
+</html>

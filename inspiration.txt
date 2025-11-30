@@ -1,0 +1,143 @@
+Synentropic.ai – Design & Copy Inspiration
+created_date: 2025-11-27
+last_updated_date: 2025-11-27
+
+------------------------------------------------------------
+HOME (current default, Synentropic theme)
+------------------------------------------------------------
+
+Hero
+- Smarter, Not Bigger.
+- At Synentropic.ai we pursue a simple but radical premise: intelligence emerges from structure, interaction, and information — not from piling more parameters on a transformer.
+- We run a dual‑arm model: an open research lab that pushes the frontier of efficient learning, and a pragmatic consulting arm that turns that work into systems that actually ship.
+- For Companies: Pragmatic AI Audit
+- For Researchers: Explore the Lab
+
+Audience Split
+- For Organizations & Teams
+  You have problems to solve, budget to respect, and stakeholders to convince. We start with a clear, low‑friction audit and end with fast, cost‑efficient systems in production.
+- For Researchers & Collaborators
+  You care about new objectives, architectures, and data engines. The Synentropic Lab publishes open models, datasets, and training recipes aligned with our 7+1 pillar agenda.
+
+Research Agenda (headings)
+- The Synentropic Research Agenda
+- 1. Improved Learning Tasks
+- 2. Multimodal Alignment
+- 3. Memory & Conditional Recursion
+- 4. Hierarchical Attention & Infinite Context
+- 5. Layer‑Wide Attention
+- 6. AI‑Assisted Data Loops
+- 7. Embodied Intelligence
+- 8. Evolution & Nature‑Inspired Learning
+
+Callout
+- What We Are Building
+  We aim to create the most capable small models on Earth—sub‑billion parameter systems that are multimodal, embodied, and grounded in the structure of the real world.
+
+------------------------------------------------------------
+LAB PAGE
+------------------------------------------------------------
+
+Hero
+- Open, Synentropic Research
+- The Synentropic Lab advances efficient, multimodal, embodied learning through completely open models, datasets, and training recipes.
+- We treat transparency as a design principle: no black boxes, clear evaluations, and research that anyone can build on.
+
+Thesis & Pillars
+- We believe current AI is plateauing on generalization and grounded understanding. Breakthroughs will come from new tasks and mechanisms, not just bigger models.
+- 1. Improved Learning Tasks — Beyond next‑token prediction: masking, N‑step forecasting, and JEPA‑style objectives that force long‑horizon understanding.
+- 2. Multimodal Learning — Early‑fusion representation learning across text, vision, audio, and interaction, with careful evaluation design.
+- 3. Memory & Conditional Recursion — Architectures with explicit memory and adaptive, data‑conditional recurrence to support deeper reasoning.
+- 4. Hierarchical Attention & Infinite Context — Variable‑resolution attention and feature reuse to enable near infinite context without brute‑force scaling.
+- 5. Layer‑Wide Attention — Real‑time access across layers so models can route information freely instead of strictly layer‑by‑layer.
+- 6. AI‑Assisted Data Loops — Data improvement loops where better models generate better data, with transparent data cards and licensing.
+- 7. Embodied Intelligence — Simulation‑first learning and sim‑to‑real protocols for interaction‑driven learning.
+- 8. Evolution & Nature‑Inspired Learning — Evolutionary curricula, adaptive augmentations, and information‑theoretic objectives as a first‑class focus.
+
+Open Science Commitments
+- We release code, models, and datasets as openly as licensing allows, with clear documentation and ablation‑first writeups. The lab exists to push the field forward, not to hide breakthroughs behind proprietary walls.
+
+------------------------------------------------------------
+CONSULTING & FLYWHEEL PAGE
+------------------------------------------------------------
+
+Hero
+- The Pragmatic AI Engine
+- We turn Synentropic research into practical systems for clients — with a ruthless focus on what actually works and what is cheapest to run.
+- Our consulting arm funds the lab while staying grounded in real‑world constraints: CPU‑first design, right‑sized models, and measurable ROI.
+
+Flagship Offering
+- Flagship Offering: Pragmatic AI Audit
+- A fixed‑price, 2‑week engagement that gives you a clear, honest roadmap instead of another science‑fair prototype.
+- Full‑Stack Assessment — Technical audit of data, infra, and low‑hanging fruit — with a CPU‑first lens to avoid unnecessary GPU spend.
+- Governance & Risk Map — Compliance, ethics, and risk analysis (EU AI Act, privacy) with a clear red / yellow / green view for leadership.
+- Skills & Culture Audit — Assessment of your existing team and a concrete upskilling plan: who to train, who to hire, and in what order.
+- The Trojan Horse Roadmap — The real output: a prioritized, costed roadmap that naturally leads into build, education, and governance work.
+
+Service Pillars
+- Education & Upskilling — Executive workshops and deep‑dive bootcamps delivered by award‑winning lecturers to make your org AI‑literate.
+- Hiring & Org Design — Interim Head‑of‑AI support: role design, candidate vetting, and culture‑first team building.
+- AI Governance & Safety — Compliance audits, ethical frameworks, and grant strategy led by experienced AI law and ethics practitioners.
+- Systems & Implementation — Delivery of RAG systems, embeddings, and pipelines that are fast, robust, and cheap to run in production.
+
+Differentiation
+- Why Synentropic Consulting Is Different
+  We build for function over fashion: smaller, distilled models, CPU‑first RAG, and systems of specialized components instead of one giant model. Our open research stack and proven track record give you both innovation and reliability — and every successful project strengthens the Synentropic flywheel.
+
+------------------------------------------------------------
+TEAM PAGE
+------------------------------------------------------------
+
+Hero
+- The Synentropic Core Team
+- A small, senior group combining deep research, pragmatic engineering, governance, and education — organized around the Synentropic flywheel.
+- We bring together people who have shipped real systems, taught at universities, written the papers, and handled the politics of deployment.
+
+Role Summaries
+- Antreas Antoniou — Technical Vision & Research
+  Multi‑modal learning, efficient LLMs, on‑device models, and high‑performance RAG. Leads the research agenda and translates frontier ideas into deployable systems.
+- Sam Jones — Engineering Lead & Operations
+  Owns delivery and day‑to‑day execution: project management, resource allocation, and making sure consulting work ships on time and to spec.
+- Fady — Senior AI Engineer / Researcher
+  Handles complex models and synthetic data; bridges research and production for difficult ML problems.
+- Patrick — Systems & Infrastructure
+  Focuses on RAG pipelines, deployment, and optimization, scaling the engineering capacity for consultancy projects.
+- Andreas Theodorou — Governance & Safety
+  AI law, ethics, and grant strategy. Leads governance audits, compliance work, and non‑dilutive funding initiatives.
+- Pavlos Andreadis — Education & Upskilling
+  Career educator and theoretical ML expert. Designs and delivers upskilling programs for executives and technical teams.
+- Laura Vergara — Community, Culture & Biz Dev
+  Connects the lab with the broader ecosystem, builds community around open science outputs, and nurtures client relationships.
+- Thomas Woerhle — Evolutionary AI
+  Research engineer exploring evolution‑inspired AI and open‑ended learning, injecting fresh perspectives into the research program.
+
+------------------------------------------------------------
+DESIGN 01 (Glass Dark Variant)
+------------------------------------------------------------
+
+Hero & Thesis
+- Design 01 · Glass Dark
+- Smarter architectures, not bigger models.
+- We believe intelligence emerges from structure, interaction, and information — not from piling more parameters on a transformer.
+- Research Thesis
+  We push beyond the current scaling plateau with compact, multimodal systems that learn from the dynamics of the real world.
+
+------------------------------------------------------------
+DESIGN 11 (Lerobot‑Inspired Variant)
+------------------------------------------------------------
+
+Hero & Split
+- Efficient AI for a post‑scaling world.
+- Synentropic.ai runs as a dual‑arm engine: an open research lab for new objectives and architectures, and a pragmatic consulting arm that turns those ideas into systems that actually ship.
+- For Companies: Pragmatic AI Audit
+- For Researchers: Explore the Lab
+
+Audience Cards
+- For Organizations & Teams
+  You need clarity, not another science‑fair prototype. Our fixed‑scope Pragmatic AI Audit maps your data, infra, and skills into a costed roadmap you can execute tomorrow.
+  CPU‑first design, right‑sized models, and a bias toward systems that are cheap to run and easy to maintain.
+- For Researchers & Collaborators
+  The Synentropic Lab focuses on improved learning tasks, multimodal alignment, memory & recursion, hierarchical attention, and evolution‑inspired optimisation — with open models, data, and training recipes.
+  We publish what we build so the community can stand on top of our experiments, not repeat them.
+
+
