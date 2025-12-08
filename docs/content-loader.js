@@ -10,7 +10,11 @@ document.addEventListener('DOMContentLoaded', async () => {
       const key = el.getAttribute('data-key');
       const value = getNestedValue(content, key);
       if (value) {
-        if (el.tagName === 'A' && key.endsWith('.text')) {
+        if (el.tagName === 'TITLE') {
+          // Special handling for title tag
+          el.textContent = value;
+          document.title = value;
+        } else if (el.tagName === 'A' && key.endsWith('.text')) {
              // For links, we might have separate href keys, but here we just update text
              el.textContent = value;
         } else {

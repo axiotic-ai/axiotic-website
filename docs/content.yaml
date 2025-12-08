@@ -1,7 +1,7 @@
 site:
-  title: "Axiotic.ai — Efficient AI for a Post‑Scaling World"
+  title: "Beyond Scaling through Smarter Learning"
   nav:
-    brand: "Axiotic.ai"
+    brand: "Axiotic AI"
     links:
       - text: "Research"
         href: "#lab"
@@ -14,15 +14,19 @@ site:
       href: "#contact-form"
 
 hero:
-  title: "Beyond Scaling: Smarter Learning, Not Bigger Models"
-  subtitle_primary: "Axiotic.ai creates a tight synergy between a white‑glove consulting practice and an open research lab: we don’t believe in ever‑bigger models; we believe in better architectures, learning tasks, and training algorithms—and in shipping systems that actually work."
-  subtitle_secondary: "We believe intelligence emerges from structure, interaction, and information — not from piling more parameters on a transformer."
+  title: "Beyond Scaling through Smarter Learning"
+  subtitle_primary: "Axiotic AI delivers research‑led consulting. You’re not buying old patterns; you’re buying frontier‑shaped systems and the confidence to own and improve them."
   cta_primary:
     text: "Request Consulting"
     href: "#consulting"
   cta_secondary:
     text: "Learn About Our Research Directions"
     href: "#lab"
+
+mission:
+  statement: "We believe intelligence emerges from Structure, Interaction, and Information,<br>Not from piling more parameters on a transformer."
+  statement_part1: "We believe intelligence emerges from Structure, Interaction, and Information,"
+  statement_part2: "Not from piling more parameters on a transformer."
 
 research:
   header:
@@ -112,7 +116,7 @@ consulting:
       description: "Governance frameworks, compliance reviews, and grant strategy so your AI work is safe, legal, and fundable."
   why_us:
     title: "Why Axiotic?"
-    text: "Axiotic.ai is a small, senior team of cutting‑edge ML researchers, production engineers, governance experts, and people‑focused operators who have shipped real AI systems. That mix lets us move from frontier ideas to white‑glove, purpose‑built systems, then help you hire, upskill, and govern the teams that run them."
+    text: "Axiotic AI is a small, senior team of cutting‑edge ML researchers, production engineers, governance experts, and people‑focused operators who have shipped real AI systems. That mix lets us move from frontier ideas to white‑glove, purpose‑built systems, then help you hire, upskill, and govern the teams that run them."
   contact:
     title: "Request a Free Consultation"
     subtitle: "Share your email; we’ll follow up with a short, focused call."
