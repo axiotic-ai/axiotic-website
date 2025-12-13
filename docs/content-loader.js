@@ -32,9 +32,9 @@ document.addEventListener('DOMContentLoaded', async () => {
           data-aos="fade-up"
           data-aos-delay="${index * 50}"
         >
-          <div class="text-3xl mb-4">${pillar.icon}</div>
-          <h3 class="text-sm font-bold text-slate-100 mb-2">${pillar.title}</h3>
-          <p class="text-xs text-slate-400 leading-relaxed">
+          <div class="text-5xl mb-4">${pillar.icon}</div>
+          <h3 class="text-lg font-bold text-slate-100 mb-2">${pillar.title}</h3>
+          <p class="text-base text-slate-400 leading-relaxed text-justify">
             ${pillar.description}
           </p>
         </article>
@@ -50,9 +50,9 @@ document.addEventListener('DOMContentLoaded', async () => {
           data-aos="fade-up"
           data-aos-delay="${index * 100}"
         >
-          <div class="text-4xl mb-3">${step.icon}</div>
-          <h3 class="text-sm font-bold text-amber-100 mb-2">${step.title}</h3>
-          <p class="text-xs text-slate-400 leading-relaxed">
+          <div class="text-6xl mb-3">${step.icon}</div>
+          <h3 class="text-lg font-bold text-amber-100 mb-2">${step.title}</h3>
+          <p class="text-base text-slate-400 leading-relaxed">
             ${step.description}
           </p>
         </article>
@@ -79,9 +79,9 @@ document.addEventListener('DOMContentLoaded', async () => {
           data-aos="fade-up"
           data-aos-delay="${index * 100}"
         >
-          <div class="text-3xl mb-4">${pillar.icon}</div>
-          <h3 class="text-base font-bold text-slate-100 mb-2">${pillar.title}</h3>
-          <p class="text-sm text-slate-300">
+          <div class="text-5xl mb-4">${pillar.icon}</div>
+          <h3 class="text-xl font-bold text-slate-100 mb-2">${pillar.title}</h3>
+          <p class="text-lg text-slate-300">
             ${pillar.description}
           </p>
         </article>
@@ -104,9 +104,9 @@ document.addEventListener('DOMContentLoaded', async () => {
               onerror="this.src='https://ui-avatars.com/api/?name=${encodeURIComponent(member.name)}&background=random'"
             >
           </div>
-          <h3 class="text-sm font-bold text-amber-100">${member.name}</h3>
-          <p class="text-xs text-amber-400 mb-2">${member.role}</p>
-          <p class="text-xs text-slate-400 leading-relaxed">
+          <h3 class="text-lg font-bold text-amber-100">${member.name}</h3>
+          <p class="text-base text-amber-400 mb-2">${member.role}</p>
+          <p class="text-base text-slate-400 leading-relaxed">
             ${member.description}
           </p>
         </article>
