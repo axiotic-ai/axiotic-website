@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Consulting Design Options — Axiotic.ai</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script defer src="particles-init.js"></script>
+    <style>
+      .design-section {
+        margin-bottom: 80px;
+        padding: 40px 0;
+        border-top: 2px solid rgba(148, 163, 184, 0.2);
+      }
+      .design-label {
+        position: sticky;
+        top: 0;
+        background: rgba(15, 23, 42, 0.95);
+        backdrop-filter: blur(10px);
+        padding: 20px;
+        margin-bottom: 30px;
+        border-bottom: 2px solid rgba(251, 146, 60, 0.3);
+        z-index: 10;
+      }
+    </style>
+  </head>
+  <body class="bg-slate-900 text-slate-50 font-[Inter]">
+    <div id="particles-js"></div>
+
+    <nav class="fixed top-0 inset-x-0 z-50 border-b border-white/5 bg-transparent backdrop-blur-md">
+      <div class="max-w-5xl mx-auto px-4 py-3 flex items-center justify-between">
+        <a href="index.html" class="flex items-center gap-2 text-base font-semibold">
+          <img src="images/logo-no-name.png" alt="Axiotic" class="h-8 w-auto rounded-full">
+          <span class="tracking-tight">Axiotic.ai</span>
+        </a>
+        <a href="index.html" class="text-sm text-slate-200 hover:text-amber-300">← Back to Home</a>
+      </div>
+    </nav>
+
+    <main class="pt-20">
+      <div class="max-w-6xl mx-auto px-4 py-10">
+        <header class="text-center mb-16">
+          <h1 class="text-4xl font-extrabold mb-4">10 Consulting Design Options</h1>
+          <p class="text-slate-300">Scroll through to compare different layouts for displaying our consultancy offerings</p>
+        </header>
+
+        <!-- Design Option 1: Vertical Cards Stack -->
+        <section class="design-section">
+          <div class="design-label">
+            <h2 class="text-2xl font-bold text-amber-300">Design 1: Vertical Cards Stack</h2>
+            <p class="text-sm text-slate-400">Simple stacked cards with icons and descriptions</p>
+          </div>
+          <div class="max-w-4xl mx-auto space-y-6">
+            <div class="rounded-2xl bg-slate-900/80 border border-slate-800 p-8">
+              <div class="flex items-start gap-4 mb-4">
+                <span class="text-3xl">📋</span>
+                <div>
+                  <h3 class="text-xl font-bold mb-2">Strategy Plan</h3>
+                  <p class="text-slate-300">We start with a free consultation to understand your products, data, and constraints, then co‑design an AI Opportunities & Strategy Plan. You get a clear, honest view of where AI can help, where it won't, and what it would take to build systems that actually work.</p>
+                </div>
+              </div>
+            </div>
+            <div class="rounded-2xl bg-slate-900/80 border border-slate-800 p-8">
+              <div class="flex items-start gap-4 mb-4">
+                <span class="text-3xl">⚖️</span>
+                <div>
+                  <h3 class="text-xl font-bold mb-2">AI Governance & Safety</h3>
+                  <p class="text-slate-300">Governance frameworks, compliance reviews, and grant strategy so your AI work is safe, legal, and fundable.</p>
+                </div>
+              </div>
+            </div>
+            <div class="rounded-2xl bg-slate-900/80 border border-slate-800 p-8">
+              <div class="flex items-start gap-4 mb-4">
+                <span class="text-3xl">🎓</span>
+                <div>
+                  <h3 class="text-xl font-bold mb-2">Education & Upskilling</h3>
+                  <p class="text-slate-300">Executive workshops and deep‑dive bootcamps that move leaders and engineers from AI‑curious to confident practitioners.</p>
+                </div>
+              </div>
+            </div>
+            <div class="rounded-2xl bg-slate-900/80 border border-slate-800 p-8">
+              <div class="flex items-start gap-4 mb-4">
+                <span class="text-3xl">🧩</span>
+                <div>
+                  <h3 class="text-xl font-bold mb-2">Hiring & Org Design</h3>
+                  <p class="text-slate-300">Interim Head‑of‑AI support: role design, candidate vetting, and culture‑first team building.</p>
+                </div>
+              </div>
+            </div>
+            <div class="rounded-2xl bg-slate-900/80 border border-slate-800 p-8">
+              <div class="flex items-start gap-4 mb-4">
+                <span class="text-3xl">🧠</span>
+                <div>
+                  <h3 class="text-xl font-bold mb-2">Models, Data & Evaluation Loops</h3>
+                  <p class="text-slate-300">Purpose‑built models, RAG systems, and data pipelines, plus evaluation schemes that turn them into learning flywheels.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Design Option 2: Grid Cards -->
+        <section class="design-section">
+          <div class="design-label">
+            <h2 class="text-2xl font-bold text-amber-300">Design 2: Grid Cards</h2>
+            <p class="text-sm text-slate-400">Equal-width cards in a responsive grid</p>
+          </div>
+          <div class="max-w-6xl mx-auto grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <div class="rounded-xl bg-gradient-to-br from-slate-900 to-slate-950 border border-slate-800 p-6 hover:border-amber-400/50 transition">
+              <div class="text-4xl mb-4">📋</div>
+              <h3 class="text-lg font-bold mb-2">Strategy Plan</h3>
+              <p class="text-sm text-slate-300">Free consultation leading to a co‑designed AI Opportunities & Strategy Plan with clear, honest guidance.</p>
+            </div>
+            <div class="rounded-xl bg-gradient-to-br from-slate-900 to-slate-950 border border-slate-800 p-6 hover:border-amber-400/50 transition">
+              <div class="text-4xl mb-4">⚖️</div>
+              <h3 class="text-lg font-bold mb-2">AI Governance & Safety</h3>
+              <p class="text-sm text-slate-300">Governance frameworks, compliance reviews, and grant strategy for safe, legal, fundable AI work.</p>
+            </div>
+            <div class="rounded-xl bg-gradient-to-br from-slate-900 to-slate-950 border border-slate-800 p-6 hover:border-amber-400/50 transition">
+              <div class="text-4xl mb-4">🎓</div>
+              <h3 class="text-lg font-bold mb-2">Education & Upskilling</h3>
+              <p class="text-sm text-slate-300">Executive workshops and bootcamps moving teams from AI‑curious to confident practitioners.</p>
+            </div>
+            <div class="rounded-xl bg-gradient-to-br from-slate-900 to-slate-950 border border-slate-800 p-6 hover:border-amber-400/50 transition">
+              <div class="text-4xl mb-4">🧩</div>
+              <h3 class="text-lg font-bold mb-2">Hiring & Org Design</h3>
+              <p class="text-sm text-slate-300">Interim Head‑of‑AI support: role design, candidate vetting, and culture‑first team building.</p>
+            </div>
+            <div class="rounded-xl bg-gradient-to-br from-slate-900 to-slate-950 border border-slate-800 p-6 hover:border-amber-400/50 transition sm:col-span-2 lg:col-span-1">
+              <div class="text-4xl mb-4">🧠</div>
+              <h3 class="text-lg font-bold mb-2">Models, Data & Evaluation Loops</h3>
+              <p class="text-sm text-slate-300">Purpose‑built models, RAG systems, and data pipelines with evaluation schemes for learning flywheels.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Design Option 3: Numbered Timeline -->
+        <section class="design-section">
+          <div class="design-label">
+            <h2 class="text-2xl font-bold text-amber-300">Design 3: Numbered Timeline</h2>
+            <p class="text-sm text-slate-400">Sequential flow with numbered steps</p>
+          </div>
+          <div class="max-w-4xl mx-auto">
+            <div class="space-y-8">
+              <div class="flex gap-6">
+                <div class="flex-shrink-0">
+                  <div class="w-12 h-12 rounded-full bg-amber-400 text-slate-950 font-bold text-lg flex items-center justify-center">1</div>
+                </div>
+                <div class="flex-1 pt-2">
+                  <h3 class="text-xl font-bold mb-2">Strategy Plan</h3>
+                  <p class="text-slate-300">We start with a free consultation to understand your products, data, and constraints, then co‑design an AI Opportunities & Strategy Plan. You get a clear, honest view of where AI can help, where it won't, and what it would take to build systems that actually work.</p>
+                </div>
+              </div>
+              <div class="flex gap-6">
+                <div class="flex-shrink-0">
+                  <div class="w-12 h-12 rounded-full bg-amber-400 text-slate-950 font-bold text-lg flex items-center justify-center">2</div>
+                </div>
+                <div class="flex-1 pt-2">
+                  <h3 class="text-xl font-bold mb-2">AI Governance & Safety</h3>
+                  <p class="text-slate-300">Governance frameworks, compliance reviews, and grant strategy so your AI work is safe, legal, and fundable.</p>
+                </div>
+              </div>
+              <div class="flex gap-6">
+                <div class="flex-shrink-0">
+                  <div class="w-12 h-12 rounded-full bg-amber-400 text-slate-950 font-bold text-lg flex items-center justify-center">3</div>
+                </div>
+                <div class="flex-1 pt-2">
+                  <h3 class="text-xl font-bold mb-2">Education & Upskilling</h3>
+                  <p class="text-slate-300">Executive workshops and deep‑dive bootcamps that move leaders and engineers from AI‑curious to confident practitioners.</p>
+                </div>
+              </div>
+              <div class="flex gap-6">
+                <div class="flex-shrink-0">
+                  <div class="w-12 h-12 rounded-full bg-amber-400 text-slate-950 font-bold text-lg flex items-center justify-center">4</div>
+                </div>
+                <div class="flex-1 pt-2">
+                  <h3 class="text-xl font-bold mb-2">Hiring & Org Design</h3>
+                  <p class="text-slate-300">Interim Head‑of‑AI support: role design, candidate vetting, and culture‑first team building.</p>
+                </div>
+              </div>
+              <div class="flex gap-6">
+                <div class="flex-shrink-0">
+                  <div class="w-12 h-12 rounded-full bg-amber-400 text-slate-950 font-bold text-lg flex items-center justify-center">5</div>
+                </div>
+                <div class="flex-1 pt-2">
+                  <h3 class="text-xl font-bold mb-2">Models, Data & Evaluation Loops</h3>
+                  <p class="text-slate-300">Purpose‑built models, RAG systems, and data pipelines, plus evaluation schemes that turn them into learning flywheels.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Design Option 4: Icon Cards with Hover -->
+        <section class="design-section">
+          <div class="design-label">
+            <h2 class="text-2xl font-bold text-amber-300">Design 4: Icon Cards with Hover</h2>
+            <p class="text-sm text-slate-400">Cards with large icons that expand on hover</p>
+          </div>
+          <div class="max-w-5xl mx-auto grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <div class="group rounded-2xl bg-slate-900/60 border border-slate-800 p-8 hover:bg-slate-900/90 hover:border-amber-400/50 transition-all cursor-pointer">
+              <div class="text-5xl mb-4 group-hover:scale-110 transition-transform">📋</div>
+              <h3 class="text-lg font-bold mb-2 group-hover:text-amber-300 transition">Strategy Plan</h3>
+              <p class="text-sm text-slate-300">Free consultation leading to a co‑designed AI Opportunities & Strategy Plan.</p>
+            </div>
+            <div class="group rounded-2xl bg-slate-900/60 border border-slate-800 p-8 hover:bg-slate-900/90 hover:border-amber-400/50 transition-all cursor-pointer">
+              <div class="text-5xl mb-4 group-hover:scale-110 transition-transform">⚖️</div>
+              <h3 class="text-lg font-bold mb-2 group-hover:text-amber-300 transition">AI Governance & Safety</h3>
+              <p class="text-sm text-slate-300">Governance frameworks, compliance reviews, and grant strategy.</p>
+            </div>
+            <div class="group rounded-2xl bg-slate-900/60 border border-slate-800 p-8 hover:bg-slate-900/90 hover:border-amber-400/50 transition-all cursor-pointer">
+              <div class="text-5xl mb-4 group-hover:scale-110 transition-transform">🎓</div>
+              <h3 class="text-lg font-bold mb-2 group-hover:text-amber-300 transition">Education & Upskilling</h3>
+              <p class="text-sm text-slate-300">Executive workshops and bootcamps for confident AI practitioners.</p>
+            </div>
+            <div class="group rounded-2xl bg-slate-900/60 border border-slate-800 p-8 hover:bg-slate-900/90 hover:border-amber-400/50 transition-all cursor-pointer">
+              <div class="text-5xl mb-4 group-hover:scale-110 transition-transform">🧩</div>
+              <h3 class="text-lg font-bold mb-2 group-hover:text-amber-300 transition">Hiring & Org Design</h3>
+              <p class="text-sm text-slate-300">Interim Head‑of‑AI support: role design and team building.</p>
+            </div>
+            <div class="group rounded-2xl bg-slate-900/60 border border-slate-800 p-8 hover:bg-slate-900/90 hover:border-amber-400/50 transition-all cursor-pointer sm:col-span-2 lg:col-span-1">
+              <div class="text-5xl mb-4 group-hover:scale-110 transition-transform">🧠</div>
+              <h3 class="text-lg font-bold mb-2 group-hover:text-amber-300 transition">Models, Data & Evaluation Loops</h3>
+              <p class="text-sm text-slate-300">Purpose‑built models, RAG systems, and learning flywheels.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Design Option 5: Split Layout -->
+        <section class="design-section">
+          <div class="design-label">
+            <h2 class="text-2xl font-bold text-amber-300">Design 5: Split Layout</h2>
+            <p class="text-sm text-slate-400">Alternating left-right layout with visual separation</p>
+          </div>
+          <div class="max-w-5xl mx-auto space-y-12">
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+              <div class="text-right">
+                <div class="text-5xl mb-4">📋</div>
+                <h3 class="text-2xl font-bold mb-3">Strategy Plan</h3>
+              </div>
+              <div class="border-l-2 border-amber-400/30 pl-8">
+                <p class="text-slate-300">We start with a free consultation to understand your products, data, and constraints, then co‑design an AI Opportunities & Strategy Plan. You get a clear, honest view of where AI can help, where it won't, and what it would take to build systems that actually work.</p>
+              </div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+              <div class="border-r-2 border-amber-400/30 pr-8 md:order-2">
+                <p class="text-slate-300">Governance frameworks, compliance reviews, and grant strategy so your AI work is safe, legal, and fundable.</p>
+              </div>
+              <div class="text-left md:order-1">
+                <div class="text-5xl mb-4">⚖️</div>
+                <h3 class="text-2xl font-bold mb-3">AI Governance & Safety</h3>
+              </div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+              <div class="text-right">
+                <div class="text-5xl mb-4">🎓</div>
+                <h3 class="text-2xl font-bold mb-3">Education & Upskilling</h3>
+              </div>
+              <div class="border-l-2 border-amber-400/30 pl-8">
+                <p class="text-slate-300">Executive workshops and deep‑dive bootcamps that move leaders and engineers from AI‑curious to confident practitioners.</p>
+              </div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+              <div class="border-r-2 border-amber-400/30 pr-8 md:order-2">
+                <p class="text-slate-300">Interim Head‑of‑AI support: role design, candidate vetting, and culture‑first team building.</p>
+              </div>
+              <div class="text-left md:order-1">
+                <div class="text-5xl mb-4">🧩</div>
+                <h3 class="text-2xl font-bold mb-3">Hiring & Org Design</h3>
+              </div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+              <div class="text-right">
+                <div class="text-5xl mb-4">🧠</div>
+                <h3 class="text-2xl font-bold mb-3">Models, Data & Evaluation Loops</h3>
+              </div>
+              <div class="border-l-2 border-amber-400/30 pl-8">
+                <p class="text-slate-300">Purpose‑built models, RAG systems, and data pipelines, plus evaluation schemes that turn them into learning flywheels.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Design Option 6: Compact List -->
+        <section class="design-section">
+          <div class="design-label">
+            <h2 class="text-2xl font-bold text-amber-300">Design 6: Compact List</h2>
+            <p class="text-sm text-slate-400">Dense, scannable list format</p>
+          </div>
+          <div class="max-w-4xl mx-auto">
+            <div class="rounded-2xl bg-slate-900/80 border border-slate-800 p-8 space-y-6">
+              <div class="flex items-start gap-4 pb-6 border-b border-slate-800">
+                <span class="text-2xl flex-shrink-0">📋</span>
+                <div>
+                  <h3 class="text-lg font-bold mb-1">Strategy Plan</h3>
+                  <p class="text-sm text-slate-300">Free consultation → co‑designed AI Opportunities & Strategy Plan with clear, honest guidance on where AI can help and what it takes to build systems that work.</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-4 pb-6 border-b border-slate-800">
+                <span class="text-2xl flex-shrink-0">⚖️</span>
+                <div>
+                  <h3 class="text-lg font-bold mb-1">AI Governance & Safety</h3>
+                  <p class="text-sm text-slate-300">Governance frameworks, compliance reviews, and grant strategy for safe, legal, fundable AI work.</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-4 pb-6 border-b border-slate-800">
+                <span class="text-2xl flex-shrink-0">🎓</span>
+                <div>
+                  <h3 class="text-lg font-bold mb-1">Education & Upskilling</h3>
+                  <p class="text-sm text-slate-300">Executive workshops and deep‑dive bootcamps moving teams from AI‑curious to confident practitioners.</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-4 pb-6 border-b border-slate-800">
+                <span class="text-2xl flex-shrink-0">🧩</span>
+                <div>
+                  <h3 class="text-lg font-bold mb-1">Hiring & Org Design</h3>
+                  <p class="text-sm text-slate-300">Interim Head‑of‑AI support: role design, candidate vetting, and culture‑first team building.</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-4">
+                <span class="text-2xl flex-shrink-0">🧠</span>
+                <div>
+                  <h3 class="text-lg font-bold mb-1">Models, Data & Evaluation Loops</h3>
+                  <p class="text-sm text-slate-300">Purpose‑built models, RAG systems, and data pipelines with evaluation schemes for learning flywheels.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Design Option 7: Feature Cards with Badges -->
+        <section class="design-section">
+          <div class="design-label">
+            <h2 class="text-2xl font-bold text-amber-300">Design 7: Feature Cards with Badges</h2>
+            <p class="text-sm text-slate-400">Cards with category badges and highlighted features</p>
+          </div>
+          <div class="max-w-5xl mx-auto grid gap-6 sm:grid-cols-2">
+            <div class="rounded-xl bg-slate-900/80 border border-slate-800 p-6 relative overflow-hidden">
+              <div class="absolute top-0 right-0 bg-amber-400/20 text-amber-300 text-xs font-bold px-3 py-1 rounded-bl-lg">FLAGSHIP</div>
+              <div class="text-4xl mb-4 mt-2">📋</div>
+              <h3 class="text-xl font-bold mb-3">Strategy Plan</h3>
+              <p class="text-sm text-slate-300 mb-4">We start with a free consultation to understand your products, data, and constraints, then co‑design an AI Opportunities & Strategy Plan.</p>
+              <ul class="text-xs text-slate-400 space-y-1">
+                <li>✓ Free consultation</li>
+                <li>✓ Co-designed roadmap</li>
+                <li>✓ Governance audit included</li>
+              </ul>
+            </div>
+            <div class="rounded-xl bg-slate-900/80 border border-slate-800 p-6">
+              <div class="text-4xl mb-4">⚖️</div>
+              <h3 class="text-xl font-bold mb-3">AI Governance & Safety</h3>
+              <p class="text-sm text-slate-300 mb-4">Governance frameworks, compliance reviews, and grant strategy so your AI work is safe, legal, and fundable.</p>
+              <ul class="text-xs text-slate-400 space-y-1">
+                <li>✓ Compliance frameworks</li>
+                <li>✓ Risk assessment</li>
+                <li>✓ Grant strategy</li>
+              </ul>
+            </div>
+            <div class="rounded-xl bg-slate-900/80 border border-slate-800 p-6">
+              <div class="text-4xl mb-4">🎓</div>
+              <h3 class="text-xl font-bold mb-3">Education & Upskilling</h3>
+              <p class="text-sm text-slate-300 mb-4">Executive workshops and deep‑dive bootcamps that move leaders and engineers from AI‑curious to confident practitioners.</p>
+              <ul class="text-xs text-slate-400 space-y-1">
+                <li>✓ Executive workshops</li>
+                <li>✓ Technical bootcamps</li>
+                <li>✓ Hands-on training</li>
+              </ul>
+            </div>
+            <div class="rounded-xl bg-slate-900/80 border border-slate-800 p-6">
+              <div class="text-4xl mb-4">🧩</div>
+              <h3 class="text-xl font-bold mb-3">Hiring & Org Design</h3>
+              <p class="text-sm text-slate-300 mb-4">Interim Head‑of‑AI support: role design, candidate vetting, and culture‑first team building.</p>
+              <ul class="text-xs text-slate-400 space-y-1">
+                <li>✓ Role design</li>
+                <li>✓ Candidate vetting</li>
+                <li>✓ Team building</li>
+              </ul>
+            </div>
+            <div class="rounded-xl bg-slate-900/80 border border-slate-800 p-6 sm:col-span-2">
+              <div class="text-4xl mb-4">🧠</div>
+              <h3 class="text-xl font-bold mb-3">Models, Data & Evaluation Loops</h3>
+              <p class="text-sm text-slate-300 mb-4">Purpose‑built models, RAG systems, and data pipelines, plus evaluation schemes that turn them into learning flywheels.</p>
+              <ul class="text-xs text-slate-400 space-y-1">
+                <li>✓ Custom model development</li>
+                <li>✓ RAG systems</li>
+                <li>✓ Evaluation frameworks</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- Design Option 8: Tabbed Interface Style -->
+        <section class="design-section">
+          <div class="design-label">
+            <h2 class="text-2xl font-bold text-amber-300">Design 8: Tabbed Interface Style</h2>
+            <p class="text-sm text-slate-400">Visual tabs with content panels</p>
+          </div>
+          <div class="max-w-5xl mx-auto">
+            <div class="rounded-2xl bg-slate-900/80 border border-slate-800 overflow-hidden">
+              <div class="grid grid-cols-5 border-b border-slate-800">
+                <div class="p-4 text-center border-r border-slate-800 bg-amber-400/10">
+                  <div class="text-2xl mb-2">📋</div>
+                  <div class="text-xs font-bold">Strategy</div>
+                </div>
+                <div class="p-4 text-center border-r border-slate-800 hover:bg-slate-900/50 transition">
+                  <div class="text-2xl mb-2">⚖️</div>
+                  <div class="text-xs font-bold">Governance</div>
+                </div>
+                <div class="p-4 text-center border-r border-slate-800 hover:bg-slate-900/50 transition">
+                  <div class="text-2xl mb-2">🎓</div>
+                  <div class="text-xs font-bold">Education</div>
+                </div>
+                <div class="p-4 text-center border-r border-slate-800 hover:bg-slate-900/50 transition">
+                  <div class="text-2xl mb-2">🧩</div>
+                  <div class="text-xs font-bold">Hiring</div>
+                </div>
+                <div class="p-4 text-center hover:bg-slate-900/50 transition">
+                  <div class="text-2xl mb-2">🧠</div>
+                  <div class="text-xs font-bold">Models</div>
+                </div>
+              </div>
+              <div class="p-8">
+                <h3 class="text-2xl font-bold mb-4">Strategy Plan</h3>
+                <p class="text-slate-300 mb-6">We start with a free consultation to understand your products, data, and constraints, then co‑design an AI Opportunities & Strategy Plan. You get a clear, honest view of where AI can help, where it won't, and what it would take to build systems that actually work.</p>
+                <div class="grid sm:grid-cols-2 gap-6">
+                  <div>
+                    <h4 class="text-sm font-bold text-amber-300 mb-2">What We Look At</h4>
+                    <ul class="text-sm text-slate-400 space-y-1">
+                      <li>• Data sources and quality</li>
+                      <li>• Infrastructure and integration</li>
+                      <li>• Team skills and culture</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 class="text-sm font-bold text-amber-300 mb-2">What You Get</h4>
+                    <ul class="text-sm text-slate-400 space-y-1">
+                      <li>• Prioritized roadmap</li>
+                      <li>• Governance audit</li>
+                      <li>• Clear engagement options</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Design Option 9: Minimalist Text Blocks -->
+        <section class="design-section">
+          <div class="design-label">
+            <h2 class="text-2xl font-bold text-amber-300">Design 9: Minimalist Text Blocks</h2>
+            <p class="text-sm text-slate-400">Clean, text-focused design with subtle accents</p>
+          </div>
+          <div class="max-w-3xl mx-auto space-y-10">
+            <div>
+              <div class="flex items-center gap-3 mb-3">
+                <div class="w-1 h-8 bg-amber-400"></div>
+                <h3 class="text-2xl font-bold">Strategy Plan</h3>
+              </div>
+              <p class="text-slate-300 ml-4">We start with a free consultation to understand your products, data, and constraints, then co‑design an AI Opportunities & Strategy Plan. You get a clear, honest view of where AI can help, where it won't, and what it would take to build systems that actually work.</p>
+            </div>
+            <div>
+              <div class="flex items-center gap-3 mb-3">
+                <div class="w-1 h-8 bg-amber-400"></div>
+                <h3 class="text-2xl font-bold">AI Governance & Safety</h3>
+              </div>
+              <p class="text-slate-300 ml-4">Governance frameworks, compliance reviews, and grant strategy so your AI work is safe, legal, and fundable.</p>
+            </div>
+            <div>
+              <div class="flex items-center gap-3 mb-3">
+                <div class="w-1 h-8 bg-amber-400"></div>
+                <h3 class="text-2xl font-bold">Education & Upskilling</h3>
+              </div>
+              <p class="text-slate-300 ml-4">Executive workshops and deep‑dive bootcamps that move leaders and engineers from AI‑curious to confident practitioners.</p>
+            </div>
+            <div>
+              <div class="flex items-center gap-3 mb-3">
+                <div class="w-1 h-8 bg-amber-400"></div>
+                <h3 class="text-2xl font-bold">Hiring & Org Design</h3>
+              </div>
+              <p class="text-slate-300 ml-4">Interim Head‑of‑AI support: role design, candidate vetting, and culture‑first team building.</p>
+            </div>
+            <div>
+              <div class="flex items-center gap-3 mb-3">
+                <div class="w-1 h-8 bg-amber-400"></div>
+                <h3 class="text-2xl font-bold">Models, Data & Evaluation Loops</h3>
+              </div>
+              <p class="text-slate-300 ml-4">Purpose‑built models, RAG systems, and data pipelines, plus evaluation schemes that turn them into learning flywheels.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Design Option 10: Accordion Style -->
+        <section class="design-section">
+          <div class="design-label">
+            <h2 class="text-2xl font-bold text-amber-300">Design 10: Accordion Style</h2>
+            <p class="text-sm text-slate-400">Expandable sections with icons</p>
+          </div>
+          <div class="max-w-4xl mx-auto space-y-3">
+            <div class="rounded-xl bg-slate-900/80 border border-slate-800 overflow-hidden">
+              <div class="p-6 flex items-center justify-between cursor-pointer hover:bg-slate-900/50 transition">
+                <div class="flex items-center gap-4">
+                  <span class="text-3xl">📋</span>
+                  <h3 class="text-lg font-bold">Strategy Plan</h3>
+                </div>
+                <span class="text-amber-400">▼</span>
+              </div>
+              <div class="px-6 pb-6 pt-0 border-t border-slate-800">
+                <p class="text-slate-300 mt-4">We start with a free consultation to understand your products, data, and constraints, then co‑design an AI Opportunities & Strategy Plan. You get a clear, honest view of where AI can help, where it won't, and what it would take to build systems that actually work.</p>
+              </div>
+            </div>
+            <div class="rounded-xl bg-slate-900/80 border border-slate-800 overflow-hidden">
+              <div class="p-6 flex items-center justify-between cursor-pointer hover:bg-slate-900/50 transition">
+                <div class="flex items-center gap-4">
+                  <span class="text-3xl">⚖️</span>
+                  <h3 class="text-lg font-bold">AI Governance & Safety</h3>
+                </div>
+                <span class="text-amber-400">▼</span>
+              </div>
+              <div class="px-6 pb-6 pt-0 border-t border-slate-800">
+                <p class="text-slate-300 mt-4">Governance frameworks, compliance reviews, and grant strategy so your AI work is safe, legal, and fundable.</p>
+              </div>
+            </div>
+            <div class="rounded-xl bg-slate-900/80 border border-slate-800 overflow-hidden">
+              <div class="p-6 flex items-center justify-between cursor-pointer hover:bg-slate-900/50 transition">
+                <div class="flex items-center gap-4">
+                  <span class="text-3xl">🎓</span>
+                  <h3 class="text-lg font-bold">Education & Upskilling</h3>
+                </div>
+                <span class="text-amber-400">▼</span>
+              </div>
+              <div class="px-6 pb-6 pt-0 border-t border-slate-800">
+                <p class="text-slate-300 mt-4">Executive workshops and deep‑dive bootcamps that move leaders and engineers from AI‑curious to confident practitioners.</p>
+              </div>
+            </div>
+            <div class="rounded-xl bg-slate-900/80 border border-slate-800 overflow-hidden">
+              <div class="p-6 flex items-center justify-between cursor-pointer hover:bg-slate-900/50 transition">
+                <div class="flex items-center gap-4">
+                  <span class="text-3xl">🧩</span>
+                  <h3 class="text-lg font-bold">Hiring & Org Design</h3>
+                </div>
+                <span class="text-amber-400">▼</span>
+              </div>
+              <div class="px-6 pb-6 pt-0 border-t border-slate-800">
+                <p class="text-slate-300 mt-4">Interim Head‑of‑AI support: role design, candidate vetting, and culture‑first team building.</p>
+              </div>
+            </div>
+            <div class="rounded-xl bg-slate-900/80 border border-slate-800 overflow-hidden">
+              <div class="p-6 flex items-center justify-between cursor-pointer hover:bg-slate-900/50 transition">
+                <div class="flex items-center gap-4">
+                  <span class="text-3xl">🧠</span>
+                  <h3 class="text-lg font-bold">Models, Data & Evaluation Loops</h3>
+                </div>
+                <span class="text-amber-400">▼</span>
+              </div>
+              <div class="px-6 pb-6 pt-0 border-t border-slate-800">
+                <p class="text-slate-300 mt-4">Purpose‑built models, RAG systems, and data pipelines, plus evaluation schemes that turn them into learning flywheels.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <footer class="mt-20 py-10 text-center text-slate-400 border-t border-slate-800">
+          <p>Scroll back up to compare designs</p>
+        </footer>
+      </div>
+    </main>
+  </body>
+</html>
+
+
+
+

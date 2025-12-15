@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Research Design Options — Axiotic.ai</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/heroicons@2.0.18/24/outline/index.js" type="module"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script defer src="particles-init.js"></script>
+    <style>
+      .design-section {
+        margin-bottom: 100px;
+        padding: 50px 0;
+        border-top: 2px solid rgba(148, 163, 184, 0.2);
+      }
+      .design-label {
+        position: sticky;
+        top: 0;
+        background: rgba(15, 23, 42, 0.98);
+        backdrop-filter: blur(10px);
+        padding: 25px;
+        margin-bottom: 40px;
+        border-bottom: 2px solid rgba(251, 146, 60, 0.3);
+        z-index: 10;
+      }
+      .research-card {
+        transition: all 0.3s ease;
+      }
+      .research-card:hover {
+        transform: translateY(-2px);
+      }
+    </style>
+  </head>
+  <body class="bg-slate-900 text-slate-50 font-[Inter]">
+    <div id="particles-js"></div>
+
+    <nav class="fixed top-0 inset-x-0 z-50 border-b border-white/5 bg-transparent backdrop-blur-md">
+      <div class="max-w-5xl mx-auto px-4 py-3 flex items-center justify-between">
+        <a href="index.html" class="flex items-center gap-2 text-base font-semibold">
+          <img src="images/logo-no-name.png" alt="Axiotic" class="h-8 w-auto rounded-full">
+          <span class="tracking-tight">Axiotic.ai</span>
+        </a>
+        <a href="index.html" class="text-sm text-slate-200 hover:text-amber-300">← Back to Home</a>
+      </div>
+    </nav>
+
+    <main class="pt-20">
+      <div class="max-w-7xl mx-auto px-4 py-10">
+        <header class="text-center mb-16">
+          <h1 class="text-4xl font-extrabold mb-4">Research Section Design Options</h1>
+          <p class="text-slate-300">Icons instead of emojis, larger text, simplified descriptions</p>
+        </header>
+
+        <!-- Research Pillars Data -->
+        <script>
+          const researchPillars = [
+            { icon: 'target', title: 'Improved Tasks', desc: 'Training models to predict past, present, and future states for better causal understanding and planning.' },
+            { icon: 'eye', title: 'Multimodal Learning', desc: 'Architectures that process text, images, and audio in shared spaces for richer world modeling.' },
+            { icon: 'cpu-chip', title: 'Memory & Recursion', desc: 'Explicit memory and reasoning loops for infinite-context learning without expensive tokens.' },
+            { icon: 'squares-2x2', title: 'Hierarchical Attention', desc: 'Multi-resolution attention patterns that see both detail and big picture efficiently.' },
+            { icon: 'cube', title: 'Architectures', desc: 'New connectivity patterns and activation mechanisms for more efficient processing.' },
+            { icon: 'cog-6-tooth', title: 'AI Flywheels', desc: 'Closed-loop systems where models generate and improve their own training data.' },
+            { icon: 'globe-alt', title: 'Embodiment', desc: 'Simulation-based learning for grounded intelligence before real-world deployment.' },
+            { icon: 'sparkles', title: 'Evolution & Distillation', desc: 'Combining evolutionary methods with information theory for efficient, robust learning.' }
+          ];
+        </script>
+
+        <!-- Option 1: Clean Cards with Top Icons -->
+        <section class="design-section">
+          <div class="design-label">
+            <h2 class="text-2xl font-bold text-amber-300">Option 1: Clean Cards with Top Icons</h2>
+            <p class="text-sm text-slate-400">Icons at top, simplified text, larger font sizes</p>
+          </div>
+          <div class="max-w-6xl mx-auto grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            <div class="research-card rounded-xl bg-gradient-to-br from-white to-slate-50/80 border-2 border-slate-300 p-8 hover:border-amber-500/40 shadow-xl">
+              <div class="w-12 h-12 rounded-lg bg-amber-100 flex items-center justify-center mb-6">
+                <i class="fas fa-bullseye text-2xl text-amber-600"></i>
+              </div>
+              <h3 class="text-lg font-bold mb-3 text-slate-900">Improved Tasks</h3>
+              <p class="text-base text-slate-700 leading-relaxed">Training models to predict past, present, and future states for better causal understanding and planning.</p>
+            </div>
+            <div class="research-card rounded-xl bg-gradient-to-br from-white to-slate-50/80 border-2 border-slate-300 p-8 hover:border-amber-500/40 shadow-xl">
+              <div class="w-12 h-12 rounded-lg bg-amber-100 flex items-center justify-center mb-6">
+                <i class="fas fa-eye text-2xl text-amber-600"></i>
+              </div>
+              <h3 class="text-lg font-bold mb-3 text-slate-900">Multimodal Learning</h3>
+              <p class="text-base text-slate-700 leading-relaxed">Architectures that process text, images, and audio in shared spaces for richer world modeling.</p>
+            </div>
+            <div class="research-card rounded-xl bg-gradient-to-br from-white to-slate-50/80 border-2 border-slate-300 p-8 hover:border-amber-500/40 shadow-xl">
+              <div class="w-12 h-12 rounded-lg bg-amber-100 flex items-center justify-center mb-6">
+                <i class="fas fa-memory text-2xl text-amber-600"></i>
+              </div>
+              <h3 class="text-lg font-bold mb-3 text-slate-900">Memory & Recursion</h3>
+              <p class="text-base text-slate-700 leading-relaxed">Explicit memory and reasoning loops for infinite-context learning without expensive tokens.</p>
+            </div>
+            <div class="research-card rounded-xl bg-gradient-to-br from-white to-slate-50/80 border-2 border-slate-300 p-8 hover:border-amber-500/40 shadow-xl">
+              <div class="w-12 h-12 rounded-lg bg-amber-100 flex items-center justify-center mb-6">
+                <i class="fas fa-sitemap text-2xl text-amber-600"></i>
+              </div>
+              <h3 class="text-lg font-bold mb-3 text-slate-900">Hierarchical Attention</h3>
+              <p class="text-base text-slate-700 leading-relaxed">Multi-resolution attention patterns that see both detail and big picture efficiently.</p>
+            </div>
+            <div class="research-card rounded-xl bg-gradient-to-br from-white to-slate-50/80 border-2 border-slate-300 p-8 hover:border-amber-500/40 shadow-xl">
+              <div class="w-12 h-12 rounded-lg bg-amber-100 flex items-center justify-center mb-6">
+                <i class="fas fa-cube text-2xl text-amber-600"></i>
+              </div>
+              <h3 class="text-lg font-bold mb-3 text-slate-900">Architectures</h3>
+              <p class="text-base text-slate-700 leading-relaxed">New connectivity patterns and activation mechanisms for more efficient processing.</p>
+            </div>
+            <div class="research-card rounded-xl bg-gradient-to-br from-white to-slate-50/80 border-2 border-slate-300 p-8 hover:border-amber-500/40 shadow-xl">
+              <div class="w-12 h-12 rounded-lg bg-amber-100 flex items-center justify-center mb-6">
+                <i class="fas fa-cogs text-2xl text-amber-600"></i>
+              </div>
+              <h3 class="text-lg font-bold mb-3 text-slate-900">AI Flywheels</h3>
+              <p class="text-base text-slate-700 leading-relaxed">Closed-loop systems where models generate and improve their own training data.</p>
+            </div>
+            <div class="research-card rounded-xl bg-gradient-to-br from-white to-slate-50/80 border-2 border-slate-300 p-8 hover:border-amber-500/40 shadow-xl">
+              <div class="w-12 h-12 rounded-lg bg-amber-100 flex items-center justify-center mb-6">
+                <i class="fas fa-globe text-2xl text-amber-600"></i>
+              </div>
+              <h3 class="text-lg font-bold mb-3 text-slate-900">Embodiment</h3>
+              <p class="text-base text-slate-700 leading-relaxed">Simulation-based learning for grounded intelligence before real-world deployment.</p>
+            </div>
+            <div class="research-card rounded-xl bg-gradient-to-br from-white to-slate-50/80 border-2 border-slate-300 p-8 hover:border-amber-500/40 shadow-xl">
+              <div class="w-12 h-12 rounded-lg bg-amber-100 flex items-center justify-center mb-6">
+                <i class="fas fa-sparkles text-2xl text-amber-600"></i>
+              </div>
+              <h3 class="text-lg font-bold mb-3 text-slate-900">Evolution & Distillation</h3>
+              <p class="text-base text-slate-700 leading-relaxed">Combining evolutionary methods with information theory for efficient, robust learning.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Option 2: Icon on Left -->
+        <section class="design-section">
+          <div class="design-label">
+            <h2 class="text-2xl font-bold text-amber-300">Option 2: Icon on Left</h2>
+            <p class="text-sm text-slate-400">Icons positioned on the left side of each card</p>
+          </div>
+          <div class="max-w-6xl mx-auto grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            <div class="research-card rounded-xl bg-white border-2 border-slate-300 p-6 hover:border-amber-500/40 shadow-lg flex gap-4">
+              <div class="flex-shrink-0">
+                <div class="w-14 h-14 rounded-lg bg-amber-100 flex items-center justify-center">
+                  <i class="fas fa-bullseye text-xl text-amber-600"></i>
+                </div>
+              </div>
+              <div>
+                <h3 class="text-lg font-bold mb-2 text-slate-900">Improved Tasks</h3>
+                <p class="text-base text-slate-700">Training models to predict past, present, and future states for better causal understanding.</p>
+              </div>
+            </div>
+            <div class="research-card rounded-xl bg-white border-2 border-slate-300 p-6 hover:border-amber-500/40 shadow-lg flex gap-4">
+              <div class="flex-shrink-0">
+                <div class="w-14 h-14 rounded-lg bg-amber-100 flex items-center justify-center">
+                  <i class="fas fa-eye text-xl text-amber-600"></i>
+                </div>
+              </div>
+              <div>
+                <h3 class="text-lg font-bold mb-2 text-slate-900">Multimodal Learning</h3>
+                <p class="text-base text-slate-700">Architectures that process text, images, and audio in shared spaces.</p>
+              </div>
+            </div>
+            <div class="research-card rounded-xl bg-white border-2 border-slate-300 p-6 hover:border-amber-500/40 shadow-lg flex gap-4">
+              <div class="flex-shrink-0">
+                <div class="w-14 h-14 rounded-lg bg-amber-100 flex items-center justify-center">
+                  <i class="fas fa-memory text-xl text-amber-600"></i>
+                </div>
+              </div>
+              <div>
+                <h3 class="text-lg font-bold mb-2 text-slate-900">Memory & Recursion</h3>
+                <p class="text-base text-slate-700">Explicit memory and reasoning loops for infinite-context learning.</p>
+              </div>
+            </div>
+            <div class="research-card rounded-xl bg-white border-2 border-slate-300 p-6 hover:border-amber-500/40 shadow-lg flex gap-4">
+              <div class="flex-shrink-0">
+                <div class="w-14 h-14 rounded-lg bg-amber-100 flex items-center justify-center">
+                  <i class="fas fa-sitemap text-xl text-amber-600"></i>
+                </div>
+              </div>
+              <div>
+                <h3 class="text-lg font-bold mb-2 text-slate-900">Hierarchical Attention</h3>
+                <p class="text-base text-slate-700">Multi-resolution attention patterns for efficient processing.</p>
+              </div>
+            </div>
+            <div class="research-card rounded-xl bg-white border-2 border-slate-300 p-6 hover:border-amber-500/40 shadow-lg flex gap-4">
+              <div class="flex-shrink-0">
+                <div class="w-14 h-14 rounded-lg bg-amber-100 flex items-center justify-center">
+                  <i class="fas fa-cube text-xl text-amber-600"></i>
+                </div>
+              </div>
+              <div>
+                <h3 class="text-lg font-bold mb-2 text-slate-900">Architectures</h3>
+                <p class="text-base text-slate-700">New connectivity patterns for more efficient processing.</p>
+              </div>
+            </div>
+            <div class="research-card rounded-xl bg-white border-2 border-slate-300 p-6 hover:border-amber-500/40 shadow-lg flex gap-4">
+              <div class="flex-shrink-0">
+                <div class="w-14 h-14 rounded-lg bg-amber-100 flex items-center justify-center">
+                  <i class="fas fa-cogs text-xl text-amber-600"></i>
+                </div>
+              </div>
+              <div>
+                <h3 class="text-lg font-bold mb-2 text-slate-900">AI Flywheels</h3>
+                <p class="text-base text-slate-700">Closed-loop systems for self-improving training data.</p>
+              </div>
+            </div>
+            <div class="research-card rounded-xl bg-white border-2 border-slate-300 p-6 hover:border-amber-500/40 shadow-lg flex gap-4">
+              <div class="flex-shrink-0">
+                <div class="w-14 h-14 rounded-lg bg-amber-100 flex items-center justify-center">
+                  <i class="fas fa-globe text-xl text-amber-600"></i>
+                </div>
+              </div>
+              <div>
+                <h3 class="text-lg font-bold mb-2 text-slate-900">Embodiment</h3>
+                <p class="text-base text-slate-700">Simulation-based learning for grounded intelligence.</p>
+              </div>
+            </div>
+            <div class="research-card rounded-xl bg-white border-2 border-slate-300 p-6 hover:border-amber-500/40 shadow-lg flex gap-4">
+              <div class="flex-shrink-0">
+                <div class="w-14 h-14 rounded-lg bg-amber-100 flex items-center justify-center">
+                  <i class="fas fa-sparkles text-xl text-amber-600"></i>
+                </div>
+              </div>
+              <div>
+                <h3 class="text-lg font-bold mb-2 text-slate-900">Evolution & Distillation</h3>
+                <p class="text-base text-slate-700">Evolutionary methods with information theory for efficient learning.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Option 3: Large Icon Centered -->
+        <section class="design-section">
+          <div class="design-label">
+            <h2 class="text-2xl font-bold text-amber-300">Option 3: Large Icon Centered</h2>
+            <p class="text-sm text-slate-400">Large centered icons with text below</p>
+          </div>
+          <div class="max-w-6xl mx-auto grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            <div class="research-card rounded-xl bg-gradient-to-br from-white to-slate-50/80 border-2 border-slate-300 p-8 hover:border-amber-500/40 shadow-xl text-center">
+              <div class="w-20 h-20 rounded-full bg-amber-100 flex items-center justify-center mx-auto mb-6">
+                <i class="fas fa-bullseye text-3xl text-amber-600"></i>
+              </div>
+              <h3 class="text-xl font-bold mb-3 text-slate-900">Improved Tasks</h3>
+              <p class="text-base text-slate-700 leading-relaxed">Training models to predict past, present, and future states for better causal understanding.</p>
+            </div>
+            <div class="research-card rounded-xl bg-gradient-to-br from-white to-slate-50/80 border-2 border-slate-300 p-8 hover:border-amber-500/40 shadow-xl text-center">
+              <div class="w-20 h-20 rounded-full bg-amber-100 flex items-center justify-center mx-auto mb-6">
+                <i class="fas fa-eye text-3xl text-amber-600"></i>
+              </div>
+              <h3 class="text-xl font-bold mb-3 text-slate-900">Multimodal Learning</h3>
+              <p class="text-base text-slate-700 leading-relaxed">Architectures that process text, images, and audio in shared spaces.</p>
+            </div>
+            <div class="research-card rounded-xl bg-gradient-to-br from-white to-slate-50/80 border-2 border-slate-300 p-8 hover:border-amber-500/40 shadow-xl text-center">
+              <div class="w-20 h-20 rounded-full bg-amber-100 flex items-center justify-center mx-auto mb-6">
+                <i class="fas fa-memory text-3xl text-amber-600"></i>
+              </div>
+              <h3 class="text-xl font-bold mb-3 text-slate-900">Memory & Recursion</h3>
+              <p class="text-base text-slate-700 leading-relaxed">Explicit memory and reasoning loops for infinite-context learning.</p>
+            </div>
+            <div class="research-card rounded-xl bg-gradient-to-br from-white to-slate-50/80 border-2 border-slate-300 p-8 hover:border-amber-500/40 shadow-xl text-center">
+              <div class="w-20 h-20 rounded-full bg-amber-100 flex items-center justify-center mx-auto mb-6">
+                <i class="fas fa-sitemap text-3xl text-amber-600"></i>
+              </div>
+              <h3 class="text-xl font-bold mb-3 text-slate-900">Hierarchical Attention</h3>
+              <p class="text-base text-slate-700 leading-relaxed">Multi-resolution attention patterns for efficient processing.</p>
+            </div>
+            <div class="research-card rounded-xl bg-gradient-to-br from-white to-slate-50/80 border-2 border-slate-300 p-8 hover:border-amber-500/40 shadow-xl text-center">
+              <div class="w-20 h-20 rounded-full bg-amber-100 flex items-center justify-center mx-auto mb-6">
+                <i class="fas fa-cube text-3xl text-amber-600"></i>
+              </div>
+              <h3 class="text-xl font-bold mb-3 text-slate-900">Architectures</h3>
+              <p class="text-base text-slate-700 leading-relaxed">New connectivity patterns for more efficient processing.</p>
+            </div>
+            <div class="research-card rounded-xl bg-gradient-to-br from-white to-slate-50/80 border-2 border-slate-300 p-8 hover:border-amber-500/40 shadow-xl text-center">
+              <div class="w-20 h-20 rounded-full bg-amber-100 flex items-center justify-center mx-auto mb-6">
+                <i class="fas fa-cogs text-3xl text-amber-600"></i>
+              </div>
+              <h3 class="text-xl font-bold mb-3 text-slate-900">AI Flywheels</h3>
+              <p class="text-base text-slate-700 leading-relaxed">Closed-loop systems for self-improving training data.</p>
+            </div>
+            <div class="research-card rounded-xl bg-gradient-to-br from-white to-slate-50/80 border-2 border-slate-300 p-8 hover:border-amber-500/40 shadow-xl text-center">
+              <div class="w-20 h-20 rounded-full bg-amber-100 flex items-center justify-center mx-auto mb-6">
+                <i class="fas fa-globe text-3xl text-amber-600"></i>
+              </div>
+              <h3 class="text-xl font-bold mb-3 text-slate-900">Embodiment</h3>
+              <p class="text-base text-slate-700 leading-relaxed">Simulation-based learning for grounded intelligence.</p>
+            </div>
+            <div class="research-card rounded-xl bg-gradient-to-br from-white to-slate-50/80 border-2 border-slate-300 p-8 hover:border-amber-500/40 shadow-xl text-center">
+              <div class="w-20 h-20 rounded-full bg-amber-100 flex items-center justify-center mx-auto mb-6">
+                <i class="fas fa-sparkles text-3xl text-amber-600"></i>
+              </div>
+              <h3 class="text-xl font-bold mb-3 text-slate-900">Evolution & Distillation</h3>
+              <p class="text-base text-slate-700 leading-relaxed">Evolutionary methods with information theory for efficient learning.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Option 4: Minimal with Border Icon -->
+        <section class="design-section">
+          <div class="design-label">
+            <h2 class="text-2xl font-bold text-amber-300">Option 4: Minimal with Border Icon</h2>
+            <p class="text-sm text-slate-400">Clean design with icons in bordered containers</p>
+          </div>
+          <div class="max-w-6xl mx-auto grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            <div class="research-card rounded-xl bg-white border-2 border-slate-300 p-8 hover:border-amber-500/50 shadow-lg">
+              <div class="w-16 h-16 border-2 border-amber-400 rounded-lg flex items-center justify-center mb-6">
+                <i class="fas fa-bullseye text-2xl text-amber-600"></i>
+              </div>
+              <h3 class="text-xl font-bold mb-3 text-slate-900">Improved Tasks</h3>
+              <p class="text-lg text-slate-700 leading-relaxed">Training models to predict past, present, and future states for better causal understanding and planning.</p>
+            </div>
+            <div class="research-card rounded-xl bg-white border-2 border-slate-300 p-8 hover:border-amber-500/50 shadow-lg">
+              <div class="w-16 h-16 border-2 border-amber-400 rounded-lg flex items-center justify-center mb-6">
+                <i class="fas fa-eye text-2xl text-amber-600"></i>
+              </div>
+              <h3 class="text-xl font-bold mb-3 text-slate-900">Multimodal Learning</h3>
+              <p class="text-lg text-slate-700 leading-relaxed">Architectures that process text, images, and audio in shared spaces for richer world modeling.</p>
+            </div>
+            <div class="research-card rounded-xl bg-white border-2 border-slate-300 p-8 hover:border-amber-500/50 shadow-lg">
+              <div class="w-16 h-16 border-2 border-amber-400 rounded-lg flex items-center justify-center mb-6">
+                <i class="fas fa-memory text-2xl text-amber-600"></i>
+              </div>
+              <h3 class="text-xl font-bold mb-3 text-slate-900">Memory & Recursion</h3>
+              <p class="text-lg text-slate-700 leading-relaxed">Explicit memory and reasoning loops for infinite-context learning without expensive tokens.</p>
+            </div>
+            <div class="research-card rounded-xl bg-white border-2 border-slate-300 p-8 hover:border-amber-500/50 shadow-lg">
+              <div class="w-16 h-16 border-2 border-amber-400 rounded-lg flex items-center justify-center mb-6">
+                <i class="fas fa-sitemap text-2xl text-amber-600"></i>
+              </div>
+              <h3 class="text-xl font-bold mb-3 text-slate-900">Hierarchical Attention</h3>
+              <p class="text-lg text-slate-700 leading-relaxed">Multi-resolution attention patterns that see both detail and big picture efficiently.</p>
+            </div>
+            <div class="research-card rounded-xl bg-white border-2 border-slate-300 p-8 hover:border-amber-500/50 shadow-lg">
+              <div class="w-16 h-16 border-2 border-amber-400 rounded-lg flex items-center justify-center mb-6">
+                <i class="fas fa-cube text-2xl text-amber-600"></i>
+              </div>
+              <h3 class="text-xl font-bold mb-3 text-slate-900">Architectures</h3>
+              <p class="text-lg text-slate-700 leading-relaxed">New connectivity patterns and activation mechanisms for more efficient processing.</p>
+            </div>
+            <div class="research-card rounded-xl bg-white border-2 border-slate-300 p-8 hover:border-amber-500/50 shadow-lg">
+              <div class="w-16 h-16 border-2 border-amber-400 rounded-lg flex items-center justify-center mb-6">
+                <i class="fas fa-cogs text-2xl text-amber-600"></i>
+              </div>
+              <h3 class="text-xl font-bold mb-3 text-slate-900">AI Flywheels</h3>
+              <p class="text-lg text-slate-700 leading-relaxed">Closed-loop systems where models generate and improve their own training data.</p>
+            </div>
+            <div class="research-card rounded-xl bg-white border-2 border-slate-300 p-8 hover:border-amber-500/50 shadow-lg">
+              <div class="w-16 h-16 border-2 border-amber-400 rounded-lg flex items-center justify-center mb-6">
+                <i class="fas fa-globe text-2xl text-amber-600"></i>
+              </div>
+              <h3 class="text-xl font-bold mb-3 text-slate-900">Embodiment</h3>
+              <p class="text-lg text-slate-700 leading-relaxed">Simulation-based learning for grounded intelligence before real-world deployment.</p>
+            </div>
+            <div class="research-card rounded-xl bg-white border-2 border-slate-300 p-8 hover:border-amber-500/50 shadow-lg">
+              <div class="w-16 h-16 border-2 border-amber-400 rounded-lg flex items-center justify-center mb-6">
+                <i class="fas fa-sparkles text-2xl text-amber-600"></i>
+              </div>
+              <h3 class="text-xl font-bold mb-3 text-slate-900">Evolution & Distillation</h3>
+              <p class="text-lg text-slate-700 leading-relaxed">Combining evolutionary methods with information theory for efficient, robust learning.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Option 5: Icon with Gradient Background -->
+        <section class="design-section">
+          <div class="design-label">
+            <h2 class="text-2xl font-bold text-amber-300">Option 5: Icon with Gradient Background</h2>
+            <p class="text-sm text-slate-400">Icons with gradient backgrounds matching consulting style</p>
+          </div>
+          <div class="max-w-6xl mx-auto grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            <div class="research-card rounded-xl bg-gradient-to-br from-white via-white to-amber-50/80 border-2 border-slate-300 p-8 hover:border-amber-500/40 shadow-xl">
+              <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-amber-100 to-amber-200 flex items-center justify-center mb-6">
+                <i class="fas fa-bullseye text-2xl text-amber-700"></i>
+              </div>
+              <h3 class="text-xl font-bold mb-3 text-slate-900">Improved Tasks</h3>
+              <p class="text-lg text-slate-700 leading-relaxed">Training models to predict past, present, and future states for better causal understanding.</p>
+            </div>
+            <div class="research-card rounded-xl bg-gradient-to-br from-white via-white to-slate-50/80 border-2 border-slate-300 p-8 hover:border-amber-500/40 shadow-xl">
+              <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-amber-100 to-amber-200 flex items-center justify-center mb-6">
+                <i class="fas fa-eye text-2xl text-amber-700"></i>
+              </div>
+              <h3 class="text-xl font-bold mb-3 text-slate-900">Multimodal Learning</h3>
+              <p class="text-lg text-slate-700 leading-relaxed">Architectures that process text, images, and audio in shared spaces.</p>
+            </div>
+            <div class="research-card rounded-xl bg-gradient-to-br from-white via-white to-slate-50/80 border-2 border-slate-300 p-8 hover:border-amber-500/40 shadow-xl">
+              <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-amber-100 to-amber-200 flex items-center justify-center mb-6">
+                <i class="fas fa-memory text-2xl text-amber-700"></i>
+              </div>
+              <h3 class="text-xl font-bold mb-3 text-slate-900">Memory & Recursion</h3>
+              <p class="text-lg text-slate-700 leading-relaxed">Explicit memory and reasoning loops for infinite-context learning.</p>
+            </div>
+            <div class="research-card rounded-xl bg-gradient-to-br from-white via-white to-slate-50/80 border-2 border-slate-300 p-8 hover:border-amber-500/40 shadow-xl">
+              <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-amber-100 to-amber-200 flex items-center justify-center mb-6">
+                <i class="fas fa-sitemap text-2xl text-amber-700"></i>
+              </div>
+              <h3 class="text-xl font-bold mb-3 text-slate-900">Hierarchical Attention</h3>
+              <p class="text-lg text-slate-700 leading-relaxed">Multi-resolution attention patterns for efficient processing.</p>
+            </div>
+            <div class="research-card rounded-xl bg-gradient-to-br from-white via-white to-slate-50/80 border-2 border-slate-300 p-8 hover:border-amber-500/40 shadow-xl">
+              <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-amber-100 to-amber-200 flex items-center justify-center mb-6">
+                <i class="fas fa-cube text-2xl text-amber-700"></i>
+              </div>
+              <h3 class="text-xl font-bold mb-3 text-slate-900">Architectures</h3>
+              <p class="text-lg text-slate-700 leading-relaxed">New connectivity patterns for more efficient processing.</p>
+            </div>
+            <div class="research-card rounded-xl bg-gradient-to-br from-white via-white to-slate-50/80 border-2 border-slate-300 p-8 hover:border-amber-500/40 shadow-xl">
+              <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-amber-100 to-amber-200 flex items-center justify-center mb-6">
+                <i class="fas fa-cogs text-2xl text-amber-700"></i>
+              </div>
+              <h3 class="text-xl font-bold mb-3 text-slate-900">AI Flywheels</h3>
+              <p class="text-lg text-slate-700 leading-relaxed">Closed-loop systems for self-improving training data.</p>
+            </div>
+            <div class="research-card rounded-xl bg-gradient-to-br from-white via-white to-slate-50/80 border-2 border-slate-300 p-8 hover:border-amber-500/40 shadow-xl">
+              <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-amber-100 to-amber-200 flex items-center justify-center mb-6">
+                <i class="fas fa-globe text-2xl text-amber-700"></i>
+              </div>
+              <h3 class="text-xl font-bold mb-3 text-slate-900">Embodiment</h3>
+              <p class="text-lg text-slate-700 leading-relaxed">Simulation-based learning for grounded intelligence.</p>
+            </div>
+            <div class="research-card rounded-xl bg-gradient-to-br from-white via-white to-slate-50/80 border-2 border-slate-300 p-8 hover:border-amber-500/40 shadow-xl">
+              <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-amber-100 to-amber-200 flex items-center justify-center mb-6">
+                <i class="fas fa-sparkles text-2xl text-amber-700"></i>
+              </div>
+              <h3 class="text-xl font-bold mb-3 text-slate-900">Evolution & Distillation</h3>
+              <p class="text-lg text-slate-700 leading-relaxed">Evolutionary methods with information theory for efficient learning.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Option 6: Compact Horizontal -->
+        <section class="design-section">
+          <div class="design-label">
+            <h2 class="text-2xl font-bold text-amber-300">Option 6: Compact Horizontal</h2>
+            <p class="text-sm text-slate-400">Horizontal layout with icon and text side by side</p>
+          </div>
+          <div class="max-w-6xl mx-auto grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            <div class="research-card rounded-lg bg-white border-2 border-slate-300 p-6 hover:border-amber-500/50 shadow-md">
+              <div class="flex items-start gap-4">
+                <i class="fas fa-bullseye text-3xl text-amber-600 mt-1"></i>
+                <div>
+                  <h3 class="text-lg font-bold mb-2 text-slate-900">Improved Tasks</h3>
+                  <p class="text-base text-slate-700">Training models to predict past, present, and future states for better understanding.</p>
+                </div>
+              </div>
+            </div>
+            <div class="research-card rounded-lg bg-white border-2 border-slate-300 p-6 hover:border-amber-500/50 shadow-md">
+              <div class="flex items-start gap-4">
+                <i class="fas fa-eye text-3xl text-amber-600 mt-1"></i>
+                <div>
+                  <h3 class="text-lg font-bold mb-2 text-slate-900">Multimodal Learning</h3>
+                  <p class="text-base text-slate-700">Architectures that process text, images, and audio in shared spaces.</p>
+                </div>
+              </div>
+            </div>
+            <div class="research-card rounded-lg bg-white border-2 border-slate-300 p-6 hover:border-amber-500/50 shadow-md">
+              <div class="flex items-start gap-4">
+                <i class="fas fa-memory text-3xl text-amber-600 mt-1"></i>
+                <div>
+                  <h3 class="text-lg font-bold mb-2 text-slate-900">Memory & Recursion</h3>
+                  <p class="text-base text-slate-700">Explicit memory and reasoning loops for infinite-context learning.</p>
+                </div>
+              </div>
+            </div>
+            <div class="research-card rounded-lg bg-white border-2 border-slate-300 p-6 hover:border-amber-500/50 shadow-md">
+              <div class="flex items-start gap-4">
+                <i class="fas fa-sitemap text-3xl text-amber-600 mt-1"></i>
+                <div>
+                  <h3 class="text-lg font-bold mb-2 text-slate-900">Hierarchical Attention</h3>
+                  <p class="text-base text-slate-700">Multi-resolution attention patterns for efficient processing.</p>
+                </div>
+              </div>
+            </div>
+            <div class="research-card rounded-lg bg-white border-2 border-slate-300 p-6 hover:border-amber-500/50 shadow-md">
+              <div class="flex items-start gap-4">
+                <i class="fas fa-cube text-3xl text-amber-600 mt-1"></i>
+                <div>
+                  <h3 class="text-lg font-bold mb-2 text-slate-900">Architectures</h3>
+                  <p class="text-base text-slate-700">New connectivity patterns for more efficient processing.</p>
+                </div>
+              </div>
+            </div>
+            <div class="research-card rounded-lg bg-white border-2 border-slate-300 p-6 hover:border-amber-500/50 shadow-md">
+              <div class="flex items-start gap-4">
+                <i class="fas fa-cogs text-3xl text-amber-600 mt-1"></i>
+                <div>
+                  <h3 class="text-lg font-bold mb-2 text-slate-900">AI Flywheels</h3>
+                  <p class="text-base text-slate-700">Closed-loop systems for self-improving training data.</p>
+                </div>
+              </div>
+            </div>
+            <div class="research-card rounded-lg bg-white border-2 border-slate-300 p-6 hover:border-amber-500/50 shadow-md">
+              <div class="flex items-start gap-4">
+                <i class="fas fa-globe text-3xl text-amber-600 mt-1"></i>
+                <div>
+                  <h3 class="text-lg font-bold mb-2 text-slate-900">Embodiment</h3>
+                  <p class="text-base text-slate-700">Simulation-based learning for grounded intelligence.</p>
+                </div>
+              </div>
+            </div>
+            <div class="research-card rounded-lg bg-white border-2 border-slate-300 p-6 hover:border-amber-500/50 shadow-md">
+              <div class="flex items-start gap-4">
+                <i class="fas fa-sparkles text-3xl text-amber-600 mt-1"></i>
+                <div>
+                  <h3 class="text-lg font-bold mb-2 text-slate-900">Evolution & Distillation</h3>
+                  <p class="text-base text-slate-700">Evolutionary methods with information theory for efficient learning.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Option 7: Numbered with Icons -->
+        <section class="design-section">
+          <div class="design-label">
+            <h2 class="text-2xl font-bold text-amber-300">Option 7: Numbered with Icons</h2>
+            <p class="text-sm text-slate-400">Numbered badges with icons showing research priority</p>
+          </div>
+          <div class="max-w-6xl mx-auto grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            <div class="research-card rounded-xl bg-white border-2 border-slate-300 p-8 hover:border-amber-500/50 shadow-lg relative">
+              <div class="absolute -top-3 -left-3 w-10 h-10 rounded-full bg-amber-400 text-white font-bold flex items-center justify-center text-lg">1</div>
+              <div class="w-12 h-12 rounded-lg bg-amber-100 flex items-center justify-center mb-6 mt-2">
+                <i class="fas fa-bullseye text-2xl text-amber-600"></i>
+              </div>
+              <h3 class="text-xl font-bold mb-3 text-slate-900">Improved Tasks</h3>
+              <p class="text-lg text-slate-700 leading-relaxed">Training models to predict past, present, and future states for better causal understanding.</p>
+            </div>
+            <div class="research-card rounded-xl bg-white border-2 border-slate-300 p-8 hover:border-amber-500/50 shadow-lg relative">
+              <div class="absolute -top-3 -left-3 w-10 h-10 rounded-full bg-amber-400 text-white font-bold flex items-center justify-center text-lg">2</div>
+              <div class="w-12 h-12 rounded-lg bg-amber-100 flex items-center justify-center mb-6 mt-2">
+                <i class="fas fa-eye text-2xl text-amber-600"></i>
+              </div>
+              <h3 class="text-xl font-bold mb-3 text-slate-900">Multimodal Learning</h3>
+              <p class="text-lg text-slate-700 leading-relaxed">Architectures that process text, images, and audio in shared spaces.</p>
+            </div>
+            <div class="research-card rounded-xl bg-white border-2 border-slate-300 p-8 hover:border-amber-500/50 shadow-lg relative">
+              <div class="absolute -top-3 -left-3 w-10 h-10 rounded-full bg-amber-400 text-white font-bold flex items-center justify-center text-lg">3</div>
+              <div class="w-12 h-12 rounded-lg bg-amber-100 flex items-center justify-center mb-6 mt-2">
+                <i class="fas fa-memory text-2xl text-amber-600"></i>
+              </div>
+              <h3 class="text-xl font-bold mb-3 text-slate-900">Memory & Recursion</h3>
+              <p class="text-lg text-slate-700 leading-relaxed">Explicit memory and reasoning loops for infinite-context learning.</p>
+            </div>
+            <div class="research-card rounded-xl bg-white border-2 border-slate-300 p-8 hover:border-amber-500/50 shadow-lg relative">
+              <div class="absolute -top-3 -left-3 w-10 h-10 rounded-full bg-amber-400 text-white font-bold flex items-center justify-center text-lg">4</div>
+              <div class="w-12 h-12 rounded-lg bg-amber-100 flex items-center justify-center mb-6 mt-2">
+                <i class="fas fa-sitemap text-2xl text-amber-600"></i>
+              </div>
+              <h3 class="text-xl font-bold mb-3 text-slate-900">Hierarchical Attention</h3>
+              <p class="text-lg text-slate-700 leading-relaxed">Multi-resolution attention patterns for efficient processing.</p>
+            </div>
+            <div class="research-card rounded-xl bg-white border-2 border-slate-300 p-8 hover:border-amber-500/50 shadow-lg relative">
+              <div class="absolute -top-3 -left-3 w-10 h-10 rounded-full bg-amber-400 text-white font-bold flex items-center justify-center text-lg">5</div>
+              <div class="w-12 h-12 rounded-lg bg-amber-100 flex items-center justify-center mb-6 mt-2">
+                <i class="fas fa-cube text-2xl text-amber-600"></i>
+              </div>
+              <h3 class="text-xl font-bold mb-3 text-slate-900">Architectures</h3>
+              <p class="text-lg text-slate-700 leading-relaxed">New connectivity patterns for more efficient processing.</p>
+            </div>
+            <div class="research-card rounded-xl bg-white border-2 border-slate-300 p-8 hover:border-amber-500/50 shadow-lg relative">
+              <div class="absolute -top-3 -left-3 w-10 h-10 rounded-full bg-amber-400 text-white font-bold flex items-center justify-center text-lg">6</div>
+              <div class="w-12 h-12 rounded-lg bg-amber-100 flex items-center justify-center mb-6 mt-2">
+                <i class="fas fa-cogs text-2xl text-amber-600"></i>
+              </div>
+              <h3 class="text-xl font-bold mb-3 text-slate-900">AI Flywheels</h3>
+              <p class="text-lg text-slate-700 leading-relaxed">Closed-loop systems for self-improving training data.</p>
+            </div>
+            <div class="research-card rounded-xl bg-white border-2 border-slate-300 p-8 hover:border-amber-500/50 shadow-lg relative">
+              <div class="absolute -top-3 -left-3 w-10 h-10 rounded-full bg-amber-400 text-white font-bold flex items-center justify-center text-lg">7</div>
+              <div class="w-12 h-12 rounded-lg bg-amber-100 flex items-center justify-center mb-6 mt-2">
+                <i class="fas fa-globe text-2xl text-amber-600"></i>
+              </div>
+              <h3 class="text-xl font-bold mb-3 text-slate-900">Embodiment</h3>
+              <p class="text-lg text-slate-700 leading-relaxed">Simulation-based learning for grounded intelligence.</p>
+            </div>
+            <div class="research-card rounded-xl bg-white border-2 border-slate-300 p-8 hover:border-amber-500/50 shadow-lg relative">
+              <div class="absolute -top-3 -left-3 w-10 h-10 rounded-full bg-amber-400 text-white font-bold flex items-center justify-center text-lg">8</div>
+              <div class="w-12 h-12 rounded-lg bg-amber-100 flex items-center justify-center mb-6 mt-2">
+                <i class="fas fa-sparkles text-2xl text-amber-600"></i>
+              </div>
+              <h3 class="text-xl font-bold mb-3 text-slate-900">Evolution & Distillation</h3>
+              <p class="text-lg text-slate-700 leading-relaxed">Evolutionary methods with information theory for efficient learning.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Option 8: Icon Above Title -->
+        <section class="design-section">
+          <div class="design-label">
+            <h2 class="text-2xl font-bold text-amber-300">Option 8: Icon Above Title</h2>
+            <p class="text-sm text-slate-400">Icon positioned directly above the title</p>
+          </div>
+          <div class="max-w-6xl mx-auto grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            <div class="research-card rounded-xl bg-gradient-to-br from-white to-slate-50/80 border-2 border-slate-300 p-8 hover:border-amber-500/40 shadow-xl text-center">
+              <i class="fas fa-bullseye text-4xl text-amber-600 mb-4"></i>
+              <h3 class="text-xl font-bold mb-4 text-slate-900">Improved Tasks</h3>
+              <p class="text-lg text-slate-700 leading-relaxed">Training models to predict past, present, and future states for better causal understanding and planning.</p>
+            </div>
+            <div class="research-card rounded-xl bg-gradient-to-br from-white to-slate-50/80 border-2 border-slate-300 p-8 hover:border-amber-500/40 shadow-xl text-center">
+              <i class="fas fa-eye text-4xl text-amber-600 mb-4"></i>
+              <h3 class="text-xl font-bold mb-4 text-slate-900">Multimodal Learning</h3>
+              <p class="text-lg text-slate-700 leading-relaxed">Architectures that process text, images, and audio in shared spaces for richer world modeling.</p>
+            </div>
+            <div class="research-card rounded-xl bg-gradient-to-br from-white to-slate-50/80 border-2 border-slate-300 p-8 hover:border-amber-500/40 shadow-xl text-center">
+              <i class="fas fa-memory text-4xl text-amber-600 mb-4"></i>
+              <h3 class="text-xl font-bold mb-4 text-slate-900">Memory & Recursion</h3>
+              <p class="text-lg text-slate-700 leading-relaxed">Explicit memory and reasoning loops for infinite-context learning without expensive tokens.</p>
+            </div>
+            <div class="research-card rounded-xl bg-gradient-to-br from-white to-slate-50/80 border-2 border-slate-300 p-8 hover:border-amber-500/40 shadow-xl text-center">
+              <i class="fas fa-sitemap text-4xl text-amber-600 mb-4"></i>
+              <h3 class="text-xl font-bold mb-4 text-slate-900">Hierarchical Attention</h3>
+              <p class="text-lg text-slate-700 leading-relaxed">Multi-resolution attention patterns that see both detail and big picture efficiently.</p>
+            </div>
+            <div class="research-card rounded-xl bg-gradient-to-br from-white to-slate-50/80 border-2 border-slate-300 p-8 hover:border-amber-500/40 shadow-xl text-center">
+              <i class="fas fa-cube text-4xl text-amber-600 mb-4"></i>
+              <h3 class="text-xl font-bold mb-4 text-slate-900">Architectures</h3>
+              <p class="text-lg text-slate-700 leading-relaxed">New connectivity patterns and activation mechanisms for more efficient processing.</p>
+            </div>
+            <div class="research-card rounded-xl bg-gradient-to-br from-white to-slate-50/80 border-2 border-slate-300 p-8 hover:border-amber-500/40 shadow-xl text-center">
+              <i class="fas fa-cogs text-4xl text-amber-600 mb-4"></i>
+              <h3 class="text-xl font-bold mb-4 text-slate-900">AI Flywheels</h3>
+              <p class="text-lg text-slate-700 leading-relaxed">Closed-loop systems where models generate and improve their own training data.</p>
+            </div>
+            <div class="research-card rounded-xl bg-gradient-to-br from-white to-slate-50/80 border-2 border-slate-300 p-8 hover:border-amber-500/40 shadow-xl text-center">
+              <i class="fas fa-globe text-4xl text-amber-600 mb-4"></i>
+              <h3 class="text-xl font-bold mb-4 text-slate-900">Embodiment</h3>
+              <p class="text-lg text-slate-700 leading-relaxed">Simulation-based learning for grounded intelligence before real-world deployment.</p>
+            </div>
+            <div class="research-card rounded-xl bg-gradient-to-br from-white to-slate-50/80 border-2 border-slate-300 p-8 hover:border-amber-500/40 shadow-xl text-center">
+              <i class="fas fa-sparkles text-4xl text-amber-600 mb-4"></i>
+              <h3 class="text-xl font-bold mb-4 text-slate-900">Evolution & Distillation</h3>
+              <p class="text-lg text-slate-700 leading-relaxed">Combining evolutionary methods with information theory for efficient, robust learning.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Option 9: Minimal Text Focus -->
+        <section class="design-section">
+          <div class="design-label">
+            <h2 class="text-2xl font-bold text-amber-300">Option 9: Minimal Text Focus</h2>
+            <p class="text-sm text-slate-400">Large text with minimal icon, maximum readability</p>
+          </div>
+          <div class="max-w-6xl mx-auto grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            <div class="research-card rounded-xl bg-white border-2 border-slate-300 p-8 hover:border-amber-500/50 shadow-lg">
+              <div class="flex items-center gap-3 mb-5">
+                <i class="fas fa-bullseye text-2xl text-amber-600"></i>
+                <h3 class="text-2xl font-bold text-slate-900">Improved Tasks</h3>
+              </div>
+              <p class="text-xl text-slate-700 leading-relaxed">Training models to predict past, present, and future states for better causal understanding and planning.</p>
+            </div>
+            <div class="research-card rounded-xl bg-white border-2 border-slate-300 p-8 hover:border-amber-500/50 shadow-lg">
+              <div class="flex items-center gap-3 mb-5">
+                <i class="fas fa-eye text-2xl text-amber-600"></i>
+                <h3 class="text-2xl font-bold text-slate-900">Multimodal Learning</h3>
+              </div>
+              <p class="text-xl text-slate-700 leading-relaxed">Architectures that process text, images, and audio in shared spaces for richer world modeling.</p>
+            </div>
+            <div class="research-card rounded-xl bg-white border-2 border-slate-300 p-8 hover:border-amber-500/50 shadow-lg">
+              <div class="flex items-center gap-3 mb-5">
+                <i class="fas fa-memory text-2xl text-amber-600"></i>
+                <h3 class="text-2xl font-bold text-slate-900">Memory & Recursion</h3>
+              </div>
+              <p class="text-xl text-slate-700 leading-relaxed">Explicit memory and reasoning loops for infinite-context learning without expensive tokens.</p>
+            </div>
+            <div class="research-card rounded-xl bg-white border-2 border-slate-300 p-8 hover:border-amber-500/50 shadow-lg">
+              <div class="flex items-center gap-3 mb-5">
+                <i class="fas fa-sitemap text-2xl text-amber-600"></i>
+                <h3 class="text-2xl font-bold text-slate-900">Hierarchical Attention</h3>
+              </div>
+              <p class="text-xl text-slate-700 leading-relaxed">Multi-resolution attention patterns that see both detail and big picture efficiently.</p>
+            </div>
+            <div class="research-card rounded-xl bg-white border-2 border-slate-300 p-8 hover:border-amber-500/50 shadow-lg">
+              <div class="flex items-center gap-3 mb-5">
+                <i class="fas fa-cube text-2xl text-amber-600"></i>
+                <h3 class="text-2xl font-bold text-slate-900">Architectures</h3>
+              </div>
+              <p class="text-xl text-slate-700 leading-relaxed">New connectivity patterns and activation mechanisms for more efficient processing.</p>
+            </div>
+            <div class="research-card rounded-xl bg-white border-2 border-slate-300 p-8 hover:border-amber-500/50 shadow-lg">
+              <div class="flex items-center gap-3 mb-5">
+                <i class="fas fa-cogs text-2xl text-amber-600"></i>
+                <h3 class="text-2xl font-bold text-slate-900">AI Flywheels</h3>
+              </div>
+              <p class="text-xl text-slate-700 leading-relaxed">Closed-loop systems where models generate and improve their own training data.</p>
+            </div>
+            <div class="research-card rounded-xl bg-white border-2 border-slate-300 p-8 hover:border-amber-500/50 shadow-lg">
+              <div class="flex items-center gap-3 mb-5">
+                <i class="fas fa-globe text-2xl text-amber-600"></i>
+                <h3 class="text-2xl font-bold text-slate-900">Embodiment</h3>
+              </div>
+              <p class="text-xl text-slate-700 leading-relaxed">Simulation-based learning for grounded intelligence before real-world deployment.</p>
+            </div>
+            <div class="research-card rounded-xl bg-white border-2 border-slate-300 p-8 hover:border-amber-500/50 shadow-lg">
+              <div class="flex items-center gap-3 mb-5">
+                <i class="fas fa-sparkles text-2xl text-amber-600"></i>
+                <h3 class="text-2xl font-bold text-slate-900">Evolution & Distillation</h3>
+              </div>
+              <p class="text-xl text-slate-700 leading-relaxed">Combining evolutionary methods with information theory for efficient, robust learning.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Option 10: Card with Icon Badge -->
+        <section class="design-section">
+          <div class="design-label">
+            <h2 class="text-2xl font-bold text-amber-300">Option 10: Card with Icon Badge</h2>
+            <p class="text-sm text-slate-400">Icon badge in corner with clean card layout</p>
+          </div>
+          <div class="max-w-6xl mx-auto grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            <div class="research-card rounded-xl bg-gradient-to-br from-white to-slate-50/80 border-2 border-slate-300 p-8 hover:border-amber-500/40 shadow-xl relative">
+              <div class="absolute top-4 right-4 w-12 h-12 rounded-lg bg-amber-100 flex items-center justify-center">
+                <i class="fas fa-bullseye text-xl text-amber-600"></i>
+              </div>
+              <h3 class="text-xl font-bold mb-4 text-slate-900 pr-16">Improved Tasks</h3>
+              <p class="text-lg text-slate-700 leading-relaxed">Training models to predict past, present, and future states for better causal understanding and planning.</p>
+            </div>
+            <div class="research-card rounded-xl bg-gradient-to-br from-white to-slate-50/80 border-2 border-slate-300 p-8 hover:border-amber-500/40 shadow-xl relative">
+              <div class="absolute top-4 right-4 w-12 h-12 rounded-lg bg-amber-100 flex items-center justify-center">
+                <i class="fas fa-eye text-xl text-amber-600"></i>
+              </div>
+              <h3 class="text-xl font-bold mb-4 text-slate-900 pr-16">Multimodal Learning</h3>
+              <p class="text-lg text-slate-700 leading-relaxed">Architectures that process text, images, and audio in shared spaces for richer world modeling.</p>
+            </div>
+            <div class="research-card rounded-xl bg-gradient-to-br from-white to-slate-50/80 border-2 border-slate-300 p-8 hover:border-amber-500/40 shadow-xl relative">
+              <div class="absolute top-4 right-4 w-12 h-12 rounded-lg bg-amber-100 flex items-center justify-center">
+                <i class="fas fa-memory text-xl text-amber-600"></i>
+              </div>
+              <h3 class="text-xl font-bold mb-4 text-slate-900 pr-16">Memory & Recursion</h3>
+              <p class="text-lg text-slate-700 leading-relaxed">Explicit memory and reasoning loops for infinite-context learning without expensive tokens.</p>
+            </div>
+            <div class="research-card rounded-xl bg-gradient-to-br from-white to-slate-50/80 border-2 border-slate-300 p-8 hover:border-amber-500/40 shadow-xl relative">
+              <div class="absolute top-4 right-4 w-12 h-12 rounded-lg bg-amber-100 flex items-center justify-center">
+                <i class="fas fa-sitemap text-xl text-amber-600"></i>
+              </div>
+              <h3 class="text-xl font-bold mb-4 text-slate-900 pr-16">Hierarchical Attention</h3>
+              <p class="text-lg text-slate-700 leading-relaxed">Multi-resolution attention patterns that see both detail and big picture efficiently.</p>
+            </div>
+            <div class="research-card rounded-xl bg-gradient-to-br from-white to-slate-50/80 border-2 border-slate-300 p-8 hover:border-amber-500/40 shadow-xl relative">
+              <div class="absolute top-4 right-4 w-12 h-12 rounded-lg bg-amber-100 flex items-center justify-center">
+                <i class="fas fa-cube text-xl text-amber-600"></i>
+              </div>
+              <h3 class="text-xl font-bold mb-4 text-slate-900 pr-16">Architectures</h3>
+              <p class="text-lg text-slate-700 leading-relaxed">New connectivity patterns and activation mechanisms for more efficient processing.</p>
+            </div>
+            <div class="research-card rounded-xl bg-gradient-to-br from-white to-slate-50/80 border-2 border-slate-300 p-8 hover:border-amber-500/40 shadow-xl relative">
+              <div class="absolute top-4 right-4 w-12 h-12 rounded-lg bg-amber-100 flex items-center justify-center">
+                <i class="fas fa-cogs text-xl text-amber-600"></i>
+              </div>
+              <h3 class="text-xl font-bold mb-4 text-slate-900 pr-16">AI Flywheels</h3>
+              <p class="text-lg text-slate-700 leading-relaxed">Closed-loop systems where models generate and improve their own training data.</p>
+            </div>
+            <div class="research-card rounded-xl bg-gradient-to-br from-white to-slate-50/80 border-2 border-slate-300 p-8 hover:border-amber-500/40 shadow-xl relative">
+              <div class="absolute top-4 right-4 w-12 h-12 rounded-lg bg-amber-100 flex items-center justify-center">
+                <i class="fas fa-globe text-xl text-amber-600"></i>
+              </div>
+              <h3 class="text-xl font-bold mb-4 text-slate-900 pr-16">Embodiment</h3>
+              <p class="text-lg text-slate-700 leading-relaxed">Simulation-based learning for grounded intelligence before real-world deployment.</p>
+            </div>
+            <div class="research-card rounded-xl bg-gradient-to-br from-white to-slate-50/80 border-2 border-slate-300 p-8 hover:border-amber-500/40 shadow-xl relative">
+              <div class="absolute top-4 right-4 w-12 h-12 rounded-lg bg-amber-100 flex items-center justify-center">
+                <i class="fas fa-sparkles text-xl text-amber-600"></i>
+              </div>
+              <h3 class="text-xl font-bold mb-4 text-slate-900 pr-16">Evolution & Distillation</h3>
+              <p class="text-lg text-slate-700 leading-relaxed">Combining evolutionary methods with information theory for efficient, robust learning.</p>
+            </div>
+          </div>
+        </section>
+
+        <footer class="mt-20 py-10 text-center text-slate-400 border-t border-slate-800">
+          <p>Scroll back up to compare all 10 designs</p>
+        </footer>
+      </div>
+    </main>
+  </body>
+</html>
+

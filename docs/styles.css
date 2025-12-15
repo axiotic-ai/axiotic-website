@@ -362,4 +362,20 @@ body {
   text-align: center;
 }
 
+.service-card {
+  transition: all 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-2px);
+}
+
+.research-card {
+  transition: all 0.3s ease;
+}
+
+.research-card:hover {
+  transform: translateY(-2px);
+}
+
 

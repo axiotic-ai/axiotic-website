@@ -17,6 +17,7 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script defer src="particles-init.js"></script>
     <script defer src="content-loader.js"></script>
   </head>
@@ -43,6 +44,7 @@
             >White Glove Consulting</a
           >
           <a href="#team" class="hover:text-amber-300 transition" data-key="site.nav.links.2.text">Team</a>
+          <a href="consulting-card-alternatives.html" class="hover:text-amber-300 transition text-amber-300">Card Alternatives</a>
           <a 
             href="#contact-form" 
             class="inline-flex items-center justify-center rounded-full bg-amber-400 px-4 py-2 text-xs font-bold text-slate-950 hover:bg-amber-300 transition shadow-sm"
@@ -56,17 +58,17 @@
 
     <main>
       <!-- Hero Section -->
-      <section class="min-h-screen flex items-center justify-center pt-20">
-        <div class="max-w-4xl mx-auto px-4 text-center space-y-6">
+      <section class="min-h-screen flex items-center justify-center pt-20 pb-32">
+        <div class="max-w-4xl mx-auto px-4 text-center space-y-8">
           <h1
-            class="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-tight gradient-text"
+            class="text-5xl sm:text-6xl md:text-7xl font-extrabold tracking-tight leading-tight gradient-text"
             data-aos="fade-up"
             data-key="hero.title"
           >
             Beyond Scaling: Smarter Learning, Not Bigger Models
           </h1>
           <p 
-            class="text-sm sm:text-base text-slate-200 max-w-2xl mx-auto"
+            class="text-base sm:text-lg text-slate-200 max-w-2xl mx-auto leading-relaxed"
             data-aos="fade-up" 
             data-aos-delay="100"
             data-key="hero.subtitle_primary"
@@ -102,11 +104,11 @@
       </section>
 
       <!-- Mission Statement Section -->
-      <section id="mission" class="py-32 min-h-screen flex items-center justify-center border-t border-slate-800/50">
+      <section id="mission" class="py-40 min-h-screen flex items-center justify-center border-t border-slate-800/50">
         <div class="max-w-6xl mx-auto px-4">
           <div class="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
             <p 
-              class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-amber-300 leading-tight tracking-tight text-left md:text-right"
+              class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-amber-300 leading-tight tracking-tight text-left md:text-right"
               data-aos="fade-right"
               data-aos-duration="1200"
               data-key="mission.statement_part1"
@@ -114,7 +116,7 @@
               We believe intelligence emerges from Structure, Interaction, and Information,
             </p>
             <p 
-              class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-amber-300/80 leading-tight tracking-tight text-left md:text-left border-l-0 md:border-l-2 border-amber-400/30 pl-0 md:pl-8"
+              class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-amber-300/90 leading-tight tracking-tight text-left md:text-left border-l-0 md:border-l-2 border-amber-400/40 pl-0 md:pl-8"
               data-aos="fade-left"
               data-aos-duration="1200"
               data-aos-delay="200"
@@ -127,30 +129,26 @@
       </section>
 
       <!-- Research Lab Section -->
-      <section id="lab" class="py-24 border-t border-slate-800/50">
+      <section id="lab" class="py-32 border-t border-slate-800/50">
         <div class="max-w-5xl mx-auto px-4 space-y-12">
           <header class="text-center space-y-4" data-aos="fade-up">
             <p class="text-xs font-semibold uppercase tracking-[0.2em] text-amber-300" data-key="research.header.eyebrow">
               Research Lab
             </p>
-            <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight" data-key="research.header.title">
-              Open Research on Efficient AI Systems
+            <h2 class="text-4xl sm:text-5xl font-extrabold tracking-tight">
+              Open research and science
             </h2>
-            <p class="max-w-2xl mx-auto text-base text-slate-300" data-key="research.header.subtitle">
-              The Axiotic Lab studies efficient, multimodal, embodied learning
-              through completely open models, datasets, and training recipes.
+            <p class="max-w-2xl mx-auto text-lg text-slate-300 leading-relaxed">
+              Next generation AI systems
             </p>
           </header>
 
-          <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4" id="research-pillars-grid">
+          <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3" id="research-pillars-grid">
             <!-- Pillars will be populated by JS -->
           </div>
 
-          <div 
-            class="rounded-2xl bg-slate-900/60 border border-slate-800 p-6 text-center"
-            data-aos="fade-up"
-          >
-            <h3 class="text-lg font-semibold mb-2" data-key="research.commitment.title">Open Science Commitment</h3>
+          <div class="text-center" data-aos="fade-up">
+            <h3 class="text-lg font-semibold mb-2 text-slate-100" data-key="research.commitment.title">Open Science Commitment</h3>
             <p class="text-sm text-slate-300 max-w-2xl mx-auto" data-key="research.commitment.text">
               We release code, models, and datasets as openly as licensing allows. 
               The lab exists to push the field forward, not to hide breakthroughs behind proprietary walls.
@@ -159,74 +157,69 @@
         </div>
       </section>
 
-      <!-- Flywheel Section -->
-      <section id="flywheel" class="py-24 bg-slate-900 border-t border-slate-800/50">
-        <div class="max-w-5xl mx-auto px-4 space-y-12">
-          <header class="text-center space-y-4" data-aos="fade-up">
-            <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight" data-key="flywheel.title">
-              The Axiotic Flywheel
-            </h2>
-            <p class="max-w-2xl mx-auto text-base text-slate-300" data-key="flywheel.subtitle">
-              A self-reinforcing loop that funds innovation without VC pressure.
-            </p>
-          </header>
-
-          <div class="grid gap-6 md:grid-cols-4" id="flywheel-grid">
-            <!-- Flywheel steps populated by JS -->
-          </div>
-        </div>
-      </section>
-
       <!-- Consulting Section -->
-      <section id="consulting" class="py-24 bg-slate-900/50 border-t border-slate-800/50">
+      <section id="consulting" class="py-32 border-t border-slate-800/50">
         <div class="max-w-5xl mx-auto px-4 space-y-12">
           <header class="text-center space-y-4" data-aos="fade-up">
             <p class="text-xs font-semibold uppercase tracking-[0.2em] text-amber-300" data-key="consulting.header.eyebrow">
               Consulting
             </p>
-            <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight" data-key="consulting.header.title">
-              White Glove Consulting
+            <h2 class="text-4xl sm:text-5xl font-extrabold tracking-tight">
+              Applied AI consultancy
             </h2>
-            <p class="max-w-2xl mx-auto text-base text-slate-300" data-key="consulting.header.subtitle">
+            <p class="max-w-2xl mx-auto text-lg text-slate-300 leading-relaxed" data-key="consulting.header.subtitle">
               We design and ship efficient AI systems: compact models, retrieval pipelines, 
               and training setups paired with the right data generation and evaluation loops.
             </p>
           </header>
 
-          <!-- Flagship -->
-          <div 
-            class="rounded-2xl bg-gradient-to-br from-slate-900 via-slate-900 to-slate-950 border border-slate-800 p-8 shadow-xl"
-            data-aos="fade-up"
-          >
-            <h3 class="text-xl font-bold text-white mb-4" data-key="consulting.flagship.title">Flagship Offering: AI Opportunities &amp; Strategy Plan</h3>
-            <p class="text-sm text-slate-300 mb-8 max-w-3xl" data-key="consulting.flagship.description">
-              We start with a free consultation to understand your products, data, and constraints, then co‑design an AI Opportunities &amp; Strategy Plan. You get a clear, honest view of where AI can help, where it won’t, and what it would take to build systems that actually work.
-            </p>
-            <div class="grid md:grid-cols-2 gap-8">
-              <div>
-                <h4 class="text-xs font-bold text-amber-400 uppercase tracking-wider mb-3" data-key="consulting.flagship.col1_title">What We Look At</h4>
-                <ul class="text-sm text-slate-300 space-y-2 list-disc list-inside" id="consulting-flagship-col1">
-                  <!-- Items populated by JS -->
-                </ul>
+          <!-- Service Cards: 2-3 Layout -->
+          <!-- Row 1: 2 Cards (AI Audit, Model Development) -->
+          <div class="grid md:grid-cols-2 gap-6 mb-6" data-aos="fade-up">
+            <div class="service-card rounded-xl bg-gradient-to-br from-white via-white to-amber-50/80 border-2 border-amber-400/30 p-8 hover:border-amber-500/50 shadow-xl transition-all">
+              <div class="mb-4">
+                <span class="text-xs font-bold text-amber-600 uppercase tracking-wider">Flagship Offering</span>
+                <h3 class="text-xl font-bold mt-3 mb-4 text-slate-900">AI Audit and Strategy Plan</h3>
               </div>
-              <div>
-                <h4 class="text-xs font-bold text-amber-400 uppercase tracking-wider mb-3" data-key="consulting.flagship.col2_title">What You Get</h4>
-                <ul class="text-sm text-slate-300 space-y-2 list-disc list-inside" id="consulting-flagship-col2">
-                  <!-- Items populated by JS -->
-                </ul>
+              <p class="text-slate-700 text-sm leading-relaxed">We start with a free consultation to understand your products, data, and constraints, then co‑design an AI Opportunities & Strategy Plan. You get a clear, honest view of where AI can help, where it won't, and what it would take to build systems that actually work.</p>
+            </div>
+            <div class="service-card rounded-xl bg-gradient-to-br from-white via-white to-slate-50/80 border-2 border-slate-300 p-8 hover:border-amber-500/40 shadow-xl transition-all">
+              <div class="w-12 h-12 rounded-lg bg-amber-100 flex items-center justify-center mb-4">
+                <i class="fas fa-cogs text-xl text-amber-600"></i>
               </div>
+              <h3 class="text-xl font-bold mb-4 text-slate-900">Model Development</h3>
+              <p class="text-slate-700 text-sm leading-relaxed">Purpose‑built models, RAG systems, and data pipelines, plus evaluation schemes that turn them into learning flywheels.</p>
             </div>
           </div>
-
-          <!-- Service Pillars Grid -->
-          <div class="grid gap-6 sm:grid-cols-2" id="consulting-pillars-grid">
-             <!-- Pillars populated by JS -->
+          <!-- Row 2: 3 Cards -->
+          <div class="grid md:grid-cols-3 gap-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-card rounded-xl bg-gradient-to-br from-white to-slate-50/80 border-2 border-slate-300 p-8 hover:border-amber-500/40 shadow-xl transition-all">
+              <div class="w-12 h-12 rounded-lg bg-amber-100 flex items-center justify-center mb-4">
+                <i class="fas fa-balance-scale text-xl text-amber-600"></i>
+              </div>
+              <h3 class="text-xl font-bold mb-4 text-slate-900">AI Governance & Compliance</h3>
+              <p class="text-slate-700 text-sm leading-relaxed">Governance frameworks and compliance reviews so your AI work is safe and ethical.</p>
+            </div>
+            <div class="service-card rounded-xl bg-gradient-to-br from-white to-slate-50/80 border-2 border-slate-300 p-8 hover:border-amber-500/40 shadow-xl transition-all">
+              <div class="w-12 h-12 rounded-lg bg-amber-100 flex items-center justify-center mb-4">
+                <i class="fas fa-graduation-cap text-xl text-amber-600"></i>
+              </div>
+              <h3 class="text-xl font-bold mb-4 text-slate-900">Executive Education</h3>
+              <p class="text-slate-700 text-sm leading-relaxed">Executive workshops and deep‑dive bootcamps that move leaders and engineers from AI‑curious to confident practitioners.</p>
+            </div>
+            <div class="service-card rounded-xl bg-gradient-to-br from-white to-slate-50/80 border-2 border-slate-300 p-8 hover:border-amber-500/40 shadow-xl transition-all">
+              <div class="w-12 h-12 rounded-lg bg-amber-100 flex items-center justify-center mb-4">
+                <i class="fas fa-users text-xl text-amber-600"></i>
+              </div>
+              <h3 class="text-xl font-bold mb-4 text-slate-900">AI team design</h3>
+              <p class="text-slate-700 text-sm leading-relaxed">Interim Head‑of‑AI support: role design, candidate vetting, and culture‑first team building.</p>
+            </div>
           </div>
 
           <!-- Why Us & Contact -->
           <div class="grid md:grid-cols-2 gap-8 items-start">
             <div 
-              class="rounded-2xl bg-slate-900/60 border border-slate-800 p-8 h-full"
+              class="rounded-2xl bg-slate-900/60 border-2 border-amber-400/50 p-8 h-full"
               data-aos="fade-right"
             >
               <h3 class="text-lg font-bold text-white mb-4" data-key="consulting.why_us.title">Why Axiotic?</h3>
@@ -276,16 +269,16 @@
       </section>
 
       <!-- Team Section -->
-      <section id="team" class="py-24 border-t border-slate-800/50">
+      <section id="team" class="py-32 border-t border-slate-800/50">
         <div class="max-w-5xl mx-auto px-4 space-y-12">
           <header class="text-center space-y-4" data-aos="fade-up">
             <p class="text-xs font-semibold uppercase tracking-[0.2em] text-amber-300" data-key="team.header.eyebrow">
               Team
             </p>
-            <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight" data-key="team.header.title">
+            <h2 class="text-4xl sm:text-5xl font-extrabold tracking-tight" data-key="team.header.title">
               The Axiotic Core Team
             </h2>
-            <p class="max-w-2xl mx-auto text-base text-slate-300" data-key="team.header.subtitle">
+            <p class="max-w-2xl mx-auto text-lg text-slate-300 leading-relaxed" data-key="team.header.subtitle">
               A small, senior group combining deep research, pragmatic engineering, governance, 
               and education — organized around the Axiotic flywheel.
             </p>
@@ -296,8 +289,26 @@
           </div>
         </div>
       </section>
+      <!-- Flywheel Section -->
+      <section id="flywheel" class="py-32 border-t border-slate-800/50">
+        <div class="max-w-5xl mx-auto px-4 space-y-12">
+          <header class="text-center space-y-4" data-aos="fade-up">
+            <h2 class="text-4xl sm:text-5xl font-extrabold tracking-tight" data-key="flywheel.title">
+              The Axiotic Flywheel
+            </h2>
+            <p class="max-w-2xl mx-auto text-lg text-slate-300 leading-relaxed" data-key="flywheel.subtitle">
+              A self-reinforcing loop that funds innovation without VC pressure.
+            </p>
+          </header>
+
+          <div class="grid gap-6 md:grid-cols-4" id="flywheel-grid">
+            <!-- Flywheel steps populated by JS -->
+          </div>
+        </div>
+      </section>
+
       <!-- Name Origin Section -->
-      <section id="name-origin" class="py-16 border-t border-slate-800/50 bg-slate-900/30">
+      <section id="name-origin" class="py-24 border-t border-slate-800/50">
         <div class="max-w-3xl mx-auto px-4 text-center space-y-6" data-aos="fade-up">
           <h3 class="text-2xl font-bold text-white" data-key="name_origin.title">Why 'Axiotic'?</h3>
           <p class="text-base text-slate-300 leading-relaxed" data-key="name_origin.text">

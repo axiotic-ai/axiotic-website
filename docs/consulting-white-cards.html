@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>White Cards on Dark Background — Axiotic.ai</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script defer src="particles-init.js"></script>
+    <style>
+      .design-section {
+        margin-bottom: 100px;
+        padding: 50px 0;
+        border-top: 2px solid rgba(148, 163, 184, 0.2);
+      }
+      .design-label {
+        position: sticky;
+        top: 0;
+        background: rgba(15, 23, 42, 0.98);
+        backdrop-filter: blur(10px);
+        padding: 25px;
+        margin-bottom: 40px;
+        border-bottom: 2px solid rgba(251, 146, 60, 0.3);
+        z-index: 10;
+      }
+      .service-card {
+        transition: all 0.3s ease;
+      }
+      .service-card:hover {
+        transform: translateY(-2px);
+      }
+    </style>
+  </head>
+  <body class="bg-slate-900 text-slate-50 font-[Inter]">
+    <div id="particles-js"></div>
+
+    <nav class="fixed top-0 inset-x-0 z-50 border-b border-white/5 bg-transparent backdrop-blur-md">
+      <div class="max-w-5xl mx-auto px-4 py-3 flex items-center justify-between">
+        <a href="index.html" class="flex items-center gap-2 text-base font-semibold">
+          <img src="images/logo-no-name.png" alt="Axiotic" class="h-8 w-auto rounded-full">
+          <span class="tracking-tight">Axiotic.ai</span>
+        </a>
+        <a href="index.html" class="text-sm text-slate-200 hover:text-amber-300">← Back to Home</a>
+      </div>
+    </nav>
+
+    <main class="pt-20">
+      <div class="max-w-7xl mx-auto px-4 py-10">
+        <header class="text-center mb-16">
+          <h1 class="text-4xl font-extrabold mb-4">White Cards on Dark Background</h1>
+          <p class="text-slate-300">Dark page background with white/light service cards for better readability</p>
+        </header>
+
+        <!-- Option 1: Pure White Cards -->
+        <section class="design-section">
+          <div class="design-label">
+            <h2 class="text-2xl font-bold text-amber-300">Option 1: Pure White Cards</h2>
+            <p class="text-sm text-slate-400">Bright white cards with subtle shadows on dark background</p>
+          </div>
+          <div class="max-w-6xl mx-auto">
+            <!-- Top Row: Strategy Plan + Model Development -->
+            <div class="grid md:grid-cols-2 gap-6 mb-6">
+              <div class="service-card rounded-xl bg-white border-2 border-amber-400/30 p-10 hover:border-amber-500/50 shadow-2xl">
+                <div class="mb-4">
+                  <span class="text-xs font-bold text-amber-600 uppercase tracking-wider">Flagship Offering</span>
+                  <h3 class="text-2xl font-bold mt-3 mb-4 text-slate-900">AI Strategy & Planning</h3>
+                </div>
+                <p class="text-slate-700 leading-relaxed">We start with a free consultation to understand your products, data, and constraints, then co‑design an AI Opportunities & Strategy Plan. You get a clear, honest view of where AI can help, where it won't, and what it would take to build systems that actually work.</p>
+              </div>
+              <div class="service-card rounded-xl bg-white border-2 border-slate-300 p-10 hover:border-amber-500/40 shadow-2xl">
+                <h3 class="text-2xl font-bold mb-4 text-slate-900">Model Development</h3>
+                <p class="text-slate-700 leading-relaxed">Purpose‑built models, RAG systems, and data pipelines, plus evaluation schemes that turn them into learning flywheels.</p>
+              </div>
+            </div>
+            <!-- Bottom Row: 3 Cards -->
+            <div class="grid md:grid-cols-3 gap-6">
+              <div class="service-card rounded-xl bg-white border-2 border-slate-300 p-8 hover:border-amber-500/40 shadow-xl">
+                <h3 class="text-xl font-bold mb-4 text-slate-900">AI Governance & Compliance</h3>
+                <p class="text-slate-700 text-sm leading-relaxed">Governance frameworks, compliance reviews, and grant strategy so your AI work is safe, legal, and fundable.</p>
+              </div>
+              <div class="service-card rounded-xl bg-white border-2 border-slate-300 p-8 hover:border-amber-500/40 shadow-xl">
+                <h3 class="text-xl font-bold mb-4 text-slate-900">Executive Education</h3>
+                <p class="text-slate-700 text-sm leading-relaxed">Executive workshops and deep‑dive bootcamps that move leaders and engineers from AI‑curious to confident practitioners.</p>
+              </div>
+              <div class="service-card rounded-xl bg-white border-2 border-slate-300 p-8 hover:border-amber-500/40 shadow-xl">
+                <h3 class="text-xl font-bold mb-4 text-slate-900">Talent & Organization</h3>
+                <p class="text-slate-700 text-sm leading-relaxed">Interim Head‑of‑AI support: role design, candidate vetting, and culture‑first team building.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Option 2: Soft White Cards with Gradient -->
+        <section class="design-section">
+          <div class="design-label">
+            <h2 class="text-2xl font-bold text-amber-300">Option 2: Soft White Cards with Gradient</h2>
+            <p class="text-sm text-slate-400">White cards with subtle gradient and amber accent on flagship</p>
+          </div>
+          <div class="max-w-6xl mx-auto">
+            <!-- Top Row: Strategy Plan + Model Development -->
+            <div class="grid md:grid-cols-2 gap-6 mb-6">
+              <div class="service-card rounded-xl bg-gradient-to-br from-white via-white to-amber-50 border-2 border-amber-400/40 p-10 hover:border-amber-500/60 shadow-2xl">
+                <div class="mb-4">
+                  <span class="text-xs font-bold text-amber-600 uppercase tracking-wider">Flagship Offering</span>
+                  <h3 class="text-2xl font-bold mt-3 mb-4 text-slate-900">AI Strategy & Planning</h3>
+                </div>
+                <p class="text-slate-700 leading-relaxed">We start with a free consultation to understand your products, data, and constraints, then co‑design an AI Opportunities & Strategy Plan. You get a clear, honest view of where AI can help, where it won't, and what it would take to build systems that actually work.</p>
+              </div>
+              <div class="service-card rounded-xl bg-gradient-to-br from-white to-slate-50 border-2 border-slate-300 p-10 hover:border-amber-500/50 shadow-2xl">
+                <h3 class="text-2xl font-bold mb-4 text-slate-900">Model Development</h3>
+                <p class="text-slate-700 leading-relaxed">Purpose‑built models, RAG systems, and data pipelines, plus evaluation schemes that turn them into learning flywheels.</p>
+              </div>
+            </div>
+            <!-- Bottom Row: 3 Cards -->
+            <div class="grid md:grid-cols-3 gap-6">
+              <div class="service-card rounded-xl bg-gradient-to-br from-white to-slate-50 border-2 border-slate-300 p-8 hover:border-amber-500/50 shadow-xl">
+                <h3 class="text-xl font-bold mb-4 text-slate-900">AI Governance & Compliance</h3>
+                <p class="text-slate-700 text-sm leading-relaxed">Governance frameworks, compliance reviews, and grant strategy so your AI work is safe, legal, and fundable.</p>
+              </div>
+              <div class="service-card rounded-xl bg-gradient-to-br from-white to-slate-50 border-2 border-slate-300 p-8 hover:border-amber-500/50 shadow-xl">
+                <h3 class="text-xl font-bold mb-4 text-slate-900">Executive Education</h3>
+                <p class="text-slate-700 text-sm leading-relaxed">Executive workshops and deep‑dive bootcamps that move leaders and engineers from AI‑curious to confident practitioners.</p>
+              </div>
+              <div class="service-card rounded-xl bg-gradient-to-br from-white to-slate-50 border-2 border-slate-300 p-8 hover:border-amber-500/50 shadow-xl">
+                <h3 class="text-xl font-bold mb-4 text-slate-900">Talent & Organization</h3>
+                <p class="text-slate-700 text-sm leading-relaxed">Interim Head‑of‑AI support: role design, candidate vetting, and culture‑first team building.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Option 3: Off-White Cards -->
+        <section class="design-section">
+          <div class="design-label">
+            <h2 class="text-2xl font-bold text-amber-300">Option 3: Off-White Cards</h2>
+            <p class="text-sm text-slate-400">Slightly warm off-white cards for softer contrast</p>
+          </div>
+          <div class="max-w-6xl mx-auto">
+            <!-- Top Row: Strategy Plan + Model Development -->
+            <div class="grid md:grid-cols-2 gap-6 mb-6">
+              <div class="service-card rounded-xl bg-amber-50/80 border-2 border-amber-400/40 p-10 hover:border-amber-500/60 shadow-2xl backdrop-blur-sm">
+                <div class="mb-4">
+                  <span class="text-xs font-bold text-amber-600 uppercase tracking-wider">Flagship Offering</span>
+                  <h3 class="text-2xl font-bold mt-3 mb-4 text-slate-900">AI Strategy & Planning</h3>
+                </div>
+                <p class="text-slate-800 leading-relaxed">We start with a free consultation to understand your products, data, and constraints, then co‑design an AI Opportunities & Strategy Plan. You get a clear, honest view of where AI can help, where it won't, and what it would take to build systems that actually work.</p>
+              </div>
+              <div class="service-card rounded-xl bg-slate-50/90 border-2 border-slate-400/50 p-10 hover:border-amber-500/50 shadow-2xl backdrop-blur-sm">
+                <h3 class="text-2xl font-bold mb-4 text-slate-900">Model Development</h3>
+                <p class="text-slate-800 leading-relaxed">Purpose‑built models, RAG systems, and data pipelines, plus evaluation schemes that turn them into learning flywheels.</p>
+              </div>
+            </div>
+            <!-- Bottom Row: 3 Cards -->
+            <div class="grid md:grid-cols-3 gap-6">
+              <div class="service-card rounded-xl bg-slate-50/90 border-2 border-slate-400/50 p-8 hover:border-amber-500/50 shadow-xl backdrop-blur-sm">
+                <h3 class="text-xl font-bold mb-4 text-slate-900">AI Governance & Compliance</h3>
+                <p class="text-slate-800 text-sm leading-relaxed">Governance frameworks, compliance reviews, and grant strategy so your AI work is safe, legal, and fundable.</p>
+              </div>
+              <div class="service-card rounded-xl bg-slate-50/90 border-2 border-slate-400/50 p-8 hover:border-amber-500/50 shadow-xl backdrop-blur-sm">
+                <h3 class="text-xl font-bold mb-4 text-slate-900">Executive Education</h3>
+                <p class="text-slate-800 text-sm leading-relaxed">Executive workshops and deep‑dive bootcamps that move leaders and engineers from AI‑curious to confident practitioners.</p>
+              </div>
+              <div class="service-card rounded-xl bg-slate-50/90 border-2 border-slate-400/50 p-8 hover:border-amber-500/50 shadow-xl backdrop-blur-sm">
+                <h3 class="text-xl font-bold mb-4 text-slate-900">Talent & Organization</h3>
+                <p class="text-slate-800 text-sm leading-relaxed">Interim Head‑of‑AI support: role design, candidate vetting, and culture‑first team building.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Option 4: White Cards with Colored Borders -->
+        <section class="design-section">
+          <div class="design-label">
+            <h2 class="text-2xl font-bold text-amber-300">Option 4: White Cards with Colored Borders</h2>
+            <p class="text-sm text-slate-400">White cards with distinct colored borders for each service</p>
+          </div>
+          <div class="max-w-6xl mx-auto">
+            <!-- Top Row: Strategy Plan + Model Development -->
+            <div class="grid md:grid-cols-2 gap-6 mb-6">
+              <div class="service-card rounded-xl bg-white border-l-4 border-amber-400 border-t-2 border-r-2 border-b-2 border-amber-400/30 p-10 hover:border-amber-500 shadow-2xl">
+                <div class="mb-4">
+                  <span class="text-xs font-bold text-amber-600 uppercase tracking-wider">Flagship Offering</span>
+                  <h3 class="text-2xl font-bold mt-3 mb-4 text-slate-900">AI Strategy & Planning</h3>
+                </div>
+                <p class="text-slate-700 leading-relaxed">We start with a free consultation to understand your products, data, and constraints, then co‑design an AI Opportunities & Strategy Plan. You get a clear, honest view of where AI can help, where it won't, and what it would take to build systems that actually work.</p>
+              </div>
+              <div class="service-card rounded-xl bg-white border-l-4 border-blue-500 border-t-2 border-r-2 border-b-2 border-blue-500/30 p-10 hover:border-blue-600 shadow-2xl">
+                <h3 class="text-2xl font-bold mb-4 text-slate-900">Model Development</h3>
+                <p class="text-slate-700 leading-relaxed">Purpose‑built models, RAG systems, and data pipelines, plus evaluation schemes that turn them into learning flywheels.</p>
+              </div>
+            </div>
+            <!-- Bottom Row: 3 Cards -->
+            <div class="grid md:grid-cols-3 gap-6">
+              <div class="service-card rounded-xl bg-white border-l-4 border-purple-500 border-t-2 border-r-2 border-b-2 border-purple-500/30 p-8 hover:border-purple-600 shadow-xl">
+                <h3 class="text-xl font-bold mb-4 text-slate-900">AI Governance & Compliance</h3>
+                <p class="text-slate-700 text-sm leading-relaxed">Governance frameworks, compliance reviews, and grant strategy so your AI work is safe, legal, and fundable.</p>
+              </div>
+              <div class="service-card rounded-xl bg-white border-l-4 border-green-500 border-t-2 border-r-2 border-b-2 border-green-500/30 p-8 hover:border-green-600 shadow-xl">
+                <h3 class="text-xl font-bold mb-4 text-slate-900">Executive Education</h3>
+                <p class="text-slate-700 text-sm leading-relaxed">Executive workshops and deep‑dive bootcamps that move leaders and engineers from AI‑curious to confident practitioners.</p>
+              </div>
+              <div class="service-card rounded-xl bg-white border-l-4 border-indigo-500 border-t-2 border-r-2 border-b-2 border-indigo-500/30 p-8 hover:border-indigo-600 shadow-xl">
+                <h3 class="text-xl font-bold mb-4 text-slate-900">Talent & Organization</h3>
+                <p class="text-slate-700 text-sm leading-relaxed">Interim Head‑of‑AI support: role design, candidate vetting, and culture‑first team building.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Option 5: White Cards with Subtle Shadows -->
+        <section class="design-section">
+          <div class="design-label">
+            <h2 class="text-2xl font-bold text-amber-300">Option 5: White Cards with Subtle Shadows</h2>
+            <p class="text-sm text-slate-400">Clean white cards with minimal borders and strong shadows</p>
+          </div>
+          <div class="max-w-6xl mx-auto">
+            <!-- Top Row: Strategy Plan + Model Development -->
+            <div class="grid md:grid-cols-2 gap-6 mb-6">
+              <div class="service-card rounded-xl bg-white border border-slate-200 p-10 hover:shadow-amber-500/20 shadow-lg hover:shadow-2xl">
+                <div class="mb-4">
+                  <span class="text-xs font-bold text-amber-600 uppercase tracking-wider">Flagship Offering</span>
+                  <h3 class="text-2xl font-bold mt-3 mb-4 text-slate-900">AI Strategy & Planning</h3>
+                </div>
+                <p class="text-slate-700 leading-relaxed">We start with a free consultation to understand your products, data, and constraints, then co‑design an AI Opportunities & Strategy Plan. You get a clear, honest view of where AI can help, where it won't, and what it would take to build systems that actually work.</p>
+              </div>
+              <div class="service-card rounded-xl bg-white border border-slate-200 p-10 hover:shadow-xl shadow-lg">
+                <h3 class="text-2xl font-bold mb-4 text-slate-900">Model Development</h3>
+                <p class="text-slate-700 leading-relaxed">Purpose‑built models, RAG systems, and data pipelines, plus evaluation schemes that turn them into learning flywheels.</p>
+              </div>
+            </div>
+            <!-- Bottom Row: 3 Cards -->
+            <div class="grid md:grid-cols-3 gap-6">
+              <div class="service-card rounded-xl bg-white border border-slate-200 p-8 hover:shadow-xl shadow-md">
+                <h3 class="text-xl font-bold mb-4 text-slate-900">AI Governance & Compliance</h3>
+                <p class="text-slate-700 text-sm leading-relaxed">Governance frameworks, compliance reviews, and grant strategy so your AI work is safe, legal, and fundable.</p>
+              </div>
+              <div class="service-card rounded-xl bg-white border border-slate-200 p-8 hover:shadow-xl shadow-md">
+                <h3 class="text-xl font-bold mb-4 text-slate-900">Executive Education</h3>
+                <p class="text-slate-700 text-sm leading-relaxed">Executive workshops and deep‑dive bootcamps that move leaders and engineers from AI‑curious to confident practitioners.</p>
+              </div>
+              <div class="service-card rounded-xl bg-white border border-slate-200 p-8 hover:shadow-xl shadow-md">
+                <h3 class="text-xl font-bold mb-4 text-slate-900">Talent & Organization</h3>
+                <p class="text-slate-700 text-sm leading-relaxed">Interim Head‑of‑AI support: role design, candidate vetting, and culture‑first team building.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Option 6: White Cards with Amber Accent -->
+        <section class="design-section">
+          <div class="design-label">
+            <h2 class="text-2xl font-bold text-amber-300">Option 6: White Cards with Amber Accent</h2>
+            <p class="text-sm text-slate-400">White cards with amber accent bar on left side</p>
+          </div>
+          <div class="max-w-6xl mx-auto">
+            <!-- Top Row: Strategy Plan + Model Development -->
+            <div class="grid md:grid-cols-2 gap-6 mb-6">
+              <div class="service-card rounded-xl bg-white border-l-8 border-amber-400 border-t-2 border-r-2 border-b-2 border-slate-200 p-10 hover:border-amber-500 shadow-2xl">
+                <div class="mb-4">
+                  <span class="text-xs font-bold text-amber-600 uppercase tracking-wider">Flagship Offering</span>
+                  <h3 class="text-2xl font-bold mt-3 mb-4 text-slate-900">AI Strategy & Planning</h3>
+                </div>
+                <p class="text-slate-700 leading-relaxed">We start with a free consultation to understand your products, data, and constraints, then co‑design an AI Opportunities & Strategy Plan. You get a clear, honest view of where AI can help, where it won't, and what it would take to build systems that actually work.</p>
+              </div>
+              <div class="service-card rounded-xl bg-white border-l-8 border-slate-300 border-t-2 border-r-2 border-b-2 border-slate-200 p-10 hover:border-amber-500 shadow-2xl">
+                <h3 class="text-2xl font-bold mb-4 text-slate-900">Model Development</h3>
+                <p class="text-slate-700 leading-relaxed">Purpose‑built models, RAG systems, and data pipelines, plus evaluation schemes that turn them into learning flywheels.</p>
+              </div>
+            </div>
+            <!-- Bottom Row: 3 Cards -->
+            <div class="grid md:grid-cols-3 gap-6">
+              <div class="service-card rounded-xl bg-white border-l-8 border-slate-300 border-t-2 border-r-2 border-b-2 border-slate-200 p-8 hover:border-amber-500 shadow-xl">
+                <h3 class="text-xl font-bold mb-4 text-slate-900">AI Governance & Compliance</h3>
+                <p class="text-slate-700 text-sm leading-relaxed">Governance frameworks, compliance reviews, and grant strategy so your AI work is safe, legal, and fundable.</p>
+              </div>
+              <div class="service-card rounded-xl bg-white border-l-8 border-slate-300 border-t-2 border-r-2 border-b-2 border-slate-200 p-8 hover:border-amber-500 shadow-xl">
+                <h3 class="text-xl font-bold mb-4 text-slate-900">Executive Education</h3>
+                <p class="text-slate-700 text-sm leading-relaxed">Executive workshops and deep‑dive bootcamps that move leaders and engineers from AI‑curious to confident practitioners.</p>
+              </div>
+              <div class="service-card rounded-xl bg-white border-l-8 border-slate-300 border-t-2 border-r-2 border-b-2 border-slate-200 p-8 hover:border-amber-500 shadow-xl">
+                <h3 class="text-xl font-bold mb-4 text-slate-900">Talent & Organization</h3>
+                <p class="text-slate-700 text-sm leading-relaxed">Interim Head‑of‑AI support: role design, candidate vetting, and culture‑first team building.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Summary Index -->
+        <section class="mt-20 py-10 border-t border-slate-800">
+          <div class="max-w-4xl mx-auto">
+            <h2 class="text-2xl font-bold mb-6 text-center">Quick Reference Index</h2>
+            <div class="grid md:grid-cols-2 gap-4 text-sm">
+              <div class="rounded-lg bg-slate-900/60 border border-slate-800 p-4">
+                <div class="font-bold text-amber-400 mb-2">Option 1: Pure White Cards</div>
+                <div class="text-slate-400">Bright white cards with subtle shadows</div>
+              </div>
+              <div class="rounded-lg bg-slate-900/60 border border-slate-800 p-4">
+                <div class="font-bold text-amber-400 mb-2">Option 2: Soft White with Gradient</div>
+                <div class="text-slate-400">White cards with subtle gradient and amber accent</div>
+              </div>
+              <div class="rounded-lg bg-slate-900/60 border border-slate-800 p-4">
+                <div class="font-bold text-amber-400 mb-2">Option 3: Off-White Cards</div>
+                <div class="text-slate-400">Slightly warm off-white for softer contrast</div>
+              </div>
+              <div class="rounded-lg bg-slate-900/60 border border-slate-800 p-4">
+                <div class="font-bold text-amber-400 mb-2">Option 4: Colored Borders</div>
+                <div class="text-slate-400">White cards with distinct colored borders</div>
+              </div>
+              <div class="rounded-lg bg-slate-900/60 border border-slate-800 p-4">
+                <div class="font-bold text-amber-400 mb-2">Option 5: Subtle Shadows</div>
+                <div class="text-slate-400">Clean white with minimal borders, strong shadows</div>
+              </div>
+              <div class="rounded-lg bg-slate-900/60 border border-slate-800 p-4">
+                <div class="font-bold text-amber-400 mb-2">Option 6: Amber Accent Bar</div>
+                <div class="text-slate-400">White cards with amber accent bar on left</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <footer class="mt-20 py-10 text-center text-slate-400 border-t border-slate-800">
+          <p>Scroll up to compare designs</p>
+        </footer>
+      </div>
+    </main>
+  </body>
+</html>
+
+
+
+
