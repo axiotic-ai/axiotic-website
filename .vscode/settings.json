@@ -1,0 +1,19 @@
+{
+  // Enable word wrap for YAML files
+  "[yaml]": {
+    "editor.wordWrap": "wordWrapColumn",
+    "editor.wordWrapColumn": 79,
+    "editor.rulers": [79],
+    "editor.formatOnSave": false
+  },
+  
+  // Optional: Also enable for YML files
+  "[yml]": {
+    "editor.wordWrap": "wordWrapColumn",
+    "editor.wordWrapColumn": 79,
+    "editor.rulers": [79],
+    "editor.formatOnSave": false
+  }
+}
+
+

@@ -1,5 +1,5 @@
 site:
-  title: "Beyond Scaling through Smarter Learning"
+  title: "Beyond Scaling via Smarter Learning"
   nav:
     brand: "Axiotic AI"
     links:
@@ -58,11 +58,18 @@ research:
       title: "Embodiment"
       description: "Intelligence requires grounding. We use simulation (Isaac/Cosmos) as a primary data source, training agents on interaction physics before sim-to-real transfer."
     - icon: "🧬📉"
-      title: "Evolution, Distillation"
+      title: "Evolution meets SGD"
       description: "SGD is greedy; evolution generalizes but is slow. We research how to synergize them for robust, efficient learning."
     - icon: "🧬📉"
       title: "Information Theory & Distillation"
       description: "We investigate distillation through an information-theoretic lens, aiming to crack the physics of compression and train small models to their maximum potential without a teacher."
+    - icon: "🔍🔄"
+      title: "Local Learning Rules"
+      description: "Efficiency in nature is at least partially achieved through local learning rules. We research how to leverage this for efficient learning."
+    - icon: "🕒"
+      title: "Multi-Temporal-Scale Periodicities"
+      description: "Periodicities at multiple temporal scales are a key feature of nature. We research how to leverage this for efficient learning, generalization and inference."
+
   commitment:
     title: "Open Science Commitment"
     text: "We release code, models, and datasets as openly as licensing allows. The lab exists to push the field forward, not to hide breakthroughs behind proprietary walls."
@@ -72,7 +79,7 @@ flywheel:
   subtitle: "A self-reinforcing loop that funds independent innovation."
   steps:
     - icon: "💰"
-      title: "Consulting Creates Real-World Value"
+      title: "Consulting ->Real-World Value"
       description: "We build systems and empower teams that solve actual industry problems. This work generates value for the world and capital to fund our own compute and talent."
     - icon: "🔬"
       title: "Revenue Funds Research"
@@ -91,7 +98,7 @@ name_origin:
 consulting:
   header:
     eyebrow: "Consulting"
-    title: "White Glove Consulting"
+    title: "Your AI Capabilities Concierge"
     subtitle: "We design and ship efficient AI systems: compact models, retrieval pipelines, and training setups paired with the right data generation and evaluation loops."
   flagship:
     title: "Flagship Offering: AI Opportunities & Strategy Plan"
