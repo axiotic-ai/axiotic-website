@@ -26,37 +26,49 @@ document.addEventListener('DOMContentLoaded', async () => {
     // 2. Render Research Pillars
     const researchGrid = document.getElementById('research-pillars-grid');
     if (researchGrid && content.research.pillars) {
-      researchGrid.innerHTML = content.research.pillars.map((pillar, index) => `
+      researchGrid.innerHTML = content.research.pillars.map((pillar, index) => {
+        // Use icon directly from content.yaml (should be Font Awesome class like "fa-bullseye")
+        const iconClass = pillar.icon.startsWith('fa-') ? pillar.icon : `fa-${pillar.icon}`;
+        return `
         <article 
           class="rounded-xl bg-slate-900/50 border border-slate-800 p-5 hover:bg-slate-800/50 transition duration-300"
           data-aos="fade-up"
           data-aos-delay="${index * 50}"
         >
-          <div class="text-5xl mb-4">${pillar.icon}</div>
+          <div class="w-16 h-16 border-2 border-amber-400 rounded-lg flex items-center justify-center mb-4">
+            <i class="fas ${iconClass} text-2xl text-amber-400"></i>
+          </div>
           <h3 class="text-lg font-bold text-slate-100 mb-2">${pillar.title}</h3>
-          <p class="text-base text-slate-400 leading-relaxed text-justify">
+          <p class="text-base text-slate-400 leading-relaxed text-left">
             ${pillar.description}
           </p>
         </article>
-      `).join('');
+      `;
+      }).join('');
     }
 
     // 2.5. Render Flywheel Steps
     const flywheelGrid = document.getElementById('flywheel-grid');
     if (flywheelGrid && content.flywheel && content.flywheel.steps) {
-      flywheelGrid.innerHTML = content.flywheel.steps.map((step, index) => `
+      flywheelGrid.innerHTML = content.flywheel.steps.map((step, index) => {
+        // Use icon directly from content.yaml (should be Font Awesome class like "fa-coins")
+        const iconClass = step.icon.startsWith('fa-') ? step.icon : `fa-${step.icon}`;
+        return `
         <article 
           class="rounded-xl bg-slate-900/40 border border-slate-800 p-5 hover:border-amber-500/40 transition duration-300 flex flex-col items-center text-center"
           data-aos="fade-up"
           data-aos-delay="${index * 100}"
         >
-          <div class="text-6xl mb-3">${step.icon}</div>
+          <div class="text-6xl mb-3">
+            <i class="fas ${iconClass} text-amber-400"></i>
+          </div>
           <h3 class="text-lg font-bold text-amber-100 mb-2">${step.title}</h3>
           <p class="text-base text-slate-400 leading-relaxed">
             ${step.description}
           </p>
         </article>
-      `).join('');
+      `;
+      }).join('');
     }
 
     // 3. Render Consulting Flagship Lists
@@ -73,19 +85,25 @@ document.addEventListener('DOMContentLoaded', async () => {
     // 4. Render Consulting Pillars
     const consultingGrid = document.getElementById('consulting-pillars-grid');
     if (consultingGrid && content.consulting.pillars) {
-      consultingGrid.innerHTML = content.consulting.pillars.map((pillar, index) => `
+      consultingGrid.innerHTML = content.consulting.pillars.map((pillar, index) => {
+        // Use icon directly from content.yaml (should be Font Awesome class like "fa-brain")
+        const iconClass = pillar.icon.startsWith('fa-') ? pillar.icon : `fa-${pillar.icon}`;
+        return `
         <article 
-          class="rounded-xl bg-slate-900/80 border border-slate-700 p-6 shadow-lg transition duration-300 hover:border-amber-500/60 hover:shadow-amber-500/10"
+          class="rounded-xl bg-gradient-to-br from-white to-slate-50/80 border-2 border-slate-300 p-8 hover:border-amber-500/40 shadow-xl transition-all"
           data-aos="fade-up"
           data-aos-delay="${index * 100}"
         >
-          <div class="text-5xl mb-4">${pillar.icon}</div>
-          <h3 class="text-xl font-bold text-slate-100 mb-2">${pillar.title}</h3>
-          <p class="text-lg text-slate-300">
+          <div class="w-12 h-12 rounded-lg bg-amber-100 flex items-center justify-center mb-4">
+            <i class="fas ${iconClass} text-xl text-amber-600"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-4 text-slate-900">${pillar.title}</h3>
+          <p class="text-slate-700 text-sm leading-relaxed">
             ${pillar.description}
           </p>
         </article>
-      `).join('');
+      `;
+      }).join('');
     }
 
     // 5. Render Team Members (Shuffled)
