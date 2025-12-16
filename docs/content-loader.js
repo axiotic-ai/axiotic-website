@@ -131,7 +131,7 @@ async function loadContent() {
         >
           <div class="aspect-w-1 aspect-h-1 w-full overflow-hidden bg-slate-900">
              <!-- In a real scenario, use actual images. For now, placeholders or text avatars -->
-            ${member.photo 
+            ${photoUrl 
                 ? `<img src="${photoUrl}" alt="${member.name}" class="h-full w-full object-cover object-center transition duration-500 group-hover:scale-110 opacity-90 group-hover:opacity-100">`
                 : `<div class="h-full w-full flex items-center justify-center bg-slate-800 text-slate-600 text-4xl font-bold">${member.name.charAt(0)}</div>`
             }
@@ -147,6 +147,13 @@ async function loadContent() {
       `;
       }).join('');
     }
+
+    // Refresh AOS to account for new DOM elements
+    setTimeout(() => {
+      if (typeof AOS !== 'undefined') {
+        AOS.refresh();
+      }
+    }, 100);
 
   } catch (error) {
     console.error('Error loading content:', error);
