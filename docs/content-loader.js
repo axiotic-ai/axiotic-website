@@ -17,13 +17,19 @@ document.addEventListener('DOMContentLoaded', async () => {
         } else if (el.tagName === 'A' && key.endsWith('.text')) {
              // For links, we might have separate href keys, but here we just update text
              el.textContent = value;
+        } else if (el.tagName === 'BUTTON') {
+             // For buttons, use textContent
+             el.textContent = value;
+        } else if (el.tagName === 'SPAN' || el.tagName === 'P' || el.tagName === 'H2' || el.tagName === 'H3' || el.tagName === 'H4') {
+             // For text elements, use textContent to avoid HTML injection
+             el.textContent = value;
         } else {
              el.innerHTML = value; // Using innerHTML to allow <br> tags
         }
       }
     });
 
-    // 2. Render Research Pillars
+    // 2. Render Research Pillars (Design 16: Asymmetric Cards with Offset Icon)
     const researchGrid = document.getElementById('research-pillars-grid');
     if (researchGrid && content.research.pillars) {
       researchGrid.innerHTML = content.research.pillars.map((pillar, index) => {
@@ -31,15 +37,15 @@ document.addEventListener('DOMContentLoaded', async () => {
         const iconClass = pillar.icon.startsWith('fa-') ? pillar.icon : `fa-${pillar.icon}`;
         return `
         <article 
-          class="rounded-xl bg-slate-900/50 border border-slate-800 p-5 hover:bg-slate-800/50 transition duration-300"
+          class="rounded-xl bg-slate-800 border border-slate-700 p-6 hover:border-amber-400 transition-all relative"
           data-aos="fade-up"
           data-aos-delay="${index * 50}"
         >
-          <div class="w-16 h-16 border-2 border-amber-400 rounded-lg flex items-center justify-center mb-4">
-            <i class="fas ${iconClass} text-2xl text-amber-400"></i>
+          <div class="absolute -top-4 -right-4 w-16 h-16 rounded-full bg-gradient-to-br from-amber-400 to-orange-500 shadow-lg border-4 border-slate-900 flex items-center justify-center">
+            <i class="fas ${iconClass} text-xl text-white"></i>
           </div>
-          <h3 class="text-lg font-bold text-slate-100 mb-2">${pillar.title}</h3>
-          <p class="text-base text-slate-400 leading-relaxed text-left">
+          <h3 class="text-lg font-bold text-white mb-2 pr-12">${pillar.title}</h3>
+          <p class="text-sm text-slate-300 leading-relaxed text-left">
             ${pillar.description}
           </p>
         </article>
@@ -74,15 +80,15 @@ document.addEventListener('DOMContentLoaded', async () => {
     // 3. Render Consulting Flagship Lists
     const col1List = document.getElementById('consulting-flagship-col1');
     if (col1List && content.consulting.flagship.col1_items) {
-      col1List.innerHTML = content.consulting.flagship.col1_items.map(item => `<li>${item}</li>`).join('');
+      col1List.innerHTML = content.consulting.flagship.col1_items.map(item => `<li class="text-slate-700 text-base">${item}</li>`).join('');
     }
 
     const col2List = document.getElementById('consulting-flagship-col2');
     if (col2List && content.consulting.flagship.col2_items) {
-      col2List.innerHTML = content.consulting.flagship.col2_items.map(item => `<li>${item}</li>`).join('');
+      col2List.innerHTML = content.consulting.flagship.col2_items.map(item => `<li class="text-slate-700 text-base">${item}</li>`).join('');
     }
 
-    // 4. Render Consulting Pillars
+    // 4. Render Consulting Pillars (Design 18: Asymmetric Offset Icon)
     const consultingGrid = document.getElementById('consulting-pillars-grid');
     if (consultingGrid && content.consulting.pillars) {
       consultingGrid.innerHTML = content.consulting.pillars.map((pillar, index) => {
@@ -90,15 +96,15 @@ document.addEventListener('DOMContentLoaded', async () => {
         const iconClass = pillar.icon.startsWith('fa-') ? pillar.icon : `fa-${pillar.icon}`;
         return `
         <article 
-          class="rounded-xl bg-gradient-to-br from-white to-slate-50/80 border-2 border-slate-300 p-8 hover:border-amber-500/40 shadow-xl transition-all"
+          class="rounded-xl bg-white border-2 border-slate-200 p-6 hover:border-amber-400 transition-all relative"
           data-aos="fade-up"
           data-aos-delay="${index * 100}"
         >
-          <div class="w-12 h-12 rounded-lg bg-amber-100 flex items-center justify-center mb-4">
-            <i class="fas ${iconClass} text-xl text-amber-600"></i>
+          <div class="absolute -top-4 -right-4 w-16 h-16 rounded-full bg-gradient-to-br from-amber-400 to-orange-500 shadow-lg border-4 border-white flex items-center justify-center">
+            <i class="fas ${iconClass} text-xl text-white"></i>
           </div>
-          <h3 class="text-xl font-bold mb-4 text-slate-900">${pillar.title}</h3>
-          <p class="text-slate-700 text-sm leading-relaxed">
+          <h3 class="text-lg font-bold mb-3 text-slate-900 pr-12">${pillar.title}</h3>
+          <p class="text-slate-700 text-base leading-relaxed">
             ${pillar.description}
           </p>
         </article>

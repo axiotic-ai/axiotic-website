@@ -16,7 +16,7 @@ site:
 hero:
   title_line1: "Smarter Learning"
   title_line2: "Not Bigger Models"
-  subtitle_primary: "Axiotic AI is a frontier research lab powering a AI consultancy. We provide bespoke cutting-edge AI systems and the confidence to own and improve them."
+  subtitle_primary: "Axiotic AI is a frontier research lab powering an AI consultancy. We provide bespoke cutting-edge AI systems and the confidence to own and improve them."
   cta_primary:
     text: "Request Consulting"
     href: "#consulting"
@@ -55,7 +55,7 @@ research:
       title: "AI Flywheels"
       description: "Data quality is the new frontier. We engineer closed-loop data engines where models generate, filter, and curriculum-sort their own training data for self-reinforcing improvement."
     - icon: "fa-robot"
-      title: "Embodiment"
+      title: "Embodied Learning"
       description: "Intelligence requires grounding. We use simulation (Isaac/Cosmos) as a primary data source, training agents on interaction physics before sim-to-real transfer."
     - icon: "fa-dna"
       title: "Evolution meets SGD"
@@ -69,6 +69,9 @@ research:
     - icon: "fa-wave-square"
       title: "Asynchronous Neural Dynamics"
       description: "Rhythms across multiple temporal scales are a defining feature of natural systems. We explore how neural architectures can internalize these rhythms for efficient learning, generalization, and inference."
+    - icon: "fa-leaf"
+      title: "Biologically Inspired Learning"
+      description: "Nature has solved learning problems over billions of years. We draw inspiration from biological neural networks, synaptic plasticity, and adaptive mechanisms to design more efficient and robust learning algorithms."
 
   commitment:
     title: "Open Science Commitment"
@@ -79,7 +82,7 @@ flywheel:
   subtitle: "A self-reinforcing loop that funds independent innovation."
   steps:
     - icon: "fa-coins"
-      title: "Consulting -> Real-World Value"
+      title: "Consulting Brings Revenue"
       description: "We build systems and empower teams that solve actual industry problems. This work generates value for the world and capital to fund our own compute and talent."
     - icon: "fa-flask"
       title: "Revenue Funds Research"
@@ -101,7 +104,8 @@ consulting:
     title: "Your AI Capabilities Concierge"
     subtitle: "We design and ship efficient AI systems: compact models, retrieval pipelines, and training setups paired with the right data generation and evaluation loops."
   flagship:
-    title: "Flagship Offering: AI Opportunities & Strategy Plan"
+    badge: "Flagship Offering"
+    title: "AI Opportunities & Strategy Plan"
     description: "We start with a free consultation to understand your products, data, and constraints, then co‑design an AI Opportunities & Strategy Plan. You get a clear, honest view of where AI can help, where it won’t, and what it would take to build systems that actually work. As part of this, we run a focused AI governance audit to surface compliance, privacy, and ethical risks."
     col1_title: "What We Look At"
     col1_items:
@@ -121,14 +125,15 @@ consulting:
       title: "Education & Upskilling"
       description: "Executive workshops and deep‑dive bootcamps that move leaders and engineers from AI‑curious to confident practitioners."
     - icon: "fa-puzzle-piece"
-      title: "Hiring & Org Design"
+      title: "Team Hiring & Design"
       description: "Interim Head‑of‑AI support: role design, candidate vetting, and culture‑first team building."
     - icon: "fa-balance-scale"
       title: "AI Governance & Safety"
       description: "Governance frameworks, compliance reviews, and grant strategy so your AI work is safe, legal, and fundable."
+    
   why_us:
     title: "Why Axiotic?"
-    text: "Axiotic AI is a small, senior team of cutting‑edge ML researchers, production engineers, governance experts, and people‑focused operators who have shipped real AI systems. That mix lets us move from frontier ideas to white‑glove, purpose‑built systems, then help you hire, upskill, and govern the teams that run them."
+    text: "Axiotic AI is an efficient, senior team of cutting‑edge ML researchers, production engineers, governance experts, and people‑focused operators who have shipped real AI systems. That mix lets us move from frontier ideas to white‑glove, purpose‑built systems, then help you hire, upskill, and govern the teams that run them."
   contact:
     title: "Request a Free Consultation"
     subtitle: "Share your email; we’ll follow up with a short, focused call."
@@ -138,7 +143,7 @@ team:
   header:
     eyebrow: "Team"
     title: "The Axiotic Core Team"
-    subtitle: "A small, senior group combining deep research, pragmatic engineering, governance, and education — organized around the Axiotic flywheel."
+    subtitle: "An efficient, senior group combining deep research, pragmatic engineering, governance, and education — organized around the Axiotic flywheel."
   members:
     - name: "Antreas Antoniou"
       role: "Co-Founder & Technical Vision"

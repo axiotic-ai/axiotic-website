@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title data-key="site.title">Axiotic.ai — Beyond Scaling through Smarter Learning</title>
+    <title data-key="site.title"><!-- Content loaded from YAML --></title>
     <link rel="icon" href="images/logo-crop.png">
     <link rel="stylesheet" href="styles.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -13,6 +13,17 @@
       rel="stylesheet"
     />
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['-apple-system', 'BlinkMacSystemFont', 'Inter', '"Segoe UI"', 'Roboto', '"Helvetica Neue"', 'Arial', 'sans-serif'],
+            },
+          },
+        },
+      };
+    </script>
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -22,7 +33,7 @@
     <script defer src="content-loader.js"></script>
     <script defer src="form-handler.js"></script>
   </head>
-  <body class="bg-slate-900 text-slate-50 font-[Inter]">
+  <body class="bg-slate-900 text-slate-50 font-sans">
     <div id="particles-js"></div>
 
     <!-- Fixed Navigation -->
@@ -37,20 +48,32 @@
           class="flex items-center gap-2 text-xl font-semibold"
         >
           <img src="images/logo-no-name.png" alt="Axiotic" class="h-8 w-auto rounded-full">
-          <span class="tracking-tight" data-key="site.nav.brand">Axiotic AI</span>
+          <span class="tracking-tight" data-key="site.nav.brand"><!-- Content loaded from YAML --></span>
         </a>
         <div class="hidden sm:flex items-center gap-6 text-lg text-slate-200">
-          <a href="#lab" class="hover:text-amber-300 transition" data-key="site.nav.links.0.text">Research</a>
-          <a href="#consulting" class="hover:text-amber-300 transition" data-key="site.nav.links.1.text"
-            >Consulting</a
-          >
-          <a href="#team" class="hover:text-amber-300 transition" data-key="site.nav.links.2.text">Team</a>
+          <a href="#lab" class="hover:text-amber-300 transition" data-key="site.nav.links.0.text"><!-- Content loaded from YAML --></a>
+          <a href="#consulting" class="hover:text-amber-300 transition" data-key="site.nav.links.1.text"><!-- Content loaded from YAML --></a>
+          <a href="#team" class="hover:text-amber-300 transition" data-key="site.nav.links.2.text"><!-- Content loaded from YAML --></a>
+          <div class="relative group">
+            <a href="pillar-designs-preview.html" class="hover:text-amber-300 transition flex items-center gap-1">
+              Designs
+              <i class="fas fa-chevron-down text-xs"></i>
+            </a>
+            <div class="absolute top-full right-0 mt-2 w-48 bg-slate-800 border border-slate-700 rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+              <div class="py-2">
+                <a href="pillar-designs-preview.html" class="block px-4 py-2 text-sm text-slate-200 hover:bg-slate-700 hover:text-amber-300 transition">Consulting Pillars</a>
+                <a href="research-pillar-designs-preview.html" class="block px-4 py-2 text-sm text-slate-200 hover:bg-slate-700 hover:text-amber-300 transition">Research Pillars</a>
+                <a href="why-contact-designs-preview.html" class="block px-4 py-2 text-sm text-slate-200 hover:bg-slate-700 hover:text-amber-300 transition">Why/Contact</a>
+                <a href="research-layout-preview.html" class="block px-4 py-2 text-sm text-slate-200 hover:bg-slate-700 hover:text-amber-300 transition">Research Layout</a>
+              </div>
+            </div>
+          </div>
           <a 
             href="#contact-form" 
             class="inline-flex items-center justify-center rounded-full bg-amber-400 px-4 py-2 text-base font-bold text-slate-950 hover:bg-amber-300 transition shadow-sm"
             data-key="site.nav.cta.text"
           >
-            Consult with Us
+            <!-- Content loaded from YAML -->
           </a>
         </div>
       </div>
@@ -61,13 +84,13 @@
       <section class="min-h-screen flex items-center justify-center pt-20">
         <div class="max-w-4xl mx-auto px-4 text-center space-y-6">
           <h1
-            class="text-6xl sm:text-7xl md:text-8xl font-extrabold tracking-tight leading-tight"
+            class="text-6xl sm:text-7xl md:text-8xl font-extrabold tracking-tight leading-none"
           >
             <span class="block text-white" data-aos="fade-up" data-key="hero.title_line1">
-              Beyond Scaling through Smarter Learning
+              <!-- Content loaded from YAML -->
             </span>
-            <span class="block text-amber-300/70 mt-2" data-aos="fade-up" data-aos-delay="200" data-key="hero.title_line2">
-              Not Bigger Models
+            <span class="block text-amber-300/70 -mt-6 sm:-mt-8 md:-mt-10" data-aos="fade-up" data-aos-delay="200" data-key="hero.title_line2">
+              <!-- Content loaded from YAML -->
             </span>
           </h1>
           <p 
@@ -76,7 +99,7 @@
             data-aos-delay="100"
             data-key="hero.subtitle_primary"
           >
-            Axiotic.ai is a frontier research lab powering a research‑led consulting practice for enterprise AI. You're not buying outdated methods; you're buying frontier‑shaped systems and the confidence to own and improve them.
+            <!-- Content loaded from YAML -->
           </p>
 
           <div
@@ -89,14 +112,14 @@
               class="inline-flex items-center justify-center rounded-lg bg-amber-400 px-6 py-3 text-lg font-semibold text-slate-950 shadow-md hover:bg-amber-300 transition transform hover:scale-105"
               data-key="hero.cta_primary.text"
             >
-              Request Consulting: Cost‑Efficient AI Strategy
+              <!-- Content loaded from YAML -->
             </a>
             <a
               href="#lab"
               class="inline-flex items-center justify-center rounded-lg border border-slate-700 px-6 py-3 text-lg font-semibold text-slate-200 hover:bg-slate-800 transition transform hover:scale-105"
               data-key="hero.cta_secondary.text"
             >
-              Learn About Our Research Directions
+              <!-- Content loaded from YAML -->
             </a>
           </div>
         </div>
@@ -131,20 +154,19 @@
       <section id="lab" class="py-24 border-t border-slate-800/50">
         <div class="max-w-5xl mx-auto px-4 space-y-12">
           <header class="text-center space-y-4" data-aos="fade-up">
-            <p class="text-base font-semibold uppercase tracking-[0.2em] text-amber-300" data-key="research.header.eyebrow">
-              Research Lab
+            <p class="text-sm font-semibold uppercase tracking-[0.2em] text-amber-300" data-key="research.header.eyebrow">
+              <!-- Content loaded from YAML -->
             </p>
             <h2 class="text-5xl sm:text-6xl font-extrabold tracking-tight">
-              <span class="block" data-key="research.header.title_line1">Open Research and Science on</span>
-              <span class="block" data-key="research.header.title_line2">Next Generation AI Systems</span>
+              <span class="block" data-key="research.header.title_line1"><!-- Content loaded from YAML --></span>
+              <span class="block" data-key="research.header.title_line2"><!-- Content loaded from YAML --></span>
             </h2>
             <p class="max-w-2xl mx-auto text-xl text-slate-300" data-key="research.header.subtitle">
-              The Axiotic Lab studies efficient, multimodal, embodied learning
-              through completely open models, datasets, and training recipes.
+              <!-- Content loaded from YAML -->
             </p>
           </header>
 
-          <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4" id="research-pillars-grid">
+          <div class="grid gap-8 grid-cols-1 lg:grid-cols-2" id="research-pillars-grid">
             <!-- Pillars will be populated by JS -->
           </div>
 
@@ -152,10 +174,9 @@
             class="rounded-2xl bg-slate-900/60 border border-slate-800 p-6 text-center"
             data-aos="fade-up"
           >
-            <h3 class="text-2xl font-semibold mb-2" data-key="research.commitment.title">Open Science Commitment</h3>
+            <h3 class="text-2xl font-semibold mb-2" data-key="research.commitment.title"><!-- Content loaded from YAML --></h3>
             <p class="text-lg text-slate-300 max-w-2xl mx-auto" data-key="research.commitment.text">
-              We release code, models, and datasets as openly as licensing allows. 
-              The lab exists to push the field forward, not to hide breakthroughs behind proprietary walls.
+              <!-- Content loaded from YAML -->
             </p>
           </div>
         </div>
@@ -165,37 +186,39 @@
       <section id="consulting" class="py-24 bg-slate-900/50 border-t border-slate-800/50">
         <div class="max-w-5xl mx-auto px-4 space-y-12">
           <header class="text-center space-y-4" data-aos="fade-up">
-            <p class="text-base font-semibold uppercase tracking-[0.2em] text-amber-300" data-key="consulting.header.eyebrow">
-              Consulting
+            <p class="text-sm font-semibold uppercase tracking-[0.2em] text-amber-300" data-key="consulting.header.eyebrow">
+              <!-- Content loaded from YAML -->
             </p>
             <h2 class="text-5xl sm:text-6xl font-extrabold tracking-tight" data-key="consulting.header.title">
-              White Glove Consulting
+              <!-- Content loaded from YAML -->
             </h2>
             <p class="max-w-2xl mx-auto text-xl text-slate-300" data-key="consulting.header.subtitle">
-              We design and ship efficient AI systems: compact models, retrieval pipelines, 
-              and training setups paired with the right data generation and evaluation loops.
+              <!-- Content loaded from YAML -->
             </p>
           </header>
 
           <!-- Flagship -->
           <div 
-            class="rounded-2xl bg-gradient-to-br from-slate-900 via-slate-900 to-slate-950 border border-slate-800 p-8 shadow-xl"
+            class="rounded-xl bg-gradient-to-br from-white to-slate-50/80 border-2 border-slate-300 p-8 hover:border-amber-500/40 shadow-xl transition-all"
             data-aos="fade-up"
           >
-            <h3 class="text-3xl font-bold text-white mb-4" data-key="consulting.flagship.title">Flagship Offering: AI Opportunities &amp; Strategy Plan</h3>
-            <p class="text-lg text-slate-300 mb-8 max-w-3xl" data-key="consulting.flagship.description">
-              We start with a free consultation to understand your products, data, and constraints, then co‑design an AI Opportunities &amp; Strategy Plan. You get a clear, honest view of where AI can help, where it won’t, and what it would take to build systems that actually work.
+            <div class="mb-4">
+              <span class="text-sm font-bold text-amber-600 uppercase tracking-wider" data-key="consulting.flagship.badge"><!-- Content loaded from YAML --></span>
+              <h3 class="text-xl font-bold mt-3 mb-4 text-slate-900" data-key="consulting.flagship.title"><!-- Content loaded from YAML --></h3>
+            </div>
+            <p class="text-slate-700 text-base leading-relaxed mb-6" data-key="consulting.flagship.description">
+              <!-- Content loaded from YAML -->
             </p>
-            <div class="grid md:grid-cols-2 gap-8">
+            <div class="grid md:grid-cols-2 gap-6">
               <div>
-                <h4 class="text-base font-bold text-amber-400 uppercase tracking-wider mb-3" data-key="consulting.flagship.col1_title">What We Look At</h4>
-                <ul class="text-lg text-slate-300 space-y-2 list-disc list-inside" id="consulting-flagship-col1">
+                <h4 class="text-sm font-bold text-amber-600 uppercase tracking-wider mb-3" data-key="consulting.flagship.col1_title"><!-- Content loaded from YAML --></h4>
+                <ul class="text-slate-700 text-base space-y-2 list-disc list-inside" id="consulting-flagship-col1">
                   <!-- Items populated by JS -->
                 </ul>
               </div>
               <div>
-                <h4 class="text-base font-bold text-amber-400 uppercase tracking-wider mb-3" data-key="consulting.flagship.col2_title">What You Get</h4>
-                <ul class="text-lg text-slate-300 space-y-2 list-disc list-inside" id="consulting-flagship-col2">
+                <h4 class="text-sm font-bold text-amber-600 uppercase tracking-wider mb-3" data-key="consulting.flagship.col2_title"><!-- Content loaded from YAML --></h4>
+                <ul class="text-slate-700 text-base space-y-2 list-disc list-inside" id="consulting-flagship-col2">
                   <!-- Items populated by JS -->
                 </ul>
               </div>
@@ -207,53 +230,59 @@
              <!-- Pillars populated by JS -->
           </div>
 
-          <!-- Why Us & Contact -->
-          <div class="grid md:grid-cols-2 gap-8 items-start">
+          <!-- Why Axiotic Row -->
+          <div id="why-axiotic-row">
             <div 
-              class="rounded-2xl bg-slate-900/60 border border-slate-800 p-8 h-full"
-              data-aos="fade-right"
+              class="rounded-xl bg-slate-800 border border-slate-700 overflow-hidden flex"
+              data-aos="fade-up"
             >
-              <h3 class="text-2xl font-bold text-white mb-4" data-key="consulting.why_us.title">Why Axiotic?</h3>
-              <p class="text-lg text-slate-300 leading-relaxed" data-key="consulting.why_us.text">
-                Axiotic.ai is a small, senior team of cutting‑edge ML researchers, production engineers, 
-                governance experts, and people‑focused operators who have shipped real AI systems. 
-                <br><br>
-                That mix lets us move from frontier ideas to white‑glove, purpose‑built systems, 
-                then help you hire, upskill, and govern the teams that run them.
-              </p>
+              <div class="w-2 bg-gradient-to-b from-amber-400 to-orange-500"></div>
+              <div class="flex-1 p-8">
+                <h3 class="text-2xl font-bold text-white mb-4" data-key="consulting.why_us.title"><!-- Content loaded from YAML --></h3>
+                <p class="text-lg text-slate-300 leading-relaxed" data-key="consulting.why_us.text">
+                  <!-- Content loaded from YAML -->
+                </p>
+              </div>
             </div>
+          </div>
+
+          <!-- Contact Form Row -->
+          <div id="contact-form-row">
             <div 
-              class="rounded-2xl bg-slate-900/80 border border-slate-700 p-8 h-full"
-              data-aos="fade-left"
+              class="rounded-xl bg-white border-2 border-slate-200 p-8 shadow-lg"
+              data-aos="fade-up"
               id="contact-form"
             >
-              <h3 class="text-2xl font-bold text-white mb-2" data-key="consulting.contact.title">Request a Free Consultation</h3>
-              <p class="text-base text-slate-400 mb-6" data-key="consulting.contact.subtitle">
-                Share your email; we’ll follow up with a short, focused call.
+              <h3 class="text-2xl font-bold text-slate-900 mb-2" data-key="consulting.contact.title"><!-- Content loaded from YAML --></h3>
+              <p class="text-base text-slate-600 mb-6" data-key="consulting.contact.subtitle">
+                <!-- Content loaded from YAML -->
               </p>
               <form class="space-y-4" id="consultation-form">
                 <div>
                   <label for="email" class="sr-only">Email</label>
                   <input type="email" id="email" name="email" required placeholder="Email (required)" 
-                    class="w-full rounded-lg border border-slate-700 bg-slate-950 px-4 py-3 text-lg text-slate-100 focus:ring-2 focus:ring-amber-400 outline-none transition"
+                    class="w-full rounded-lg border border-slate-300 bg-white px-4 py-3 text-lg text-slate-900 focus:ring-2 focus:ring-amber-400 outline-none transition"
                   >
                 </div>
                 <div>
                   <label for="name" class="sr-only">Name</label>
                   <input type="text" id="name" name="name" placeholder="Name (optional)" 
-                    class="w-full rounded-lg border border-slate-700 bg-slate-950 px-4 py-3 text-lg text-slate-100 focus:ring-2 focus:ring-amber-400 outline-none transition"
+                    class="w-full rounded-lg border border-slate-300 bg-white px-4 py-3 text-lg text-slate-900 focus:ring-2 focus:ring-amber-400 outline-none transition"
                   >
                 </div>
                 <div>
                   <label for="notes" class="sr-only">Notes</label>
                   <textarea id="notes" name="notes" rows="2" placeholder="Short description (optional)" 
-                    class="w-full rounded-lg border border-slate-700 bg-slate-950 px-4 py-3 text-lg text-slate-100 focus:ring-2 focus:ring-amber-400 outline-none transition"
+                    class="w-full rounded-lg border border-slate-300 bg-white px-4 py-3 text-lg text-slate-900 focus:ring-2 focus:ring-amber-400 outline-none transition"
                   ></textarea>
                 </div>
                 <button type="submit" class="w-full rounded-lg bg-amber-400 px-6 py-3 text-lg font-bold text-slate-950 hover:bg-amber-300 transition shadow-lg hover:shadow-amber-400/20 disabled:opacity-50 disabled:cursor-not-allowed" data-key="consulting.contact.button">
-                  Request Free Consultation
+                  <!-- Content loaded from YAML -->
                 </button>
               </form>
+              <div class="mt-6 text-center">
+                <p class="text-slate-600 text-sm">Or email us directly at <a href="mailto:contact@axiotic.ai" class="text-amber-600 font-bold hover:underline">contact@axiotic.ai</a></p>
+              </div>
             </div>
           </div>
         </div>
@@ -264,10 +293,10 @@
         <div class="max-w-5xl mx-auto px-4 space-y-12">
           <header class="text-center space-y-4" data-aos="fade-up">
             <h2 class="text-5xl sm:text-6xl font-extrabold tracking-tight" data-key="flywheel.title">
-              The Axiotic Flywheel
+              <!-- Content loaded from YAML -->
             </h2>
             <p class="max-w-2xl mx-auto text-xl text-slate-300" data-key="flywheel.subtitle">
-              A self-reinforcing loop that funds innovation without VC pressure.
+              <!-- Content loaded from YAML -->
             </p>
           </header>
 
@@ -281,15 +310,14 @@
       <section id="team" class="py-24 border-t border-slate-800/50">
         <div class="max-w-5xl mx-auto px-4 space-y-12">
           <header class="text-center space-y-4" data-aos="fade-up">
-            <p class="text-base font-semibold uppercase tracking-[0.2em] text-amber-300" data-key="team.header.eyebrow">
-              Team
+            <p class="text-sm font-semibold uppercase tracking-[0.2em] text-amber-300" data-key="team.header.eyebrow">
+              <!-- Content loaded from YAML -->
             </p>
             <h2 class="text-5xl sm:text-6xl font-extrabold tracking-tight" data-key="team.header.title">
-              The Axiotic Core Team
+              <!-- Content loaded from YAML -->
             </h2>
             <p class="max-w-2xl mx-auto text-xl text-slate-300" data-key="team.header.subtitle">
-              A small, senior group combining deep research, pragmatic engineering, governance, 
-              and education — organized around the Axiotic flywheel.
+              <!-- Content loaded from YAML -->
             </p>
           </header>
 
@@ -301,16 +329,16 @@
       <!-- Name Origin Section -->
       <section id="name-origin" class="py-16 border-t border-slate-800/50 bg-slate-900/30">
         <div class="max-w-3xl mx-auto px-4 text-center space-y-6" data-aos="fade-up">
-          <h3 class="text-4xl font-bold text-white" data-key="name_origin.title">Why 'Axiotic'?</h3>
+          <h3 class="text-4xl font-bold text-white" data-key="name_origin.title"><!-- Content loaded from YAML --></h3>
           <p class="text-xl text-slate-300 leading-relaxed" data-key="name_origin.text">
-            The name comes from First Principles (Axioms). In a field crowded with hype, we return to the fundamentals: exploring structure, interaction, and information for the sake of discovery, and building robust systems for the sake of creating real value.
+            <!-- Content loaded from YAML -->
           </p>
         </div>
       </section>
     </main>
 
     <footer class="py-8 text-center text-base text-slate-500 border-t border-slate-800/50">
-      <p data-key="footer.copyright">&copy; 2025 Axiotic.ai</p>
+      <p data-key="footer.copyright"><!-- Content loaded from YAML --></p>
     </footer>
 
     <script>
