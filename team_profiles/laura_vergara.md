@@ -1,5 +1,5 @@
-# Laura Vergara
-**Role:** Community & Biz Dev
+# Laura Bernal
+**Role:** Co-Founder & Commercial Lead
 **Flywheel Function:** Connects the lab with the broader ecosystem, builds community around open science outputs, and nurtures client relationships.
 
 ## Focus Areas
