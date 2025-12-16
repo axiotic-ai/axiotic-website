@@ -14,13 +14,14 @@ site:
       href: "#contact-form"
 
 hero:
-  title: "Beyond Scaling through Smarter Learning"
-  subtitle_primary: "Axiotic AI delivers research‑led consulting. You’re not buying old patterns; you’re buying frontier‑shaped systems and the confidence to own and improve them."
+  title_line1: "Smarter Learning"
+  title_line2: "Not Bigger Models"
+  subtitle_primary: "Axiotic AI is a frontier research lab powering an AI consultancy. We provide bespoke cutting-edge AI systems and the confidence to own and improve them."
   cta_primary:
     text: "Request Consulting"
     href: "#consulting"
   cta_secondary:
-    text: "Learn About Our Research Directions"
+    text: "Learn About Our Research"
     href: "#lab"
 
 mission:
@@ -61,6 +62,12 @@ research:
     - icon: "🧬📉"
       title: "9. Distillation"
       description: "We investigate distillation through an information-theoretic lens, aiming to crack the physics of compression and train small models to their maximum potential without a teacher."
+    - icon: "🔗"
+      title: "10. Local Learning Rules"
+      description: "Efficiency in nature is at least partially achieved through local learning rules. We research how to leverage this for efficient learning."
+    - icon: "🌊"
+      title: "11. Asynchronous Neural Dynamics"
+      description: "Rhythms across multiple temporal scales are a defining feature of natural systems. We explore how neural architectures can internalize these rhythms for efficient learning, generalization, and inference."
   commitment:
     title: "Open Science Commitment"
     text: "We release code, models, and datasets as openly as licensing allows. The lab exists to push the field forward, not to hide breakthroughs behind proprietary walls."

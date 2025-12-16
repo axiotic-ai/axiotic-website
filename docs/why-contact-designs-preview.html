@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Why Axiotic & Contact Form Design Variations</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    .design-section {
+      margin-bottom: 4rem;
+      padding: 2rem 0;
+      border-bottom: 2px solid #334155;
+    }
+    body {
+      background: #0f172a;
+    }
+  </style>
+</head>
+<body class="bg-slate-900 p-8 text-slate-50">
+  <!-- Navigation Menu -->
+  <nav class="fixed top-0 left-0 right-0 bg-slate-900 text-white z-50 shadow-lg border-b border-slate-700">
+    <div class="max-w-7xl mx-auto px-4 py-3">
+      <div class="flex items-center justify-between flex-wrap gap-2">
+        <a href="index.html" class="text-lg font-semibold text-amber-400 hover:text-amber-300">← Main Site</a>
+        <div class="flex gap-2 flex-wrap">
+          <a href="pillar-designs-preview.html" class="px-3 py-1 rounded bg-slate-700 hover:bg-slate-600 text-white font-medium text-sm">Consulting Pillars</a>
+          <a href="research-pillar-designs-preview.html" class="px-3 py-1 rounded bg-slate-700 hover:bg-slate-600 text-white font-medium text-sm">Research Pillars</a>
+          <a href="why-contact-designs-preview.html" class="px-3 py-1 rounded bg-amber-500 text-slate-900 font-medium text-sm">Why/Contact</a>
+          <a href="research-layout-preview.html" class="px-3 py-1 rounded bg-slate-700 hover:bg-slate-600 text-white font-medium text-sm">Research Layout</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <div id="preview-content" class="max-w-7xl mx-auto pt-20">
+    <h1 class="text-4xl font-bold mb-2 text-white">20 Why Axiotic & Contact Form Design Variations</h1>
+    <p class="text-slate-400 mb-8">Scroll down to see all designs</p>
+
+    <script>
+      const whyText = "Axiotic.ai is a small, senior team of cutting‑edge ML researchers, production engineers, governance experts, and people‑focused operators who have shipped real AI systems. That mix lets us move from frontier ideas to white‑glove, purpose‑built systems, then help you hire, upskill, and govern the teams that run them.";
+
+      function renderWhyDesign(designNum, template) {
+        const section = document.createElement('div');
+        section.className = 'design-section';
+        section.innerHTML = `
+          <h2 class="text-2xl font-bold mb-4 text-amber-300">Why Axiotic - Design ${designNum}</h2>
+          <div class="max-w-4xl">
+            ${template}
+          </div>
+        `;
+        return section;
+      }
+
+      function renderContactDesign(designNum, template) {
+        const section = document.createElement('div');
+        section.className = 'design-section';
+        section.innerHTML = `
+          <h2 class="text-2xl font-bold mb-4 text-amber-300">Contact Form - Design ${designNum}</h2>
+          <div class="max-w-2xl">
+            ${template}
+          </div>
+        `;
+        return section;
+      }
+
+      document.addEventListener('DOMContentLoaded', () => {
+        const container = document.getElementById('preview-content');
+
+        // Why Axiotic Designs
+        // Design 1: Current Dark Card
+        container.appendChild(renderWhyDesign(1, `
+          <div class="rounded-2xl bg-slate-900/60 border border-slate-800 p-8">
+            <h3 class="text-2xl font-bold text-white mb-4">Why Axiotic?</h3>
+            <p class="text-lg text-slate-300 leading-relaxed">${whyText}</p>
+          </div>
+        `));
+
+        // Design 2: Gradient Background
+        container.appendChild(renderWhyDesign(2, `
+          <div class="rounded-2xl bg-gradient-to-br from-slate-800 via-slate-900 to-slate-800 border border-amber-400/30 p-8">
+            <h3 class="text-2xl font-bold text-white mb-4">Why Axiotic?</h3>
+            <p class="text-lg text-slate-300 leading-relaxed">${whyText}</p>
+          </div>
+        `));
+
+        // Design 3: Left Border Accent
+        container.appendChild(renderWhyDesign(3, `
+          <div class="rounded-xl bg-slate-800/80 border-l-4 border-amber-400 border-t border-r border-b border-slate-700 p-8">
+            <h3 class="text-2xl font-bold text-white mb-4">Why Axiotic?</h3>
+            <p class="text-lg text-slate-300 leading-relaxed">${whyText}</p>
+          </div>
+        `));
+
+        // Design 4: Top Border Accent
+        container.appendChild(renderWhyDesign(4, `
+          <div class="rounded-xl bg-slate-800/80 border-t-4 border-amber-400 border-b border-l border-r border-slate-700 p-8">
+            <h3 class="text-2xl font-bold text-white mb-4">Why Axiotic?</h3>
+            <p class="text-lg text-slate-300 leading-relaxed">${whyText}</p>
+          </div>
+        `));
+
+        // Design 5: Glassmorphism
+        container.appendChild(renderWhyDesign(5, `
+          <div class="rounded-2xl bg-white/5 backdrop-blur-md border border-white/10 p-8 shadow-lg">
+            <h3 class="text-2xl font-bold text-white mb-4">Why Axiotic?</h3>
+            <p class="text-lg text-slate-200 leading-relaxed">${whyText}</p>
+          </div>
+        `));
+
+        // Design 6: Icon Header
+        container.appendChild(renderWhyDesign(6, `
+          <div class="rounded-xl bg-slate-800/80 border border-slate-700 p-8">
+            <div class="flex items-center gap-4 mb-4">
+              <div class="w-12 h-12 rounded-lg bg-amber-400/20 flex items-center justify-center">
+                <i class="fas fa-star text-xl text-amber-400"></i>
+              </div>
+              <h3 class="text-2xl font-bold text-white">Why Axiotic?</h3>
+            </div>
+            <p class="text-lg text-slate-300 leading-relaxed">${whyText}</p>
+          </div>
+        `));
+
+        // Design 7: Split Background
+        container.appendChild(renderWhyDesign(7, `
+          <div class="rounded-xl bg-slate-800 border border-slate-700 overflow-hidden flex">
+            <div class="w-2 bg-gradient-to-b from-amber-400 to-orange-500"></div>
+            <div class="flex-1 p-8">
+              <h3 class="text-2xl font-bold text-white mb-4">Why Axiotic?</h3>
+              <p class="text-lg text-slate-300 leading-relaxed">${whyText}</p>
+            </div>
+          </div>
+        `));
+
+        // Design 8: Elevated Card
+        container.appendChild(renderWhyDesign(8, `
+          <div class="rounded-2xl bg-slate-800 p-8 shadow-2xl transform hover:-translate-y-1 transition-all">
+            <h3 class="text-2xl font-bold text-white mb-4">Why Axiotic?</h3>
+            <p class="text-lg text-slate-300 leading-relaxed">${whyText}</p>
+          </div>
+        `));
+
+        // Design 9: Minimal Border
+        container.appendChild(renderWhyDesign(9, `
+          <div class="bg-slate-800/50 border-b-4 border-amber-400 p-8">
+            <h3 class="text-2xl font-bold text-white mb-4">Why Axiotic?</h3>
+            <p class="text-lg text-slate-300 leading-relaxed">${whyText}</p>
+          </div>
+        `));
+
+        // Design 10: Top Gradient Bar
+        container.appendChild(renderWhyDesign(10, `
+          <div class="rounded-xl bg-slate-800 shadow-md overflow-hidden">
+            <div class="h-2 bg-gradient-to-r from-amber-400 to-orange-500"></div>
+            <div class="p-8">
+              <h3 class="text-2xl font-bold text-white mb-4">Why Axiotic?</h3>
+              <p class="text-lg text-slate-300 leading-relaxed">${whyText}</p>
+            </div>
+          </div>
+        `));
+
+        // Design 11: Quote Style
+        container.appendChild(renderWhyDesign(11, `
+          <div class="rounded-xl bg-slate-800/80 border-l-8 border-amber-400 p-8 relative">
+            <div class="absolute top-4 left-4 text-6xl text-amber-400/20 font-serif">"</div>
+            <h3 class="text-2xl font-bold text-white mb-4 ml-8">Why Axiotic?</h3>
+            <p class="text-lg text-slate-300 leading-relaxed ml-8">${whyText}</p>
+          </div>
+        `));
+
+        // Design 12: Centered Content
+        container.appendChild(renderWhyDesign(12, `
+          <div class="rounded-xl bg-slate-800/80 border border-slate-700 p-8 text-center">
+            <h3 class="text-2xl font-bold text-white mb-4">Why Axiotic?</h3>
+            <p class="text-lg text-slate-300 leading-relaxed max-w-3xl mx-auto">${whyText}</p>
+          </div>
+        `));
+
+        // Design 13: Badge Header
+        container.appendChild(renderWhyDesign(13, `
+          <div class="rounded-xl bg-slate-800/80 border border-slate-700 p-8">
+            <span class="inline-block bg-amber-400/20 text-amber-400 text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full mb-4">Our Advantage</span>
+            <h3 class="text-2xl font-bold text-white mb-4">Why Axiotic?</h3>
+            <p class="text-lg text-slate-300 leading-relaxed">${whyText}</p>
+          </div>
+        `));
+
+        // Design 14: Two Column Layout
+        container.appendChild(renderWhyDesign(14, `
+          <div class="rounded-xl bg-slate-800/80 border border-slate-700 p-8">
+            <h3 class="text-2xl font-bold text-white mb-6">Why Axiotic?</h3>
+            <div class="grid md:grid-cols-2 gap-6">
+              <p class="text-lg text-slate-300 leading-relaxed">Axiotic.ai is a small, senior team of cutting‑edge ML researchers, production engineers, governance experts, and people‑focused operators who have shipped real AI systems.</p>
+              <p class="text-lg text-slate-300 leading-relaxed">That mix lets us move from frontier ideas to white‑glove, purpose‑built systems, then help you hire, upskill, and govern the teams that run them.</p>
+            </div>
+          </div>
+        `));
+
+        // Design 15: Icon Grid
+        container.appendChild(renderWhyDesign(15, `
+          <div class="rounded-xl bg-slate-800/80 border border-slate-700 p-8">
+            <h3 class="text-2xl font-bold text-white mb-6">Why Axiotic?</h3>
+            <div class="flex gap-4 mb-6">
+              <div class="w-12 h-12 rounded-lg bg-amber-400/20 flex items-center justify-center"><i class="fas fa-brain text-xl text-amber-400"></i></div>
+              <div class="w-12 h-12 rounded-lg bg-amber-400/20 flex items-center justify-center"><i class="fas fa-cogs text-xl text-amber-400"></i></div>
+              <div class="w-12 h-12 rounded-lg bg-amber-400/20 flex items-center justify-center"><i class="fas fa-shield-alt text-xl text-amber-400"></i></div>
+            </div>
+            <p class="text-lg text-slate-300 leading-relaxed">${whyText}</p>
+          </div>
+        `));
+
+        // Design 16: Dashed Border
+        container.appendChild(renderWhyDesign(16, `
+          <div class="rounded-xl border-2 border-dashed border-slate-600 bg-slate-800/30 p-8 hover:border-amber-400 transition-all">
+            <h3 class="text-2xl font-bold text-white mb-4">Why Axiotic?</h3>
+            <p class="text-lg text-slate-300 leading-relaxed">${whyText}</p>
+          </div>
+        `));
+
+        // Design 17: Shadow Focus
+        container.appendChild(renderWhyDesign(17, `
+          <div class="rounded-xl bg-slate-800/80 border border-slate-700 p-8 shadow-lg hover:shadow-amber-400/20 transition-all">
+            <h3 class="text-2xl font-bold text-white mb-4">Why Axiotic?</h3>
+            <p class="text-lg text-slate-300 leading-relaxed">${whyText}</p>
+          </div>
+        `));
+
+        // Design 18: Rounded Pills
+        container.appendChild(renderWhyDesign(18, `
+          <div class="rounded-full bg-gradient-to-r from-slate-800 via-slate-900 to-slate-800 border-2 border-amber-400/30 px-12 py-8">
+            <h3 class="text-2xl font-bold text-white mb-4 text-center">Why Axiotic?</h3>
+            <p class="text-lg text-slate-300 leading-relaxed text-center">${whyText}</p>
+          </div>
+        `));
+
+        // Design 19: Compact Minimal
+        container.appendChild(renderWhyDesign(19, `
+          <div class="bg-slate-800/50 p-6 border-l-2 border-amber-400">
+            <h3 class="text-xl font-bold text-white mb-3">Why Axiotic?</h3>
+            <p class="text-base text-slate-300 leading-relaxed">${whyText}</p>
+          </div>
+        `));
+
+        // Design 20: Gradient Text
+        container.appendChild(renderWhyDesign(20, `
+          <div class="rounded-xl bg-slate-800/80 border border-slate-700 p-8">
+            <h3 class="text-2xl font-bold bg-gradient-to-r from-amber-400 to-orange-500 bg-clip-text text-transparent mb-4">Why Axiotic?</h3>
+            <p class="text-lg text-slate-300 leading-relaxed">${whyText}</p>
+          </div>
+        `));
+
+        // Contact Form Designs
+        const contactFormHTML = `
+          <h3 class="text-2xl font-bold text-white mb-2">Request a Free Consultation</h3>
+          <p class="text-base text-slate-400 mb-6">Share your email; we'll follow up with a short, focused call.</p>
+          <form class="space-y-4">
+            <div>
+              <label for="email" class="sr-only">Email</label>
+              <input type="email" id="email" name="email" required placeholder="Email (required)" 
+                class="w-full rounded-lg border border-slate-700 bg-slate-950 px-4 py-3 text-lg text-slate-100 focus:ring-2 focus:ring-amber-400 outline-none transition">
+            </div>
+            <div>
+              <label for="name" class="sr-only">Name</label>
+              <input type="text" id="name" name="name" placeholder="Name (optional)" 
+                class="w-full rounded-lg border border-slate-700 bg-slate-950 px-4 py-3 text-lg text-slate-100 focus:ring-2 focus:ring-amber-400 outline-none transition">
+            </div>
+            <div>
+              <label for="notes" class="sr-only">Notes</label>
+              <textarea id="notes" name="notes" rows="2" placeholder="Short description (optional)" 
+                class="w-full rounded-lg border border-slate-700 bg-slate-950 px-4 py-3 text-lg text-slate-100 focus:ring-2 focus:ring-amber-400 outline-none transition"></textarea>
+            </div>
+            <button type="submit" class="w-full rounded-lg bg-amber-400 px-6 py-3 text-lg font-bold text-slate-950 hover:bg-amber-300 transition shadow-lg hover:shadow-amber-400/20">
+              Request Free Consultation
+            </button>
+          </form>
+        `;
+
+        // Contact Design 1: Current Dark Card
+        container.appendChild(renderContactDesign(1, `
+          <div class="rounded-2xl bg-slate-900/80 border border-slate-700 p-8">
+            ${contactFormHTML}
+          </div>
+        `));
+
+        // Contact Design 2: Gradient Background
+        container.appendChild(renderContactDesign(2, `
+          <div class="rounded-2xl bg-gradient-to-br from-slate-800 via-slate-900 to-slate-800 border border-amber-400/30 p-8">
+            ${contactFormHTML}
+          </div>
+        `));
+
+        // Contact Design 3: Left Border Accent
+        container.appendChild(renderContactDesign(3, `
+          <div class="rounded-xl bg-slate-800/80 border-l-4 border-amber-400 border-t border-r border-b border-slate-700 p-8">
+            ${contactFormHTML}
+          </div>
+        `));
+
+        // Contact Design 4: Top Border Accent
+        container.appendChild(renderContactDesign(4, `
+          <div class="rounded-xl bg-slate-800/80 border-t-4 border-amber-400 border-b border-l border-r border-slate-700 p-8">
+            ${contactFormHTML}
+          </div>
+        `));
+
+        // Contact Design 5: Glassmorphism
+        container.appendChild(renderContactDesign(5, `
+          <div class="rounded-2xl bg-white/5 backdrop-blur-md border border-white/10 p-8 shadow-lg">
+            ${contactFormHTML}
+          </div>
+        `));
+
+        // Contact Design 6: Icon Header
+        container.appendChild(renderContactDesign(6, `
+          <div class="rounded-xl bg-slate-800/80 border border-slate-700 p-8">
+            <div class="flex items-center gap-4 mb-6">
+              <div class="w-12 h-12 rounded-lg bg-amber-400/20 flex items-center justify-center">
+                <i class="fas fa-envelope text-xl text-amber-400"></i>
+              </div>
+              <h3 class="text-2xl font-bold text-white">Request a Free Consultation</h3>
+            </div>
+            <p class="text-base text-slate-400 mb-6">Share your email; we'll follow up with a short, focused call.</p>
+            <form class="space-y-4">
+              <div>
+                <input type="email" placeholder="Email (required)" 
+                  class="w-full rounded-lg border border-slate-700 bg-slate-950 px-4 py-3 text-lg text-slate-100 focus:ring-2 focus:ring-amber-400 outline-none transition">
+              </div>
+              <div>
+                <input type="text" placeholder="Name (optional)" 
+                  class="w-full rounded-lg border border-slate-700 bg-slate-950 px-4 py-3 text-lg text-slate-100 focus:ring-2 focus:ring-amber-400 outline-none transition">
+              </div>
+              <div>
+                <textarea rows="2" placeholder="Short description (optional)" 
+                  class="w-full rounded-lg border border-slate-700 bg-slate-950 px-4 py-3 text-lg text-slate-100 focus:ring-2 focus:ring-amber-400 outline-none transition"></textarea>
+              </div>
+              <button type="submit" class="w-full rounded-lg bg-amber-400 px-6 py-3 text-lg font-bold text-slate-950 hover:bg-amber-300 transition shadow-lg">
+                Request Free Consultation
+              </button>
+            </form>
+          </div>
+        `));
+
+        // Contact Design 7: Split Background
+        container.appendChild(renderContactDesign(7, `
+          <div class="rounded-xl bg-slate-800 border border-slate-700 overflow-hidden flex">
+            <div class="w-2 bg-gradient-to-b from-amber-400 to-orange-500"></div>
+            <div class="flex-1 p-8">
+              ${contactFormHTML}
+            </div>
+          </div>
+        `));
+
+        // Contact Design 8: Elevated Card
+        container.appendChild(renderContactDesign(8, `
+          <div class="rounded-2xl bg-slate-800 p-8 shadow-2xl transform hover:-translate-y-1 transition-all">
+            ${contactFormHTML}
+          </div>
+        `));
+
+        // Contact Design 9: Minimal Border
+        container.appendChild(renderContactDesign(9, `
+          <div class="bg-slate-800/50 border-b-4 border-amber-400 p-8">
+            ${contactFormHTML}
+          </div>
+        `));
+
+        // Contact Design 10: Top Gradient Bar
+        container.appendChild(renderContactDesign(10, `
+          <div class="rounded-xl bg-slate-800 shadow-md overflow-hidden">
+            <div class="h-2 bg-gradient-to-r from-amber-400 to-orange-500"></div>
+            <div class="p-8">
+              ${contactFormHTML}
+            </div>
+          </div>
+        `));
+
+        // Contact Design 11: Light Theme
+        container.appendChild(renderContactDesign(11, `
+          <div class="rounded-xl bg-white border-2 border-slate-200 p-8 shadow-lg">
+            <h3 class="text-2xl font-bold text-slate-900 mb-2">Request a Free Consultation</h3>
+            <p class="text-base text-slate-600 mb-6">Share your email; we'll follow up with a short, focused call.</p>
+            <form class="space-y-4">
+              <div>
+                <input type="email" placeholder="Email (required)" 
+                  class="w-full rounded-lg border border-slate-300 bg-white px-4 py-3 text-lg text-slate-900 focus:ring-2 focus:ring-amber-400 outline-none transition">
+              </div>
+              <div>
+                <input type="text" placeholder="Name (optional)" 
+                  class="w-full rounded-lg border border-slate-300 bg-white px-4 py-3 text-lg text-slate-900 focus:ring-2 focus:ring-amber-400 outline-none transition">
+              </div>
+              <div>
+                <textarea rows="2" placeholder="Short description (optional)" 
+                  class="w-full rounded-lg border border-slate-300 bg-white px-4 py-3 text-lg text-slate-900 focus:ring-2 focus:ring-amber-400 outline-none transition"></textarea>
+              </div>
+              <button type="submit" class="w-full rounded-lg bg-amber-400 px-6 py-3 text-lg font-bold text-slate-950 hover:bg-amber-300 transition shadow-lg">
+                Request Free Consultation
+              </button>
+            </form>
+          </div>
+        `));
+
+        // Contact Design 12: Centered Content
+        container.appendChild(renderContactDesign(12, `
+          <div class="rounded-xl bg-slate-800/80 border border-slate-700 p-8 text-center">
+            <h3 class="text-2xl font-bold text-white mb-2">Request a Free Consultation</h3>
+            <p class="text-base text-slate-400 mb-6">Share your email; we'll follow up with a short, focused call.</p>
+            <form class="space-y-4 max-w-md mx-auto">
+              <div>
+                <input type="email" placeholder="Email (required)" 
+                  class="w-full rounded-lg border border-slate-700 bg-slate-950 px-4 py-3 text-lg text-slate-100 focus:ring-2 focus:ring-amber-400 outline-none transition">
+              </div>
+              <div>
+                <input type="text" placeholder="Name (optional)" 
+                  class="w-full rounded-lg border border-slate-700 bg-slate-950 px-4 py-3 text-lg text-slate-100 focus:ring-2 focus:ring-amber-400 outline-none transition">
+              </div>
+              <div>
+                <textarea rows="2" placeholder="Short description (optional)" 
+                  class="w-full rounded-lg border border-slate-700 bg-slate-950 px-4 py-3 text-lg text-slate-100 focus:ring-2 focus:ring-amber-400 outline-none transition"></textarea>
+              </div>
+              <button type="submit" class="w-full rounded-lg bg-amber-400 px-6 py-3 text-lg font-bold text-slate-950 hover:bg-amber-300 transition shadow-lg">
+                Request Free Consultation
+              </button>
+            </form>
+          </div>
+        `));
+
+        // Contact Design 13: Badge Header
+        container.appendChild(renderContactDesign(13, `
+          <div class="rounded-xl bg-slate-800/80 border border-slate-700 p-8">
+            <span class="inline-block bg-amber-400/20 text-amber-400 text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full mb-4">Get Started</span>
+            ${contactFormHTML}
+          </div>
+        `));
+
+        // Contact Design 14: Two Column Form
+        container.appendChild(renderContactDesign(14, `
+          <div class="rounded-xl bg-slate-800/80 border border-slate-700 p-8">
+            <h3 class="text-2xl font-bold text-white mb-2">Request a Free Consultation</h3>
+            <p class="text-base text-slate-400 mb-6">Share your email; we'll follow up with a short, focused call.</p>
+            <form class="space-y-4">
+              <div class="grid md:grid-cols-2 gap-4">
+                <div>
+                  <input type="email" placeholder="Email (required)" 
+                    class="w-full rounded-lg border border-slate-700 bg-slate-950 px-4 py-3 text-lg text-slate-100 focus:ring-2 focus:ring-amber-400 outline-none transition">
+                </div>
+                <div>
+                  <input type="text" placeholder="Name (optional)" 
+                    class="w-full rounded-lg border border-slate-700 bg-slate-950 px-4 py-3 text-lg text-slate-100 focus:ring-2 focus:ring-amber-400 outline-none transition">
+                </div>
+              </div>
+              <div>
+                <textarea rows="2" placeholder="Short description (optional)" 
+                  class="w-full rounded-lg border border-slate-700 bg-slate-950 px-4 py-3 text-lg text-slate-100 focus:ring-2 focus:ring-amber-400 outline-none transition"></textarea>
+              </div>
+              <button type="submit" class="w-full rounded-lg bg-amber-400 px-6 py-3 text-lg font-bold text-slate-950 hover:bg-amber-300 transition shadow-lg">
+                Request Free Consultation
+              </button>
+            </form>
+          </div>
+        `));
+
+        // Contact Design 15: Icon Grid
+        container.appendChild(renderContactDesign(15, `
+          <div class="rounded-xl bg-slate-800/80 border border-slate-700 p-8">
+            <div class="flex gap-4 mb-6">
+              <div class="w-12 h-12 rounded-lg bg-amber-400/20 flex items-center justify-center"><i class="fas fa-envelope text-xl text-amber-400"></i></div>
+              <div class="w-12 h-12 rounded-lg bg-amber-400/20 flex items-center justify-center"><i class="fas fa-phone text-xl text-amber-400"></i></div>
+              <div class="w-12 h-12 rounded-lg bg-amber-400/20 flex items-center justify-center"><i class="fas fa-calendar text-xl text-amber-400"></i></div>
+            </div>
+            ${contactFormHTML}
+          </div>
+        `));
+
+        // Contact Design 16: Dashed Border
+        container.appendChild(renderContactDesign(16, `
+          <div class="rounded-xl border-2 border-dashed border-slate-600 bg-slate-800/30 p-8 hover:border-amber-400 transition-all">
+            ${contactFormHTML}
+          </div>
+        `));
+
+        // Contact Design 17: Shadow Focus
+        container.appendChild(renderContactDesign(17, `
+          <div class="rounded-xl bg-slate-800/80 border border-slate-700 p-8 shadow-lg hover:shadow-amber-400/20 transition-all">
+            ${contactFormHTML}
+          </div>
+        `));
+
+        // Contact Design 18: Rounded Pills
+        container.appendChild(renderContactDesign(18, `
+          <div class="rounded-full bg-gradient-to-r from-slate-800 via-slate-900 to-slate-800 border-2 border-amber-400/30 px-12 py-8">
+            <h3 class="text-2xl font-bold text-white mb-2 text-center">Request a Free Consultation</h3>
+            <p class="text-base text-slate-400 mb-6 text-center">Share your email; we'll follow up with a short, focused call.</p>
+            <form class="space-y-4 max-w-md mx-auto">
+              <div>
+                <input type="email" placeholder="Email (required)" 
+                  class="w-full rounded-full border border-slate-700 bg-slate-950 px-6 py-3 text-lg text-slate-100 focus:ring-2 focus:ring-amber-400 outline-none transition">
+              </div>
+              <div>
+                <input type="text" placeholder="Name (optional)" 
+                  class="w-full rounded-full border border-slate-700 bg-slate-950 px-6 py-3 text-lg text-slate-100 focus:ring-2 focus:ring-amber-400 outline-none transition">
+              </div>
+              <div>
+                <textarea rows="2" placeholder="Short description (optional)" 
+                  class="w-full rounded-2xl border border-slate-700 bg-slate-950 px-6 py-3 text-lg text-slate-100 focus:ring-2 focus:ring-amber-400 outline-none transition"></textarea>
+              </div>
+              <button type="submit" class="w-full rounded-full bg-amber-400 px-6 py-3 text-lg font-bold text-slate-950 hover:bg-amber-300 transition shadow-lg">
+                Request Free Consultation
+              </button>
+            </form>
+          </div>
+        `));
+
+        // Contact Design 19: Compact Minimal
+        container.appendChild(renderContactDesign(19, `
+          <div class="bg-slate-800/50 border-l-2 border-amber-400 p-6">
+            <h3 class="text-xl font-bold text-white mb-2">Request a Free Consultation</h3>
+            <p class="text-sm text-slate-400 mb-4">Share your email; we'll follow up with a short, focused call.</p>
+            <form class="space-y-3">
+              <div>
+                <input type="email" placeholder="Email" 
+                  class="w-full rounded border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-slate-100 focus:ring-1 focus:ring-amber-400 outline-none transition">
+              </div>
+              <div>
+                <input type="text" placeholder="Name (optional)" 
+                  class="w-full rounded border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-slate-100 focus:ring-1 focus:ring-amber-400 outline-none transition">
+              </div>
+              <div>
+                <textarea rows="2" placeholder="Description (optional)" 
+                  class="w-full rounded border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-slate-100 focus:ring-1 focus:ring-amber-400 outline-none transition"></textarea>
+              </div>
+              <button type="submit" class="w-full rounded bg-amber-400 px-4 py-2 text-sm font-bold text-slate-950 hover:bg-amber-300 transition">
+                Request Consultation
+              </button>
+            </form>
+          </div>
+        `));
+
+        // Contact Design 20: Gradient Text
+        container.appendChild(renderContactDesign(20, `
+          <div class="rounded-xl bg-slate-800/80 border border-slate-700 p-8">
+            <h3 class="text-2xl font-bold bg-gradient-to-r from-amber-400 to-orange-500 bg-clip-text text-transparent mb-2">Request a Free Consultation</h3>
+            <p class="text-base text-slate-400 mb-6">Share your email; we'll follow up with a short, focused call.</p>
+            <form class="space-y-4">
+              <div>
+                <input type="email" placeholder="Email (required)" 
+                  class="w-full rounded-lg border border-slate-700 bg-slate-950 px-4 py-3 text-lg text-slate-100 focus:ring-2 focus:ring-amber-400 outline-none transition">
+              </div>
+              <div>
+                <input type="text" placeholder="Name (optional)" 
+                  class="w-full rounded-lg border border-slate-700 bg-slate-950 px-4 py-3 text-lg text-slate-100 focus:ring-2 focus:ring-amber-400 outline-none transition">
+              </div>
+              <div>
+                <textarea rows="2" placeholder="Short description (optional)" 
+                  class="w-full rounded-lg border border-slate-700 bg-slate-950 px-4 py-3 text-lg text-slate-100 focus:ring-2 focus:ring-amber-400 outline-none transition"></textarea>
+              </div>
+              <button type="submit" class="w-full rounded-lg bg-gradient-to-r from-amber-400 to-orange-500 px-6 py-3 text-lg font-bold text-white hover:from-amber-500 hover:to-orange-600 transition shadow-lg">
+                Request Free Consultation
+              </button>
+            </form>
+          </div>
+        `));
+      });
+    </script>
+  </div>
+</body>
+</html>
+

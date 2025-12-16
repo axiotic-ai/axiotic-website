@@ -32,10 +32,12 @@ document.addEventListener('DOMContentLoaded', async () => {
       '🏗️🕸️': 'fa-cube',
       '⚙️🚀': 'fa-cogs',
       '🤖🌍': 'fa-globe',
-      '🧬📉': 'fa-leaf'
+      '🧬📉': 'fa-leaf',
+      '🔗': 'fa-project-diagram',
+      '🌊': 'fa-wave-square'
     };
     
-    // Special handling for Distillation (9th card) - use a different icon
+    // Special handling for specific pillars
     const getIconForPillar = (pillar) => {
       if (pillar.title.includes('Distillation')) {
         return 'fa-compress';
@@ -44,40 +46,70 @@ document.addEventListener('DOMContentLoaded', async () => {
     };
     
     const simplifiedDescriptions = {
-      '1. Improved Tasks': 'We move beyond the next token prediction. By training models to predict masked past, present, and future states, we force them to learn causal structure, long-horizon planning, and robust memory.',
-      '2. Multimodal Learning': 'Inspired by the brain\'s multimodal neurons, we design \'synesthetic\' architectures that process text, images, and audio in a shared latent space, leveraging correlations across senses for richer world modeling.',
-      '3. Memory & Conditional Recursion': 'Equipping transformers with explicit memory and latent reasoning loops could turn them into differentiable computers that separate processing from storage. This offers a path to infinite-context learning and efficient, internal recursion without expensive chain-of-thought tokens.',
-      '4. Hierarchical/Fractal Attention': 'We develop fractal attention patterns that operate at multiple resolutions simultaneously—seeing the forest and the trees without the brute-force cost of standard scaling.',
-      '5. Architectures': 'New connectivity patterns, different activation mechanisms, and dense routing schemes where deep layers attend directly to shallow features.',
-      '6. AI Flywheels': 'Data quality is the new frontier. We engineer closed-loop data engines where models generate, filter, and curriculum-sort their own training data for self-reinforcing improvement.',
-      '7. Embodiment': 'Intelligence requires grounding. We use simulation (Isaac/Cosmos) as a primary data source, training agents on interaction physics before sim-to-real transfer.',
-      '8. Evolution & Information': 'SGD is greedy; evolution generalizes but is slow. We research how to synergize them for robust, efficient learning.',
-      '9. Distillation': 'We investigate distillation through an information-theoretic lens, aiming to crack the physics of compression and train small models to their maximum potential without a teacher.'
+      '1. Improved Tasks': 'Training models to predict past, present, and future states for better causal understanding and planning.',
+      '2. Multimodal Learning': 'Architectures that process text, images, and audio together for richer world understanding.',
+      '3. Memory & Conditional Recursion': 'Adding explicit memory to transformers for infinite-context learning without expensive tokens.',
+      '4. Hierarchical/Fractal Attention': 'Attention patterns that see both detail and big picture efficiently.',
+      '5. Architectures': 'New connectivity patterns and activation mechanisms for more efficient processing.',
+      '6. AI Flywheels': 'Closed-loop systems where models generate and improve their own training data.',
+      '7. Embodiment': 'Simulation-based learning for grounded intelligence before real-world deployment.',
+      '8. Evolution & Information': 'Combining evolutionary methods with gradient descent for robust learning.',
+      '9. Distillation': 'Compressing large models into smaller ones without losing performance.',
+      '10. Local Learning Rules': 'Learning rules that work locally, inspired by how nature achieves efficiency.',
+      '11. Asynchronous Neural Dynamics': 'Neural rhythms across multiple time scales for efficient learning and inference.'
     };
     
     const researchGrid = document.getElementById('research-pillars-grid');
     if (researchGrid && content.research.pillars) {
-      researchGrid.innerHTML = content.research.pillars.map((pillar, index) => {
+      // Create first row with 2 larger cards
+      const firstRow = document.createElement('div');
+      firstRow.className = 'grid gap-4 grid-cols-1 md:grid-cols-2 mb-4';
+      
+      // Create second section with 3-column grid for remaining 9 cards
+      const remainingGrid = document.createElement('div');
+      remainingGrid.className = 'grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3';
+      
+      content.research.pillars.forEach((pillar, index) => {
         const iconClass = getIconForPillar(pillar);
         const simplifiedDesc = simplifiedDescriptions[pillar.title] || pillar.description;
-        // Remove numbers from title (e.g., "1. Improved Tasks" -> "Improved Tasks")
         const cleanTitle = pillar.title.replace(/^\d+\.\s*/, '');
-        return `
-        <article 
-          class="research-card rounded-xl bg-slate-900/10 border border-slate-800/50 p-6 hover:border-amber-500/30 hover:bg-slate-900/20 transition-all backdrop-blur-sm"
-          data-aos="fade-up"
-          data-aos-delay="${index * 50}"
-        >
-          <div class="w-16 h-16 border-2 border-amber-400 rounded-lg flex items-center justify-center mb-4">
-            <i class="fas ${iconClass} text-2xl text-amber-400"></i>
-          </div>
-          <h3 class="text-xl font-bold mb-3 text-slate-100">${cleanTitle}</h3>
-          <p class="text-sm text-slate-300 leading-relaxed">
-            ${simplifiedDesc}
-          </p>
-        </article>
-      `;
-      }).join('');
+        
+        const isLargeCard = index < 2;
+        const cardPadding = isLargeCard ? 'p-6' : 'p-5';
+        const iconSize = isLargeCard ? 'w-12 h-12' : 'w-10 h-10';
+        const iconTextSize = isLargeCard ? 'text-lg' : '';
+        const titleSize = isLargeCard ? 'text-base' : 'text-sm';
+        const textSize = isLargeCard ? 'text-sm' : 'text-xs';
+        
+        const cardHTML = `
+          <article 
+            class="research-card rounded-lg bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 ${cardPadding} hover:bg-slate-800 hover:border-amber-400 transition-all"
+            data-aos="fade-up"
+            data-aos-delay="${index * 50}"
+          >
+            <div class="flex items-center gap-3 mb-3">
+              <div class="${iconSize} rounded-lg bg-amber-400/20 flex items-center justify-center">
+                <i class="fas ${iconClass} text-amber-400 ${iconTextSize}"></i>
+              </div>
+              <h3 class="${titleSize} font-bold text-white">${cleanTitle}</h3>
+            </div>
+            <p class="${textSize} text-slate-300 leading-relaxed">
+              ${simplifiedDesc}
+            </p>
+          </article>
+        `;
+        
+        if (isLargeCard) {
+          firstRow.insertAdjacentHTML('beforeend', cardHTML);
+        } else {
+          remainingGrid.insertAdjacentHTML('beforeend', cardHTML);
+        }
+      });
+      
+      // Clear and rebuild grid structure
+      researchGrid.innerHTML = '';
+      researchGrid.appendChild(firstRow);
+      researchGrid.appendChild(remainingGrid);
     }
 
     // 2.5. Render Flywheel Steps (with icons, no emojis, no client purchase claims)
