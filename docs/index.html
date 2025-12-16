@@ -65,6 +65,8 @@
                 <a href="research-pillar-designs-preview.html" class="block px-4 py-2 text-sm text-slate-200 hover:bg-slate-700 hover:text-amber-300 transition">Research Pillars</a>
                 <a href="why-contact-designs-preview.html" class="block px-4 py-2 text-sm text-slate-200 hover:bg-slate-700 hover:text-amber-300 transition">Why/Contact</a>
                 <a href="research-layout-preview.html" class="block px-4 py-2 text-sm text-slate-200 hover:bg-slate-700 hover:text-amber-300 transition">Research Layout</a>
+                <a href="flywheel-designs-preview.html" class="block px-4 py-2 text-sm text-slate-200 hover:bg-slate-700 hover:text-amber-300 transition">Flywheel Designs</a>
+                <a href="flywheel-circular-preview.html" class="block px-4 py-2 text-sm text-slate-200 hover:bg-slate-700 hover:text-amber-300 transition">Circular Metro</a>
               </div>
             </div>
           </div>
@@ -290,7 +292,7 @@
 
       <!-- Flywheel Section -->
       <section id="flywheel" class="py-24 bg-slate-900 border-t border-slate-800/50">
-        <div class="max-w-5xl mx-auto px-4 space-y-12">
+        <div class="max-w-7xl mx-auto px-4 space-y-12">
           <header class="text-center space-y-4" data-aos="fade-up">
             <h2 class="text-5xl sm:text-6xl font-extrabold tracking-tight" data-key="flywheel.title">
               <!-- Content loaded from YAML -->
@@ -300,8 +302,50 @@
             </p>
           </header>
 
-          <div class="grid gap-6 md:grid-cols-4" id="flywheel-grid">
-            <!-- Flywheel steps populated by JS -->
+          <!-- Hardcoded Metro Line Layout (Design 16) with Data-Keys -->
+          <div class="flex flex-col md:flex-row items-start justify-between relative pt-10">
+             <!-- Connecting Line (Desktop Only) -->
+             <div class="absolute top-12 left-0 w-full h-2 bg-slate-800 hidden md:block rounded-full"></div>
+             
+             <!-- Step 1 -->
+             <div class="relative w-full md:w-1/4 px-2 text-center group" data-aos="fade-up" data-aos-delay="0">
+                 <div class="w-6 h-6 bg-amber-500 rounded-full mx-auto mb-4 border-4 border-slate-900 relative z-10 shadow-[0_0_10px_rgba(245,158,11,0.5)] group-hover:scale-125 transition-transform duration-300"></div>
+                 <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-full mb-2 text-amber-400 text-2xl opacity-90 group-hover:-translate-y-[120%] transition-transform duration-300">
+                    <i class="fas fa-coins"></i>
+                 </div>
+                 <h3 class="text-white font-bold text-xl mb-2 pt-2 group-hover:text-amber-400 transition-colors" data-key="flywheel.steps.0.title">Consulting Brings Revenue</h3>
+                 <p class="text-slate-500 text-base leading-relaxed" data-key="flywheel.steps.0.description">We build systems and empower teams that solve actual industry problems.</p>
+             </div>
+
+             <!-- Step 2 -->
+             <div class="relative w-full md:w-1/4 px-2 text-center group" data-aos="fade-up" data-aos-delay="100">
+                 <div class="w-6 h-6 bg-amber-500 rounded-full mx-auto mb-4 border-4 border-slate-900 relative z-10 shadow-[0_0_10px_rgba(245,158,11,0.5)] group-hover:scale-125 transition-transform duration-300"></div>
+                 <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-full mb-2 text-amber-400 text-2xl opacity-90 group-hover:-translate-y-[120%] transition-transform duration-300">
+                    <i class="fas fa-flask"></i>
+                 </div>
+                 <h3 class="text-white font-bold text-xl mb-2 pt-2 group-hover:text-amber-400 transition-colors" data-key="flywheel.steps.1.title">Revenue Funds Research</h3>
+                 <p class="text-slate-500 text-base leading-relaxed" data-key="flywheel.steps.1.description">We reinvest profits into "blue sky" exploration without needing immediate ROI.</p>
+             </div>
+
+             <!-- Step 3 -->
+             <div class="relative w-full md:w-1/4 px-2 text-center group" data-aos="fade-up" data-aos-delay="200">
+                 <div class="w-6 h-6 bg-amber-500 rounded-full mx-auto mb-4 border-4 border-slate-900 relative z-10 shadow-[0_0_10px_rgba(245,158,11,0.5)] group-hover:scale-125 transition-transform duration-300"></div>
+                 <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-full mb-2 text-amber-400 text-2xl opacity-90 group-hover:-translate-y-[120%] transition-transform duration-300">
+                    <i class="fas fa-star"></i>
+                 </div>
+                 <h3 class="text-white font-bold text-xl mb-2 pt-2 group-hover:text-amber-400 transition-colors" data-key="flywheel.steps.2.title">Research Builds Reputation</h3>
+                 <p class="text-slate-500 text-base leading-relaxed" data-key="flywheel.steps.2.description">We publish SOTA open-source work. This builds technical authority and trust.</p>
+             </div>
+
+             <!-- Step 4 -->
+             <div class="relative w-full md:w-1/4 px-2 text-center group" data-aos="fade-up" data-aos-delay="300">
+                 <div class="w-6 h-6 bg-amber-500 rounded-full mx-auto mb-4 border-4 border-slate-900 relative z-10 shadow-[0_0_10px_rgba(245,158,11,0.5)] group-hover:scale-125 transition-transform duration-300"></div>
+                 <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-full mb-2 text-amber-400 text-2xl opacity-90 group-hover:-translate-y-[120%] transition-transform duration-300">
+                    <i class="fas fa-magnet"></i>
+                 </div>
+                 <h3 class="text-white font-bold text-xl mb-2 pt-2 group-hover:text-amber-400 transition-colors" data-key="flywheel.steps.3.title">Reputation Attracts Clients</h3>
+                 <p class="text-slate-500 text-base leading-relaxed" data-key="flywheel.steps.3.description">Our open work acts as a magnet. Companies want to work with the team that built the models.</p>
+             </div>
           </div>
         </div>
       </section>

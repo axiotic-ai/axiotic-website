@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Circular Flywheel Variations</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    .design-section {
+      margin-bottom: 4rem;
+      padding: 4rem 0;
+      border-bottom: 2px solid #334155;
+    }
+    body {
+      background: #0f172a;
+    }
+    /* Metro Line Glow */
+    .metro-glow {
+        box-shadow: 0 0 10px rgba(245, 158, 11, 0.5);
+    }
+  </style>
+</head>
+<body class="bg-slate-900 text-slate-50">
+  <!-- Navigation Menu -->
+  <nav class="fixed top-0 left-0 right-0 bg-slate-900/90 backdrop-blur text-white z-50 shadow-lg border-b border-slate-700">
+    <div class="max-w-7xl mx-auto px-4 py-3">
+      <div class="flex items-center justify-between flex-wrap gap-2">
+        <a href="index.html" class="text-lg font-semibold text-amber-400 hover:text-amber-300">← Main Site</a>
+        <div class="flex gap-2 flex-wrap">
+          <a href="flywheel-designs-preview.html" class="px-3 py-1 rounded bg-slate-700 hover:bg-slate-600 text-white font-medium text-sm">All Flywheel</a>
+          <span class="px-3 py-1 rounded bg-amber-500 text-slate-900 font-medium text-sm">Circular Metro</span>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div id="preview-content" class="max-w-7xl mx-auto pt-24 pb-20 px-4">
+    <h1 class="text-4xl font-bold mb-2 text-white">Circular Metro Variations</h1>
+    <p class="text-slate-400 mb-12">Adapting the sleek "Metro Line" aesthetic into a closed loop.</p>
+
+    <script>
+      const steps = [
+        { icon: 'fa-coins', title: 'Consulting Brings Revenue', description: 'Real industry problems generate value and capital.', pos: 'top' },
+        { icon: 'fa-flask', title: 'Revenue Funds Research', description: 'Profits reinvested into blue-sky exploration.', pos: 'right' },
+        { icon: 'fa-star', title: 'Research Builds Reputation', description: 'SOTA open-source work builds authority.', pos: 'bottom' },
+        { icon: 'fa-magnet', title: 'Reputation Attracts Clients', description: 'Clients seek the team behind the tools.', pos: 'left' }
+      ];
+
+      function renderSection(title, html) {
+        const section = document.createElement('div');
+        section.className = 'design-section';
+        section.innerHTML = `
+          <h2 class="text-2xl font-bold mb-8 text-amber-300">${title}</h2>
+          ${html}
+        `;
+        return section;
+      }
+
+      document.addEventListener('DOMContentLoaded', () => {
+        const container = document.getElementById('preview-content');
+
+        // VARIATION 1: The Circle Line (Absolute Positioning)
+        // Desktop: Circle. Mobile: Vertical Line.
+        container.appendChild(renderSection('1. The Circle Line', `
+          <div class="relative w-full max-w-2xl mx-auto h-[600px] hidden md:block">
+            <!-- The Track -->
+            <div class="absolute inset-12 rounded-full border-4 border-slate-700 shadow-[0_0_20px_rgba(30,41,59,0.5)]"></div>
+            <!-- Active Track Segment (Gradient) -->
+            <div class="absolute inset-12 rounded-full border-4 border-transparent border-t-amber-500 border-r-amber-500 rotate-45 opacity-50"></div>
+            
+            <!-- Central Hub Text -->
+            <div class="absolute inset-0 flex items-center justify-center">
+                <div class="text-center">
+                    <h3 class="text-3xl font-black text-slate-800 tracking-tighter uppercase">Fly<br>Wheel</h3>
+                </div>
+            </div>
+
+            <!-- Stations -->
+            <!-- Top -->
+            <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-4 text-center w-64">
+               <div class="w-16 h-16 mx-auto bg-slate-900 border-4 border-amber-500 rounded-full flex items-center justify-center text-amber-400 text-2xl shadow-lg z-10 relative mb-4">
+                 <i class="fas ${steps[0].icon}"></i>
+               </div>
+               <h3 class="text-white font-bold text-lg mb-1">${steps[0].title}</h3>
+               <p class="text-slate-400 text-sm">${steps[0].description}</p>
+            </div>
+
+            <!-- Right -->
+            <div class="absolute top-1/2 right-0 translate-x-4 -translate-y-1/2 text-left w-64 flex items-center gap-4">
+               <div class="order-1 w-16 h-16 shrink-0 bg-slate-900 border-4 border-amber-500 rounded-full flex items-center justify-center text-amber-400 text-2xl shadow-lg">
+                 <i class="fas ${steps[1].icon}"></i>
+               </div>
+               <div class="order-2">
+                   <h3 class="text-white font-bold text-lg mb-1">${steps[1].title}</h3>
+                   <p class="text-slate-400 text-sm">${steps[1].description}</p>
+               </div>
+            </div>
+
+            <!-- Bottom -->
+            <div class="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-4 text-center w-64">
+               <p class="text-slate-400 text-sm mb-1 order-3">${steps[2].description}</p>
+               <h3 class="text-white font-bold text-lg mb-4 order-2">${steps[2].title}</h3>
+               <div class="w-16 h-16 mx-auto bg-slate-900 border-4 border-amber-500 rounded-full flex items-center justify-center text-amber-400 text-2xl shadow-lg z-10 relative order-1">
+                 <i class="fas ${steps[2].icon}"></i>
+               </div>
+            </div>
+
+            <!-- Left -->
+             <div class="absolute top-1/2 left-0 -translate-x-4 -translate-y-1/2 text-right w-64 flex items-center gap-4 justify-end">
+               <div class="order-1">
+                   <h3 class="text-white font-bold text-lg mb-1">${steps[3].title}</h3>
+                   <p class="text-slate-400 text-sm">${steps[3].description}</p>
+               </div>
+               <div class="order-2 w-16 h-16 shrink-0 bg-slate-900 border-4 border-amber-500 rounded-full flex items-center justify-center text-amber-400 text-2xl shadow-lg">
+                 <i class="fas ${steps[3].icon}"></i>
+               </div>
+            </div>
+          </div>
+          
+          <!-- Mobile View for Variation 1 -->
+          <div class="md:hidden space-y-8 relative pl-8 border-l-4 border-slate-700 ml-4">
+            ${steps.map(s => `
+                <div class="relative">
+                    <div class="absolute -left-[44px] top-0 w-8 h-8 bg-slate-900 border-4 border-amber-500 rounded-full flex items-center justify-center text-xs text-amber-400"><i class="fas ${s.icon}"></i></div>
+                    <h3 class="text-white font-bold">${s.title}</h3>
+                    <p class="text-slate-400 text-sm">${s.description}</p>
+                </div>
+            `).join('')}
+          </div>
+        `));
+
+        // VARIATION 2: The Racetrack (Rounded Rect)
+        container.appendChild(renderSection('2. The Racetrack', `
+          <div class="relative max-w-4xl mx-auto p-12 hidden md:block">
+            <!-- Racetrack SVG -->
+            <svg class="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 800 300" fill="none" preserveAspectRatio="none">
+                <rect x="50" y="50" width="700" height="200" rx="100" stroke="#334155" stroke-width="4" />
+                <!-- Flow Indicator -->
+                <path d="M 150,50 L 650,50 A 100,100 0 0 1 650,250 L 150,250 A 100,100 0 0 1 150,50" stroke="url(#grad1)" stroke-width="4" stroke-dasharray="10 10" class="animate-[dash_20s_linear_infinite]" />
+                <defs>
+                    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" style="stop-color:#f59e0b;stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:#f97316;stop-opacity:1" />
+                    </linearGradient>
+                </defs>
+            </svg>
+
+            <div class="grid grid-cols-2 gap-x-24 gap-y-16 relative z-10">
+                <!-- Top Left -->
+                <div class="flex items-center gap-4 bg-slate-900/80 p-4 rounded-xl border border-slate-800 -translate-x-12 -translate-y-8">
+                    <div class="w-12 h-12 rounded-full bg-amber-500 flex items-center justify-center text-slate-900 text-lg font-bold shadow-lg shadow-amber-500/50"><i class="fas ${steps[0].icon}"></i></div>
+                    <div>
+                        <h3 class="text-white font-bold">${steps[0].title}</h3>
+                        <p class="text-slate-400 text-xs w-48">${steps[0].description}</p>
+                    </div>
+                </div>
+                 <!-- Top Right -->
+                <div class="flex items-center gap-4 flex-row-reverse text-right bg-slate-900/80 p-4 rounded-xl border border-slate-800 translate-x-12 -translate-y-8">
+                    <div class="w-12 h-12 rounded-full bg-amber-500 flex items-center justify-center text-slate-900 text-lg font-bold shadow-lg shadow-amber-500/50"><i class="fas ${steps[1].icon}"></i></div>
+                    <div>
+                        <h3 class="text-white font-bold">${steps[1].title}</h3>
+                        <p class="text-slate-400 text-xs w-48">${steps[1].description}</p>
+                    </div>
+                </div>
+                <!-- Bottom Left -->
+                <div class="flex items-center gap-4 bg-slate-900/80 p-4 rounded-xl border border-slate-800 -translate-x-12 translate-y-8">
+                     <div class="w-12 h-12 rounded-full bg-slate-800 border-2 border-amber-500 flex items-center justify-center text-amber-500 text-lg font-bold"><i class="fas ${steps[3].icon}"></i></div>
+                    <div>
+                        <h3 class="text-white font-bold">${steps[3].title}</h3>
+                         <p class="text-slate-400 text-xs w-48">${steps[3].description}</p>
+                    </div>
+                </div>
+                 <!-- Bottom Right -->
+                <div class="flex items-center gap-4 flex-row-reverse text-right bg-slate-900/80 p-4 rounded-xl border border-slate-800 translate-x-12 translate-y-8">
+                    <div class="w-12 h-12 rounded-full bg-slate-800 border-2 border-amber-500 flex items-center justify-center text-amber-500 text-lg font-bold"><i class="fas ${steps[2].icon}"></i></div>
+                    <div>
+                        <h3 class="text-white font-bold">${steps[2].title}</h3>
+                        <p class="text-slate-400 text-xs w-48">${steps[2].description}</p>
+                    </div>
+                </div>
+            </div>
+          </div>
+          <div class="md:hidden text-center p-4">
+             <p class="text-amber-500">Rotate device or view on desktop for full loop effect.</p>
+             <!-- Fallback vertical list -->
+             <div class="mt-4 space-y-4">
+                ${steps.map(s => `<div class="bg-slate-800 p-4 rounded-lg border border-slate-700"><h3 class="font-bold text-white">${s.title}</h3></div>`).join('')}
+             </div>
+          </div>
+        `));
+
+         // VARIATION 3: The Radar (Concentric / Orbital)
+        container.appendChild(renderSection('3. The Orbital Hub', `
+          <div class="relative w-full max-w-2xl mx-auto h-[600px] flex items-center justify-center hidden md:flex">
+             <!-- Orbits -->
+             <div class="absolute w-[500px] h-[500px] rounded-full border border-slate-700/50"></div>
+             <div class="absolute w-[350px] h-[350px] rounded-full border border-slate-700/50"></div>
+             
+             <!-- Center -->
+             <div class="w-32 h-32 rounded-full bg-slate-800 border-4 border-slate-700 flex items-center justify-center z-10 shadow-2xl">
+                <img src="images/logo-no-name.png" class="w-16 opacity-50 grayscale">
+             </div>
+
+             <!-- Satellites -->
+             <!-- 1 -->
+             <div class="absolute top-8 left-1/2 -translate-x-1/2 flex flex-col items-center">
+                <div class="w-14 h-14 bg-amber-500 rounded-full flex items-center justify-center text-slate-900 text-xl font-bold mb-2 shadow-lg shadow-amber-500/20"><i class="fas ${steps[0].icon}"></i></div>
+                <div class="bg-slate-900/90 p-3 rounded-lg border border-slate-700 text-center w-48">
+                    <h3 class="text-white font-bold text-sm">${steps[0].title}</h3>
+                </div>
+             </div>
+             <!-- 2 -->
+             <div class="absolute right-0 top-1/2 -translate-y-1/2 flex flex-row items-center">
+                 <div class="bg-slate-900/90 p-3 rounded-lg border border-slate-700 text-center w-48 mr-2">
+                    <h3 class="text-white font-bold text-sm">${steps[1].title}</h3>
+                </div>
+                <div class="w-14 h-14 bg-slate-800 border-2 border-amber-500 rounded-full flex items-center justify-center text-amber-500 text-xl font-bold"><i class="fas ${steps[1].icon}"></i></div>
+             </div>
+             <!-- 3 -->
+             <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col-reverse items-center">
+                <div class="w-14 h-14 bg-slate-800 border-2 border-amber-500 rounded-full flex items-center justify-center text-amber-500 text-xl font-bold mt-2"><i class="fas ${steps[2].icon}"></i></div>
+                <div class="bg-slate-900/90 p-3 rounded-lg border border-slate-700 text-center w-48">
+                    <h3 class="text-white font-bold text-sm">${steps[2].title}</h3>
+                </div>
+             </div>
+             <!-- 4 -->
+             <div class="absolute left-0 top-1/2 -translate-y-1/2 flex flex-row items-center">
+                <div class="w-14 h-14 bg-slate-800 border-2 border-amber-500 rounded-full flex items-center justify-center text-amber-500 text-xl font-bold mr-2"><i class="fas ${steps[3].icon}"></i></div>
+                 <div class="bg-slate-900/90 p-3 rounded-lg border border-slate-700 text-center w-48">
+                    <h3 class="text-white font-bold text-sm">${steps[3].title}</h3>
+                </div>
+             </div>
+          </div>
+          <div class="md:hidden text-center text-slate-500">Desktop View Recommended</div>
+        `));
+        
+        // VARIATION 4: The Diamond Metro
+        container.appendChild(renderSection('4. The Diamond Loop', `
+           <div class="max-w-3xl mx-auto relative py-12 hidden md:block">
+              <!-- Diamond Track -->
+              <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] border-4 border-slate-700 rotate-45 rounded-[3rem]"></div>
+              
+              <div class="grid grid-cols-3 gap-12 text-center relative z-10">
+                  <!-- Top (1) -->
+                  <div class="col-start-2 -mb-12">
+                     <div class="w-16 h-16 mx-auto bg-slate-900 border-4 border-amber-500 rounded-full flex items-center justify-center text-amber-400 text-2xl mb-2 relative z-10"><i class="fas ${steps[0].icon}"></i></div>
+                     <h3 class="text-white font-bold text-sm bg-slate-900/80 inline-block px-2 rounded">${steps[0].title}</h3>
+                  </div>
+
+                  <!-- Row 2 (4 & 2) -->
+                  <div class="col-start-1 flex flex-col items-center justify-center mt-12">
+                     <div class="w-16 h-16 mx-auto bg-slate-900 border-4 border-amber-500 rounded-full flex items-center justify-center text-amber-400 text-2xl mb-2 relative z-10"><i class="fas ${steps[3].icon}"></i></div>
+                     <h3 class="text-white font-bold text-sm bg-slate-900/80 inline-block px-2 rounded">${steps[3].title}</h3>
+                  </div>
+                  
+                  <div class="col-start-3 flex flex-col items-center justify-center mt-12">
+                     <div class="w-16 h-16 mx-auto bg-slate-900 border-4 border-amber-500 rounded-full flex items-center justify-center text-amber-400 text-2xl mb-2 relative z-10"><i class="fas ${steps[1].icon}"></i></div>
+                     <h3 class="text-white font-bold text-sm bg-slate-900/80 inline-block px-2 rounded">${steps[1].title}</h3>
+                  </div>
+
+                  <!-- Bottom (3) -->
+                  <div class="col-start-2 -mt-12">
+                     <h3 class="text-white font-bold text-sm bg-slate-900/80 inline-block px-2 rounded mb-2">${steps[2].title}</h3>
+                     <div class="w-16 h-16 mx-auto bg-slate-900 border-4 border-amber-500 rounded-full flex items-center justify-center text-amber-400 text-2xl relative z-10"><i class="fas ${steps[2].icon}"></i></div>
+                  </div>
+              </div>
+           </div>
+           <div class="md:hidden text-center text-slate-500">Desktop View Recommended</div>
+        `));
+
+         // VARIATION 5: The Snake-Circle (Responsive)
+        container.appendChild(renderSection('5. Responsive Loop (Recommended)', `
+           <div class="flex flex-col md:grid md:grid-cols-4 md:grid-rows-1 gap-4 max-w-5xl mx-auto">
+              <!-- Item 1 -->
+              <div class="bg-slate-800 p-6 rounded-2xl border-b-4 border-amber-500 relative group hover:-translate-y-1 transition-transform">
+                 <div class="absolute -bottom-[22px] left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-slate-900 border-4 border-amber-500 z-10"></div>
+                 <div class="absolute -bottom-1 left-0 right-0 h-1 bg-amber-500"></div> <!-- Connector -->
+                 <i class="fas ${steps[0].icon} text-3xl text-amber-400 mb-4"></i>
+                 <h3 class="text-white font-bold mb-2">${steps[0].title}</h3>
+                 <p class="text-slate-400 text-sm">${steps[0].description}</p>
+                 <div class="absolute top-1/2 -right-4 text-slate-700 text-2xl hidden md:block"><i class="fas fa-chevron-right"></i></div>
+              </div>
+
+               <!-- Item 2 -->
+              <div class="bg-slate-800 p-6 rounded-2xl border-b-4 border-slate-600 hover:border-amber-500/50 relative group hover:-translate-y-1 transition-transform">
+                 <div class="absolute -bottom-[22px] left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-slate-900 border-4 border-slate-600 group-hover:border-amber-500/50 z-10 transition-colors"></div>
+                 <i class="fas ${steps[1].icon} text-3xl text-slate-500 group-hover:text-amber-400 mb-4 transition-colors"></i>
+                 <h3 class="text-white font-bold mb-2">${steps[1].title}</h3>
+                 <p class="text-slate-400 text-sm">${steps[1].description}</p>
+                 <div class="absolute top-1/2 -right-4 text-slate-700 text-2xl hidden md:block"><i class="fas fa-chevron-right"></i></div>
+              </div>
+
+               <!-- Item 3 -->
+              <div class="bg-slate-800 p-6 rounded-2xl border-b-4 border-slate-600 hover:border-amber-500/50 relative group hover:-translate-y-1 transition-transform">
+                 <div class="absolute -bottom-[22px] left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-slate-900 border-4 border-slate-600 group-hover:border-amber-500/50 z-10 transition-colors"></div>
+                 <i class="fas ${steps[2].icon} text-3xl text-slate-500 group-hover:text-amber-400 mb-4 transition-colors"></i>
+                 <h3 class="text-white font-bold mb-2">${steps[2].title}</h3>
+                 <p class="text-slate-400 text-sm">${steps[2].description}</p>
+                 <div class="absolute top-1/2 -right-4 text-slate-700 text-2xl hidden md:block"><i class="fas fa-chevron-right"></i></div>
+              </div>
+
+               <!-- Item 4 (Loop Back) -->
+              <div class="bg-slate-800 p-6 rounded-2xl border-b-4 border-slate-600 hover:border-amber-500/50 relative group hover:-translate-y-1 transition-transform">
+                 <div class="absolute -bottom-[22px] left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-slate-900 border-4 border-slate-600 group-hover:border-amber-500/50 z-10 transition-colors"></div>
+                 <i class="fas ${steps[3].icon} text-3xl text-slate-500 group-hover:text-amber-400 mb-4 transition-colors"></i>
+                 <h3 class="text-white font-bold mb-2">${steps[3].title}</h3>
+                 <p class="text-slate-400 text-sm">${steps[3].description}</p>
+                  <!-- Visual Loop Arrow -->
+                 <div class="absolute -bottom-12 right-1/2 translate-x-1/2 md:hidden text-amber-500/30 text-4xl"><i class="fas fa-undo"></i></div>
+              </div>
+           </div>
+           <div class="text-center mt-8 text-amber-500/50 text-sm"><i class="fas fa-sync-alt animate-spin-slow mr-2"></i> The Cycle Repeats</div>
+        `));
+
+      });
+    </script>
+  </div>
+</body>
+</html>
+

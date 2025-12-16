@@ -1,30 +1,49 @@
-document.addEventListener('DOMContentLoaded', async () => {
+// content-loader.js
+
+async function loadContent() {
   try {
-    const response = await fetch('content.yaml?v=' + new Date().getTime());
+    const response = await fetch('content.yaml');
     const yamlText = await response.text();
     const content = jsyaml.load(yamlText);
 
-    // 1. Update simple text/html elements by data-key
+    // Helper: Safely set text content to avoid HTML injection
+    const setText = (element, text) => {
+      if (element) element.textContent = text;
+    };
+    
+    // Helper: Safely set HTML content (only for trusted sources or simple formatting)
+    // Note: In a production app, use a sanitizer. Here we assume content.yaml is trusted.
+    const setHTML = (element, html) => {
+      if (element) element.innerHTML = html;
+    };
+
+    // 1. Populate Text Elements with data-key attributes
     const elements = document.querySelectorAll('[data-key]');
     elements.forEach(el => {
       const key = el.getAttribute('data-key');
-      const value = getNestedValue(content, key);
-      if (value) {
-        if (el.tagName === 'TITLE') {
-          // Special handling for title tag
-          el.textContent = value;
-          document.title = value;
-        } else if (el.tagName === 'A' && key.endsWith('.text')) {
-             // For links, we might have separate href keys, but here we just update text
-             el.textContent = value;
-        } else if (el.tagName === 'BUTTON') {
-             // For buttons, use textContent
-             el.textContent = value;
-        } else if (el.tagName === 'SPAN' || el.tagName === 'P' || el.tagName === 'H2' || el.tagName === 'H3' || el.tagName === 'H4') {
-             // For text elements, use textContent to avoid HTML injection
-             el.textContent = value;
+      const keys = key.split('.');
+      let value = content;
+      
+      for (const k of keys) {
+        if (value && value[k] !== undefined) {
+          value = value[k];
         } else {
-             el.innerHTML = value; // Using innerHTML to allow <br> tags
+          value = null;
+          break;
+        }
+      }
+
+      if (value !== null) {
+        // Handle specific elements or keys that might contain HTML (like line breaks)
+        // or formatting. For now, we trust the YAML content for these specific keys.
+        if (['SPAN', 'P', 'H2', 'H3', 'H4', 'BUTTON'].includes(el.tagName)) {
+             if (key === 'mission.statement') {
+                 el.innerHTML = value; // Allow HTML for mission statement (e.g. <br>)
+             } else {
+                 el.textContent = value;
+             }
+        } else {
+            el.textContent = value;
         }
       }
     });
@@ -53,107 +72,86 @@ document.addEventListener('DOMContentLoaded', async () => {
       }).join('');
     }
 
-    // 2.5. Render Flywheel Steps
-    const flywheelGrid = document.getElementById('flywheel-grid');
-    if (flywheelGrid && content.flywheel && content.flywheel.steps) {
-      flywheelGrid.innerHTML = content.flywheel.steps.map((step, index) => {
-        // Use icon directly from content.yaml (should be Font Awesome class like "fa-coins")
-        const iconClass = step.icon.startsWith('fa-') ? step.icon : `fa-${step.icon}`;
-        return `
-        <article 
-          class="rounded-xl bg-slate-900/40 border border-slate-800 p-5 hover:border-amber-500/40 transition duration-300 flex flex-col items-center text-center"
-          data-aos="fade-up"
-          data-aos-delay="${index * 100}"
-        >
-          <div class="text-6xl mb-3">
-            <i class="fas ${iconClass} text-amber-400"></i>
-          </div>
-          <h3 class="text-lg font-bold text-amber-100 mb-2">${step.title}</h3>
-          <p class="text-base text-slate-400 leading-relaxed">
-            ${step.description}
-          </p>
-        </article>
-      `;
-      }).join('');
-    }
+    // 2.5. Flywheel Steps are now hardcoded in index.html for specific layout (Design 16).
+    // The text content is populated by the generic data-key handler above.
 
-    // 3. Render Consulting Flagship Lists
-    const col1List = document.getElementById('consulting-flagship-col1');
-    if (col1List && content.consulting.flagship.col1_items) {
-      col1List.innerHTML = content.consulting.flagship.col1_items.map(item => `<li class="text-slate-700 text-base">${item}</li>`).join('');
-    }
-
-    const col2List = document.getElementById('consulting-flagship-col2');
-    if (col2List && content.consulting.flagship.col2_items) {
-      col2List.innerHTML = content.consulting.flagship.col2_items.map(item => `<li class="text-slate-700 text-base">${item}</li>`).join('');
-    }
-
-    // 4. Render Consulting Pillars (Design 18: Asymmetric Offset Icon)
+    // 3. Render Consulting Pillars (Design 18: Light Theme Cards)
     const consultingGrid = document.getElementById('consulting-pillars-grid');
     if (consultingGrid && content.consulting.pillars) {
-      consultingGrid.innerHTML = content.consulting.pillars.map((pillar, index) => {
-        // Use icon directly from content.yaml (should be Font Awesome class like "fa-brain")
-        const iconClass = pillar.icon.startsWith('fa-') ? pillar.icon : `fa-${pillar.icon}`;
+        consultingGrid.innerHTML = content.consulting.pillars.map((pillar, index) => {
+            const iconClass = pillar.icon.startsWith('fa-') ? pillar.icon : `fa-${pillar.icon}`;
+            return `
+            <article 
+              class="rounded-xl bg-white border border-slate-200 p-6 hover:shadow-xl hover:border-amber-400 transition-all relative group"
+              data-aos="fade-up"
+              data-aos-delay="${index * 100}"
+            >
+               <div class="flex items-start gap-4 mb-3">
+                  <div class="w-12 h-12 rounded-lg bg-amber-100 flex items-center justify-center shrink-0 group-hover:bg-amber-400 transition-colors duration-300">
+                    <i class="fas ${iconClass} text-xl text-amber-600 group-hover:text-white transition-colors duration-300"></i>
+                  </div>
+                  <h3 class="text-lg font-bold text-slate-900 pt-2">${pillar.title}</h3>
+               </div>
+              <p class="text-sm text-slate-600 leading-relaxed text-left">
+                ${pillar.description}
+              </p>
+            </article>
+            `;
+        }).join('');
+    }
+
+    // 3.5 Render Flagship List Items
+    const flagshipCol1 = document.getElementById('consulting-flagship-col1');
+    const flagshipCol2 = document.getElementById('consulting-flagship-col2');
+    
+    if (flagshipCol1 && content.consulting.flagship.col1_items) {
+        flagshipCol1.innerHTML = content.consulting.flagship.col1_items.map(item => 
+            `<li>${item}</li>`
+        ).join('');
+    }
+    
+    if (flagshipCol2 && content.consulting.flagship.col2_items) {
+        flagshipCol2.innerHTML = content.consulting.flagship.col2_items.map(item => 
+            `<li>${item}</li>`
+        ).join('');
+    }
+
+
+    // 4. Render Team Members (Cards with Hover Effect)
+    const teamGrid = document.getElementById('team-grid');
+    if (teamGrid && content.team.members) {
+      teamGrid.innerHTML = content.team.members.map((member, index) => {
+        // Fallback photo if not specified or broken could be handled here
+        const photoUrl = member.photo || 'images/default-avatar.png'; // Update with your actual default
         return `
         <article 
-          class="rounded-xl bg-white border-2 border-slate-200 p-6 hover:border-amber-400 transition-all relative"
+          class="group relative bg-slate-800 rounded-xl overflow-hidden border border-slate-700 hover:border-amber-500/50 transition duration-300"
           data-aos="fade-up"
           data-aos-delay="${index * 100}"
         >
-          <div class="absolute -top-4 -right-4 w-16 h-16 rounded-full bg-gradient-to-br from-amber-400 to-orange-500 shadow-lg border-4 border-white flex items-center justify-center">
-            <i class="fas ${iconClass} text-xl text-white"></i>
+          <div class="aspect-w-1 aspect-h-1 w-full overflow-hidden bg-slate-900">
+             <!-- In a real scenario, use actual images. For now, placeholders or text avatars -->
+            ${member.photo 
+                ? `<img src="${photoUrl}" alt="${member.name}" class="h-full w-full object-cover object-center transition duration-500 group-hover:scale-110 opacity-90 group-hover:opacity-100">`
+                : `<div class="h-full w-full flex items-center justify-center bg-slate-800 text-slate-600 text-4xl font-bold">${member.name.charAt(0)}</div>`
+            }
           </div>
-          <h3 class="text-lg font-bold mb-3 text-slate-900 pr-12">${pillar.title}</h3>
-          <p class="text-slate-700 text-base leading-relaxed">
-            ${pillar.description}
-          </p>
+          <div class="p-6">
+            <h3 class="text-lg font-bold text-white group-hover:text-amber-400 transition-colors">${member.name}</h3>
+            <p class="text-amber-500 text-sm font-medium mb-3">${member.role}</p>
+            <p class="text-sm text-slate-400 leading-relaxed">
+              ${member.description}
+            </p>
+          </div>
         </article>
       `;
       }).join('');
     }
 
-    // 5. Render Team Members (Shuffled)
-    const teamGrid = document.getElementById('team-grid');
-    if (teamGrid && content.team.members) {
-      const members = [...content.team.members];
-      shuffleArray(members);
-      
-      teamGrid.innerHTML = members.map((member, index) => `
-        <article class="p-4 flex flex-col items-start" data-aos="fade-up" data-aos-delay="${index * 50}">
-          <div class="mb-4 w-24 h-24 rounded-full overflow-hidden border-2 border-slate-700 shadow-sm">
-            <img 
-              src="${member.photo}" 
-              alt="${member.name}" 
-              class="w-full h-full object-cover"
-              onerror="this.src='https://ui-avatars.com/api/?name=${encodeURIComponent(member.name)}&background=random'"
-            >
-          </div>
-          <h3 class="text-lg font-bold text-amber-100">${member.name}</h3>
-          <p class="text-base text-amber-400 mb-2">${member.role}</p>
-          <p class="text-base text-slate-400 leading-relaxed">
-            ${member.description}
-          </p>
-        </article>
-      `).join('');
-    }
-
-    // Refresh AOS to account for new DOM elements
-    setTimeout(() => {
-        AOS.refresh();
-    }, 100);
-
-  } catch (e) {
-    console.error('Error loading content:', e);
-  }
-});
-
-function getNestedValue(obj, path) {
-  return path.split('.').reduce((acc, part) => acc && acc[part], obj);
-}
-
-function shuffleArray(array) {
-  for (let i = array.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [array[i], array[j]] = [array[j], array[i]];
+  } catch (error) {
+    console.error('Error loading content:', error);
   }
 }
+
+// Load content when DOM is ready
+document.addEventListener('DOMContentLoaded', loadContent);
