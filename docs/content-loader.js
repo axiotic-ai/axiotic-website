@@ -37,8 +37,8 @@ async function loadContent() {
         // Handle specific elements or keys that might contain HTML (like line breaks)
         // or formatting. For now, we trust the YAML content for these specific keys.
         if (['SPAN', 'P', 'H2', 'H3', 'H4', 'BUTTON'].includes(el.tagName)) {
-             if (key === 'mission.statement') {
-                 el.innerHTML = value; // Allow HTML for mission statement (e.g. <br>)
+             if (key === 'mission.statement' || key === 'name_origin.text') {
+                 el.innerHTML = value; // Allow HTML for mission statement and name origin (e.g. <br>, <em>)
              } else {
                  el.textContent = value;
              }
@@ -117,32 +117,41 @@ async function loadContent() {
     }
 
 
-    // 4. Render Team Members (Cards with Hover Effect)
+    // 4. Render Team Members (Circular Layout)
     const teamGrid = document.getElementById('team-grid');
     if (teamGrid && content.team.members) {
-      teamGrid.innerHTML = content.team.members.map((member, index) => {
-        // Fallback photo if not specified or broken could be handled here
-        const photoUrl = member.photo || 'images/default-avatar.png'; // Update with your actual default
+      // Shuffle array for random order on each page load
+      const shuffledMembers = [...content.team.members].sort(() => Math.random() - 0.5);
+      
+      teamGrid.innerHTML = shuffledMembers.map((member, index) => {
+        const photoUrl = member.photo || 'images/default-avatar.png'; 
         return `
         <article 
-          class="group relative bg-slate-800 rounded-xl overflow-hidden border border-slate-700 hover:border-amber-500/50 transition duration-300"
+          class="text-center group p-4"
           data-aos="fade-up"
           data-aos-delay="${index * 100}"
         >
-          <div class="aspect-w-1 aspect-h-1 w-full overflow-hidden bg-slate-900">
-             <!-- In a real scenario, use actual images. For now, placeholders or text avatars -->
-            ${photoUrl 
-                ? `<img src="${photoUrl}" alt="${member.name}" class="h-full w-full object-cover object-center transition duration-500 group-hover:scale-110 opacity-90 group-hover:opacity-100">`
-                : `<div class="h-full w-full flex items-center justify-center bg-slate-800 text-slate-600 text-4xl font-bold">${member.name.charAt(0)}</div>`
-            }
+          <div class="relative w-40 h-40 mx-auto mb-6">
+            <!-- Glow effect -->
+            <div class="absolute inset-0 rounded-full bg-gradient-to-br from-amber-400 to-orange-600 opacity-0 group-hover:opacity-20 transition-opacity duration-500 blur-xl -z-10"></div>
+            
+            <div class="w-full h-full rounded-full p-1 bg-gradient-to-br from-slate-700 to-slate-800 group-hover:from-amber-400 group-hover:to-orange-500 transition-colors duration-300">
+                <div class="w-full h-full rounded-full overflow-hidden border-4 border-slate-900 bg-slate-800">
+                  <img 
+                    src="${photoUrl}" 
+                    alt="${member.name}" 
+                    class="w-full h-full object-cover"
+                    style="aspect-ratio: 1 / 1;"
+                  >
+                </div>
+            </div>
           </div>
-          <div class="p-6">
-            <h3 class="text-lg font-bold text-white group-hover:text-amber-400 transition-colors">${member.name}</h3>
-            <p class="text-amber-500 text-sm font-medium mb-3">${member.role}</p>
-            <p class="text-sm text-slate-400 leading-relaxed">
-              ${member.description}
-            </p>
-          </div>
+          
+          <h3 class="text-xl font-bold text-white mb-1 group-hover:text-amber-400 transition-colors">${member.name}</h3>
+          <p class="text-amber-500 text-sm font-bold uppercase tracking-wider mb-3">${member.role}</p>
+          <p class="text-slate-400 text-sm leading-relaxed">
+            ${member.description}
+          </p>
         </article>
       `;
       }).join('');
