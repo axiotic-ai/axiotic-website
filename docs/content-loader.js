@@ -23,26 +23,14 @@ document.addEventListener('DOMContentLoaded', async () => {
       }
     });
 
-    // 2. Render Research Pillars (Option 4: Minimal with Border Icon - Dark)
-    const iconMap = {
-      '🔮🎯': 'fa-bullseye',
-      '👁️👂🗣️🖐️': 'fa-brain',
-      '🧠🔄': 'fa-memory',
-      '🔍🌲': 'fa-sitemap',
-      '🏗️🕸️': 'fa-cube',
-      '⚙️🚀': 'fa-cogs',
-      '🤖🌍': 'fa-globe',
-      '🧬📉': 'fa-leaf',
-      '🔗': 'fa-project-diagram',
-      '🌊': 'fa-wave-square'
-    };
-    
-    // Special handling for specific pillars
+    // 2. Render Research Pillars (Option 18: Minimalist Cards)
+    // Icons are now Font Awesome classes directly from content.yaml
     const getIconForPillar = (pillar) => {
-      if (pillar.title.includes('Distillation')) {
-        return 'fa-compress';
+      // If icon already starts with fa-, use it directly
+      if (pillar.icon && pillar.icon.startsWith('fa-')) {
+        return pillar.icon;
       }
-      return iconMap[pillar.icon] || 'fa-circle';
+      return 'fa-circle'; // fallback
     };
     
     const simplifiedDescriptions = {
