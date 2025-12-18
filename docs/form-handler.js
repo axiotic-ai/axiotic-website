@@ -6,10 +6,15 @@
  * 1. Create a Google Apps Script at script.google.com
  * 2. Deploy it as a Web App (see CONTACT_FORM_SETUP.md)
  * 3. Replace 'YOUR_GOOGLE_APPS_SCRIPT_URL' below with your Web App URL
+ * 4. Get reCAPTCHA keys from https://www.google.com/recaptcha/admin
+ * 5. Replace 'YOUR_RECAPTCHA_SITE_KEY' in index.html
  */
 
 // Your Google Apps Script Web App URL
 const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwpb0glnaC-o2C9bIfJ-R8lOad0ItjcpsHDuwqmEztlQOX5KfGqr_oYcuA0wGrMcQGqGw/exec';
+
+// reCAPTCHA Site Key (get from https://www.google.com/recaptcha/admin)
+const RECAPTCHA_SITE_KEY = '6LcB_S8sAAAAAKwHounFNONQvUvqTDVuOCj3rxJF';
 
 // Initialize when DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
@@ -53,30 +58,44 @@ async function handleFormSubmit(e) {
   submitButton.classList.add('opacity-75', 'cursor-not-allowed');
   
   try {
-    // Send data to Google Apps Script
-    const response = await fetch(GOOGLE_SCRIPT_URL, {
-      method: 'POST',
-      mode: 'no-cors', // Required for Google Apps Script
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        email: email,
-        name: name,
-        notes: notes
-      })
+    // Get reCAPTCHA token if configured
+    let recaptchaToken = null;
+    if (typeof grecaptcha !== 'undefined' && RECAPTCHA_SITE_KEY !== 'YOUR_RECAPTCHA_SITE_KEY') {
+      try {
+        recaptchaToken = await grecaptcha.execute(RECAPTCHA_SITE_KEY, { action: 'submit' });
+      } catch (recaptchaError) {
+        console.warn('reCAPTCHA error:', recaptchaError);
+        // Continue without reCAPTCHA if it fails
+      }
+    }
+    
+    // Build URL with query parameters (Google Apps Script works better this way)
+    const params = new URLSearchParams({
+      email: email,
+      name: name,
+      notes: notes
     });
     
-    // Note: With no-cors mode, we can't read the response
-    // But if no error is thrown, assume success
+    if (recaptchaToken) {
+      params.append('recaptcha_token', recaptchaToken);
+    }
+    
+    // Send data to Google Apps Script
+    // Using GET method with query params works more reliably with Google Apps Script
+    const response = await fetch(`${GOOGLE_SCRIPT_URL}?${params.toString()}`, {
+      method: 'GET',
+      mode: 'no-cors'
+    });
+    
+    // With no-cors, we can't read response, but we can check if request was made
+    console.log('Form submitted to:', GOOGLE_SCRIPT_URL);
+    
     showMessage('Thank you! We\'ll be in touch soon.', 'success');
     form.reset();
     
   } catch (error) {
     console.error('Error sending form:', error);
-    showMessage('Thank you for your interest! If you don\'t hear from us, please email contact@axiotic.ai directly.', 'success');
-    // Still show success message since no-cors prevents error detection
-    form.reset();
+    showMessage('There was an error sending your message. Please try again or email contact@axiotic.ai directly.', 'error');
   } finally {
     // Re-enable button after a delay
     setTimeout(() => {

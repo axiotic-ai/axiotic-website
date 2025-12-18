@@ -12,11 +12,51 @@
  * 8. Paste that URL into form-handler.js (replace YOUR_GOOGLE_APPS_SCRIPT_URL)
  */
 
+// Handle both GET and POST requests
+function doGet(e) {
+  return processRequest(e);
+}
+
 function doPost(e) {
+  return processRequest(e);
+}
+
+function processRequest(e) {
   try {
-    // Parse the incoming JSON data
-    const data = JSON.parse(e.postData.contents);
-    const { email, name, notes } = data;
+    // Parse incoming data - Google Apps Script receives data in e.parameter for GET or e.postData for POST
+    let email, name, notes;
+    
+    if (e.parameter) {
+      // GET request or form data
+      email = e.parameter.email;
+      name = e.parameter.name;
+      notes = e.parameter.notes;
+    } else if (e.postData && e.postData.contents) {
+      // POST with JSON
+      try {
+        const data = JSON.parse(e.postData.contents);
+        email = data.email;
+        name = data.name;
+        notes = data.notes;
+      } catch (jsonError) {
+        // POST with form data
+        const formData = e.parameter || {};
+        email = formData.email;
+        name = formData.name;
+        notes = formData.notes;
+      }
+    }
+    
+    // Validate required fields
+    if (!email) {
+      throw new Error('Email is required');
+    }
+    
+    // Log for debugging (check Executions tab)
+    Logger.log('Received form submission:');
+    Logger.log('Email: ' + email);
+    Logger.log('Name: ' + name);
+    Logger.log('Notes: ' + notes);
     
     // Your receiving email address (change if needed)
     const recipientEmail = 'contact@axiotic.ai';
@@ -50,7 +90,7 @@ You can reply directly to this email to respond to ${email}
       }
     );
     
-    // Return success response
+    // Return success response with CORS headers
     return ContentService
       .createTextOutput(JSON.stringify({ 
         success: true, 
@@ -60,7 +100,8 @@ You can reply directly to this email to respond to ${email}
       
   } catch (error) {
     // Log error (check Executions tab in Apps Script)
-    console.error('Error processing form:', error);
+    Logger.log('Error processing form: ' + error.toString());
+    Logger.log('Error details: ' + JSON.stringify(error));
     
     // Return error response
     return ContentService
