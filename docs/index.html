@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title data-key="site.title">Axiotic.ai — Beyond Scaling through Smarter Learning</title>
+    <title data-key="site.title">Axiotic.ai - Beyond Scaling through Smarter Learning</title>
     <link rel="icon" href="images/logo-crop.png">
     <link rel="stylesheet" href="styles.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -19,7 +19,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script defer src="particles-init.js"></script>
-    <script defer src="content-loader.js?v=2"></script>
+    <script defer src="content-loader.js?v=4"></script>
   </head>
   <body class="bg-slate-900 text-slate-50 font-[Inter]">
     <div id="particles-js"></div>
@@ -44,22 +44,6 @@
             >White Glove Consulting</a
           >
           <a href="#team" class="hover:text-amber-300 transition" data-key="site.nav.links.2.text">Team</a>
-          <div class="relative group">
-            <a href="pillar-designs-preview.html" class="hover:text-amber-300 transition flex items-center gap-1">
-              Designs
-              <i class="fas fa-chevron-down text-xs"></i>
-            </a>
-            <div class="absolute top-full right-0 mt-2 w-48 bg-slate-800 border border-slate-700 rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-              <div class="py-2">
-                <a href="pillar-designs-preview.html" class="block px-4 py-2 text-sm text-slate-200 hover:bg-slate-700 hover:text-amber-300 transition">Consulting Pillars</a>
-                <a href="research-pillar-designs-preview.html" class="block px-4 py-2 text-sm text-slate-200 hover:bg-slate-700 hover:text-amber-300 transition">Research Pillars</a>
-                <a href="why-contact-designs-preview.html" class="block px-4 py-2 text-sm text-slate-200 hover:bg-slate-700 hover:text-amber-300 transition">Why/Contact</a>
-                <a href="research-layout-preview.html" class="block px-4 py-2 text-sm text-slate-200 hover:bg-slate-700 hover:text-amber-300 transition">Research Layout</a>
-                <a href="flywheel-designs-preview.html" class="block px-4 py-2 text-sm text-slate-200 hover:bg-slate-700 hover:text-amber-300 transition">Flywheel Designs</a>
-                <a href="flywheel-circular-preview.html" class="block px-4 py-2 text-sm text-slate-200 hover:bg-slate-700 hover:text-amber-300 transition">Circular Metro</a>
-              </div>
-            </div>
-          </div>
           <a 
             href="#contact-form" 
             class="inline-flex items-center justify-center rounded-full bg-amber-400 px-4 py-2 text-xs font-bold text-slate-950 hover:bg-amber-300 transition shadow-sm"
@@ -74,9 +58,9 @@
     <main>
       <!-- Hero Section -->
       <section class="min-h-screen flex items-center justify-center pt-20">
-        <div class="max-w-4xl mx-auto px-4 text-center space-y-6">
+        <div class="max-w-5xl mx-auto px-4 text-center space-y-8">
           <h1
-            class="text-5xl sm:text-6xl md:text-7xl font-extrabold tracking-tight leading-none"
+            class="text-6xl sm:text-7xl md:text-8xl font-extrabold tracking-tight leading-none"
           >
             <span class="block text-white" data-aos="fade-up" data-key="hero.title_line1">
               <!-- Content loaded from YAML -->
@@ -85,14 +69,14 @@
               <!-- Content loaded from YAML -->
             </span>
           </h1>
-          <p 
-            class="text-base sm:text-lg text-slate-200 max-w-2xl mx-auto"
+          <div 
+            class="text-sm sm:text-base text-slate-200 max-w-3xl mx-auto leading-tight"
             data-aos="fade-up" 
             data-aos-delay="100"
-            data-key="hero.subtitle_primary"
           >
-            <!-- Content loaded from YAML -->
-          </p>
+            <div class="block" data-key="hero.subtitle_primary_line1"><!-- Content loaded from YAML --></div>
+            <div class="block" data-key="hero.subtitle_primary_line2"><!-- Content loaded from YAML --></div>
+          </div>
 
           <div
             class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4"
@@ -127,7 +111,7 @@
               data-aos-duration="1200"
               data-key="mission.statement_part1"
             >
-              We believe intelligence emerges from Structure, Interaction, and Information,
+              We believe intelligence emerges from Structure, Interaction, and Information
             </p>
             <p 
               class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-amber-300/90 leading-tight tracking-tight text-left md:text-left border-l-0 md:border-l-2 border-amber-400/40 pl-0 md:pl-8"
@@ -189,11 +173,11 @@
           <!-- Row 1: 2 Cards (AI Audit, Model Development) -->
           <div class="grid md:grid-cols-2 gap-6 mb-6" data-aos="fade-up">
             <div class="service-card rounded-xl bg-gradient-to-br from-white via-white to-amber-50/80 border-2 border-amber-400/30 p-8 hover:border-amber-500/50 shadow-xl transition-all">
-              <div class="mb-4">
-                <span class="text-xs font-bold text-amber-600 uppercase tracking-wider">Flagship Offering</span>
-                <h3 class="text-xl font-bold mt-3 mb-4 text-slate-900">AI Strategy</h3>
+              <div class="w-12 h-12 rounded-lg bg-amber-100 flex items-center justify-center mb-4">
+                <i class="fas fa-compass text-xl text-amber-600"></i>
               </div>
-              <p class="text-slate-700 text-sm leading-relaxed">We work with you to understand your products, data, and constraints, then define where AI will create real value—and where it won't. You leave with a clear, practical AI strategy grounded in what's actually possible.</p>
+              <h3 class="text-xl font-bold mb-4 text-slate-900">AI Strategy</h3>
+              <p class="text-slate-700 text-sm leading-relaxed">We work with you to understand your products, data, and constraints, then define where AI will create real value-and where it won't. You leave with a clear, practical AI strategy grounded in what's actually possible.</p>
             </div>
             <div class="service-card rounded-xl bg-gradient-to-br from-white via-white to-slate-50/80 border-2 border-slate-300 p-8 hover:border-amber-500/40 shadow-xl transition-all">
               <div class="w-12 h-12 rounded-lg bg-amber-100 flex items-center justify-center mb-4">
@@ -224,7 +208,7 @@
                 <i class="fas fa-users text-xl text-amber-600"></i>
               </div>
               <h3 class="text-xl font-bold mb-4 text-slate-900">Hiring & Org Design</h3>
-              <p class="text-slate-700 text-sm leading-relaxed">Help you build the right AI team—providing interim Head-of-AI support, designing key roles, and vetting top candidates.</p>
+              <p class="text-slate-700 text-sm leading-relaxed">Help you build the right AI team-providing interim Head-of-AI support, designing key roles, and vetting top candidates.</p>
             </div>
           </div>
 
@@ -272,7 +256,7 @@
                   ></textarea>
                 </div>
                 <button type="submit" class="w-full rounded-lg bg-amber-400 px-6 py-3 text-sm font-bold text-slate-950 hover:bg-amber-300 transition shadow-lg hover:shadow-amber-400/20" data-key="consulting.contact.button">
-                  Request Free Consultation
+                  <!-- Content loaded from YAML -->
                 </button>
               </form>
             </div>
@@ -292,7 +276,7 @@
             </h2>
             <p class="max-w-2xl mx-auto text-lg text-slate-300 leading-relaxed" data-key="team.header.subtitle">
               A small, senior group combining deep research, pragmatic engineering, governance, 
-              and education — organized around the Axiotic flywheel.
+              and education - organized around the Axiotic flywheel.
             </p>
           </header>
 

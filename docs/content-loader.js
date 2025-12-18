@@ -110,7 +110,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     
     const flywheelDescriptions = {
       'Consulting Creates Real-World Value': 'We build systems and empower teams that solve actual industry problems. This work generates value for the world and capital to fund our own compute and talent.',
-      'Revenue Funds Research': 'We reinvest profits into blue sky exploration—new architectures, evolution, and embodied AI—without needing immediate ROI.',
+      'Revenue Funds Research': 'We reinvest profits into blue sky exploration-new architectures, evolution, and embodied AI-without needing immediate ROI.',
       'Research Builds Reputation': 'We publish SOTA open-source work. This builds technical authority and trust in our capabilities.',
       'Reputation Attracts Clients': 'Our open work demonstrates our expertise. Companies engage with us to leverage our research and systems, restarting the cycle.'
     };
@@ -167,13 +167,32 @@ document.addEventListener('DOMContentLoaded', async () => {
       `).join('');
     }
 
-    // 5. Render Team Members (Shuffled)
+    // 5. Render Team Members (Fixed Order)
     const teamGrid = document.getElementById('team-grid');
     if (teamGrid && content.team.members) {
-      const members = [...content.team.members];
-      shuffleArray(members);
+      const members = content.team.members;
       
-      teamGrid.innerHTML = members.map((member, index) => `
+      teamGrid.innerHTML = members.map((member, index) => {
+        const linkedinIcon = member.linkedin ? `
+          <a href="${member.linkedin}" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-amber-400 transition-colors" title="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+        ` : '';
+        
+        const scholarIcon = member.scholar ? `
+          <a href="${member.scholar}" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-amber-400 transition-colors" title="Google Scholar">
+            <i class="fas fa-graduation-cap"></i>
+          </a>
+        ` : '';
+        
+        const socialIcons = (linkedinIcon || scholarIcon) ? `
+          <div class="flex items-center gap-3 mt-3">
+            ${linkedinIcon}
+            ${scholarIcon}
+          </div>
+        ` : '';
+        
+        return `
         <article class="p-4 flex flex-col items-start" data-aos="fade-up" data-aos-delay="${index * 50}">
           <div class="mb-4 w-24 h-24 rounded-full overflow-hidden border-2 border-slate-700 shadow-sm">
             <img 
@@ -188,8 +207,10 @@ document.addEventListener('DOMContentLoaded', async () => {
           <p class="text-xs text-slate-400 leading-relaxed">
             ${member.description}
           </p>
+          ${socialIcons}
         </article>
-      `).join('');
+      `;
+      }).join('');
     }
 
     // Refresh AOS to account for new DOM elements
