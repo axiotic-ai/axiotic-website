@@ -124,7 +124,21 @@ async function loadContent() {
       const shuffledMembers = [...content.team.members].sort(() => Math.random() - 0.5);
       
       teamGrid.innerHTML = shuffledMembers.map((member, index) => {
-        const photoUrl = member.photo || 'images/default-avatar.png'; 
+        const photoUrl = member.photo || 'images/default-avatar.png';
+        
+        // Build the name with title (e.g., "Sam Jones, PhD")
+        const displayName = member.name + (member.title ? ', ' + member.title : '');
+        
+        // Build social links array
+        const links = [];
+        if (member.github) {
+          links.push(`<a href="${member.github}" target="_blank" rel="noopener noreferrer" class="hover:text-amber-400 transition-colors">GitHub</a>`);
+        }
+        if (member.linkedin) {
+          links.push(`<a href="${member.linkedin}" target="_blank" rel="noopener noreferrer" class="hover:text-amber-400 transition-colors">LinkedIn</a>`);
+        }
+        const linksHtml = links.length > 0 ? `<p class="text-blue-400 text-sm mt-3">${links.join(' | ')}</p>` : '';
+        
         return `
         <article 
           class="text-center group p-4"
@@ -147,11 +161,12 @@ async function loadContent() {
             </div>
           </div>
           
-          <h3 class="text-xl font-bold text-white mb-1 group-hover:text-amber-400 transition-colors">${member.name}</h3>
+          <h3 class="text-xl font-bold text-white mb-1 group-hover:text-amber-400 transition-colors">${displayName}</h3>
           <p class="text-amber-500 text-sm font-bold uppercase tracking-wider mb-3">${member.role}</p>
           <p class="text-slate-400 text-sm leading-relaxed">
             ${member.description}
           </p>
+          ${linksHtml}
         </article>
       `;
       }).join('');

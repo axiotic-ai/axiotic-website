@@ -146,39 +146,63 @@ team:
     subtitle: "An efficient, senior group combining deep research, pragmatic engineering, governance, and education — organized around the Axiotic flywheel."
   members:
     - name: "Antreas Antoniou"
+      title: "PhD"  # Academic title/credentials (e.g., "PhD", "MSc", "Dr.")
       role: "Co-Founder & Technical Vision"
       description: "PhD in Meta-Learning (Edinburgh). Principal Scientist (Pieces), Lead Scientist (Malted AI). Expert in LLMs, Multi-Modal Learning, Meta-Learning, Evolutionary Optimization, and Self-Supervised Methods in AI."
       photo: "team_photos/antreas_antoniou.jpeg"
+      github: ""  # Add GitHub profile URL here
+      linkedin: ""  # Add LinkedIn profile URL here
     - name: "Sam Jones"
+      title: ""  # Academic title/credentials (e.g., "PhD", "MSc", "Dr.")
       role: "Co-Founder & Engineering Lead"
       description: "Owns delivery and execution: project management, resource allocation, and ensuring consulting work ships on time. Expert in agentic systems, RAG, LLMs and on device AI."
       photo: "team_photos/sam_jones.jpeg"
+      github: ""  # Add GitHub profile URL here
+      linkedin: ""  # Add LinkedIn profile URL here
     - name: "Fady Rezk"
+      title: "PhD"  # Academic title/credentials (e.g., "PhD", "MSc", "Dr.")
       role: "AI Researcher and Engineer"
       description: "Specializing in 'scaling down to scale up': efficient architectures, deep learning theory, and on-device AI. PhD from Edinburgh, ex-Samsung AI."
       photo: "team_photos/fady_rezk.jpeg"
+      github: ""  # Add GitHub profile URL here
+      linkedin: ""  # Add LinkedIn profile URL here
     - name: "Patryk Bartkowiak"
+      title: ""  # Academic title/credentials (e.g., "PhD", "MSc", "Dr.")
       role: "AI Researcher & Engineer"
       description: "Specializing in privacy-first multimodal frameworks, video generation optimization, and bridging edge/cloud AI. Expert in low-level GPU optimization."
       photo: "team_photos/patryk.jpeg"
+      github: ""  # Add GitHub profile URL here
+      linkedin: ""  # Add LinkedIn profile URL here
     - name: "Aristotelis Charalampous"
+      title: ""  # Academic title/credentials (e.g., "PhD", "MSc", "Dr.")
       role: "Senior Data Scientist"
       description: "Specializing in production-ready ML models, scalable pipelines, and bridging research with industry applications (NLP, forecasting, valuation)."
       photo: "team_photos/aristotelis_charalampous.jpeg"
+      github: ""  # Add GitHub profile URL here
+      linkedin: ""  # Add LinkedIn profile URL here
     
     - name: "Andreas Theodorou"
+      title: ""  # Academic title/credentials (e.g., "PhD", "MSc", "Dr.")
       role: "Governance & Safety Advisor"
       description: "AI law, ethics, and grant strategy. Leads governance audits, compliance work, and non‑dilutive funding."
       photo: "team_photos/andreas_theodorou.jpg"
+      github: ""  # Add GitHub profile URL here
+      linkedin: ""  # Add LinkedIn profile URL here
    
     - name: "Laura Bernal"
+      title: ""  # Academic title/credentials (e.g., "PhD", "MSc", "Dr.")
       role: "Co-Founder & Commercial Lead"
       description: "Connects the lab with the broader ecosystem, builds community around open science outputs, and develops and crystallizes messaging for the company, and builds relationships with clients."
       photo: "team_photos/laura_vergara.webp"
+      github: ""  # Add GitHub profile URL here
+      linkedin: ""  # Add LinkedIn profile URL here
     - name: "Thomas Woehrle"
+      title: ""  # Academic title/credentials (e.g., "PhD", "MSc", "Dr.")
       role: "AI Researcher and Engineer"
       description: "Research engineer exploring evolution‑inspired AI and open‑ended learning, injecting fresh perspectives into the research program."
       photo: "team_photos/thomas.jpeg"
+      github: ""  # Add GitHub profile URL here
+      linkedin: ""  # Add LinkedIn profile URL here
 
 footer:
   copyright: "© 2025 Axiotic.ai"
