@@ -80,18 +80,34 @@ async function handleFormSubmit(e) {
       params.append('recaptcha_token', recaptchaToken);
     }
     
-    // Send data to Google Apps Script
-    // Using GET method with query params works more reliably with Google Apps Script
-    const response = await fetch(`${GOOGLE_SCRIPT_URL}?${params.toString()}`, {
-      method: 'GET',
-      mode: 'no-cors'
-    });
+    // Build full URL for debugging
+    const fullUrl = `${GOOGLE_SCRIPT_URL}?${params.toString()}`;
+    console.log('=== FORM SUBMISSION DEBUG ===');
+    console.log('URL:', fullUrl);
+    console.log('Email:', email);
+    console.log('Name:', name);
+    console.log('Notes:', notes);
+    console.log('reCAPTCHA Token:', recaptchaToken ? 'Present' : 'Not present');
     
-    // With no-cors, we can't read response, but we can check if request was made
-    console.log('Form submitted to:', GOOGLE_SCRIPT_URL);
+    // Use a hidden iframe approach - more reliable with Google Apps Script
+    // This avoids CORS issues and works better with Web Apps
+    const iframe = document.createElement('iframe');
+    iframe.style.display = 'none';
+    iframe.style.width = '0';
+    iframe.style.height = '0';
+    iframe.src = fullUrl;
     
-    showMessage('Thank you! We\'ll be in touch soon.', 'success');
-    form.reset();
+    // Add iframe to page temporarily
+    document.body.appendChild(iframe);
+    
+    // Wait a moment for the request to complete
+    setTimeout(() => {
+      document.body.removeChild(iframe);
+      console.log('Request sent via iframe. Check Google Apps Script Executions tab.');
+      console.log('=== END DEBUG ===');
+      showMessage('Thank you! We\'ll be in touch soon.', 'success');
+      form.reset();
+    }, 1000);
     
   } catch (error) {
     console.error('Error sending form:', error);

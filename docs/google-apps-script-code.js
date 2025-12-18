@@ -14,49 +14,87 @@
 
 // Handle both GET and POST requests
 function doGet(e) {
+  // Ensure e exists (should always be provided by Google Apps Script, but safety check)
+  if (!e) {
+    e = {};
+  }
   return processRequest(e);
 }
 
 function doPost(e) {
+  // Ensure e exists (should always be provided by Google Apps Script, but safety check)
+  if (!e) {
+    e = {};
+  }
   return processRequest(e);
 }
 
 function processRequest(e) {
   try {
+    // Log everything for debugging
+    Logger.log('=== GOOGLE APPS SCRIPT DEBUG ===');
+    Logger.log('Request received at: ' + new Date().toISOString());
+    Logger.log('e.parameter: ' + JSON.stringify(e ? e.parameter : 'e is undefined'));
+    Logger.log('e.postData exists: ' + (e && e.postData ? 'Yes' : 'No'));
+    if (e && e.postData) {
+      Logger.log('e.postData: ' + JSON.stringify(e.postData));
+    }
+    
+    // Safety check
+    if (!e) {
+      Logger.log('ERROR: Event object (e) is undefined');
+      throw new Error('Event object is undefined');
+    }
+    
     // Parse incoming data - Google Apps Script receives data in e.parameter for GET or e.postData for POST
     let email, name, notes;
     
-    if (e.parameter) {
+    // Check GET request first (e.parameter exists and has data)
+    if (e.parameter && typeof e.parameter === 'object' && Object.keys(e.parameter).length > 0) {
       // GET request or form data
+      Logger.log('Processing as GET request with parameters');
       email = e.parameter.email;
       name = e.parameter.name;
       notes = e.parameter.notes;
-    } else if (e.postData && e.postData.contents) {
+    } 
+    // Check POST request (e.postData exists)
+    else if (e.postData && e.postData.contents) {
       // POST with JSON
+      Logger.log('Processing as POST request with JSON');
       try {
         const data = JSON.parse(e.postData.contents);
         email = data.email;
         name = data.name;
         notes = data.notes;
       } catch (jsonError) {
-        // POST with form data
-        const formData = e.parameter || {};
-        email = formData.email;
-        name = formData.name;
-        notes = formData.notes;
+        Logger.log('JSON parse error: ' + jsonError.toString());
+        // Fallback to parameters if available
+        if (e.parameter) {
+          email = e.parameter.email;
+          name = e.parameter.name;
+          notes = e.parameter.notes;
+        }
       }
+    } 
+    // No data found
+    else {
+      Logger.log('ERROR: No data received in request');
+      Logger.log('e.parameter keys: ' + (e.parameter ? Object.keys(e.parameter).join(', ') : 'null'));
+      Logger.log('e.postData: ' + (e.postData ? 'exists' : 'null'));
+      throw new Error('No data received in request');
     }
     
     // Validate required fields
     if (!email) {
+      Logger.log('ERROR: Email is required but not provided');
       throw new Error('Email is required');
     }
     
-    // Log for debugging (check Executions tab)
-    Logger.log('Received form submission:');
+    // Log parsed data
+    Logger.log('Parsed form data:');
     Logger.log('Email: ' + email);
-    Logger.log('Name: ' + name);
-    Logger.log('Notes: ' + notes);
+    Logger.log('Name: ' + (name || 'Not provided'));
+    Logger.log('Notes: ' + (notes || 'Not provided'));
     
     // Your receiving email address (change if needed)
     const recipientEmail = 'contact@axiotic.ai';
@@ -80,17 +118,27 @@ You can reply directly to this email to respond to ${email}
     `.trim();
     
     // Send email using GmailApp
-    GmailApp.sendEmail(
-      recipientEmail, 
-      subject, 
-      body, 
-      {
-        replyTo: email,
-        name: name && name !== 'Not provided' ? name : 'Contact Form'
-      }
-    );
+    Logger.log('Attempting to send email to: ' + recipientEmail);
+    Logger.log('Subject: ' + subject);
+    
+    try {
+      GmailApp.sendEmail(
+        recipientEmail, 
+        subject, 
+        body, 
+        {
+          replyTo: email,
+          name: name && name !== 'Not provided' ? name : 'Contact Form'
+        }
+      );
+      Logger.log('SUCCESS: Email sent successfully!');
+    } catch (emailError) {
+      Logger.log('ERROR sending email: ' + emailError.toString());
+      throw emailError;
+    }
     
     // Return success response with CORS headers
+    Logger.log('=== END DEBUG - SUCCESS ===');
     return ContentService
       .createTextOutput(JSON.stringify({ 
         success: true, 
@@ -114,7 +162,7 @@ You can reply directly to this email to respond to ${email}
 }
 
 /**
- * Test function - run this manually to verify setup
+ * Test function - run this manually to verify setup (POST with JSON)
  */
 function testEmail() {
   const testData = {
@@ -130,6 +178,22 @@ function testEmail() {
   };
   
   const result = doPost(mockEvent);
+  Logger.log(result.getContent());
+}
+
+/**
+ * Test function for GET requests (simulates form submission)
+ */
+function testEmailGet() {
+  const mockEvent = {
+    parameter: {
+      email: 'test@example.com',
+      name: 'Test User GET',
+      notes: 'This is a test message via GET'
+    }
+  };
+  
+  const result = doGet(mockEvent);
   Logger.log(result.getContent());
 }
 
