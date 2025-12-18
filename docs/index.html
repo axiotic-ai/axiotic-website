@@ -70,12 +70,12 @@
       <section class="min-h-screen flex items-center justify-center pt-20">
         <div class="max-w-4xl mx-auto px-4 text-center space-y-6">
           <h1
-            class="text-6xl sm:text-7xl md:text-8xl font-extrabold tracking-tight leading-none"
+            class="text-6xl sm:text-7xl md:text-8xl font-extrabold tracking-tighter leading-none hero-title-mobile"
           >
-            <span class="block text-white" data-aos="fade-up" data-key="hero.title_line1">
+            <span class="block text-white leading-none" data-aos="fade-up" data-key="hero.title_line1">
               <!-- Content loaded from YAML -->
             </span>
-            <span class="block text-amber-300/70 -mt-6 sm:-mt-8 md:-mt-10" data-aos="fade-up" data-aos-delay="200" data-key="hero.title_line2">
+            <span class="block text-amber-300/70 -mt-2 sm:-mt-12 md:-mt-14 lg:-mt-16 leading-none" data-aos="fade-up" data-aos-delay="200" data-key="hero.title_line2">
               <!-- Content loaded from YAML -->
             </span>
           </h1>
@@ -143,7 +143,7 @@
             <p class="text-sm font-semibold uppercase tracking-[0.2em] text-amber-300" data-key="research.header.eyebrow">
               <!-- Content loaded from YAML -->
             </p>
-            <h2 class="text-5xl sm:text-6xl font-extrabold tracking-tight">
+            <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight">
               <span class="block" data-key="research.header.title_line1"><!-- Content loaded from YAML --></span>
               <span class="block" data-key="research.header.title_line2"><!-- Content loaded from YAML --></span>
             </h2>
@@ -308,48 +308,51 @@
           </header>
 
           <!-- Hardcoded Metro Line Layout (Design 16) with Data-Keys -->
-          <div class="flex flex-col md:flex-row items-start justify-between relative pt-10">
-             <!-- Connecting Line (Desktop Only) -->
+          <div class="flex flex-col md:flex-row items-start justify-between relative pt-10 gap-8 md:gap-0">
+             <!-- Connecting Line (Desktop Horizontal) -->
              <div class="absolute top-12 left-0 w-full h-2 bg-slate-800 hidden md:block rounded-full"></div>
              
+             <!-- Connecting Line (Mobile Vertical) -->
+             <div class="absolute top-12 left-1/2 -translate-x-1/2 w-0.5 h-full bg-slate-700/30 md:hidden rounded-full"></div>
+             
              <!-- Step 1 -->
-             <div class="relative w-full md:w-1/4 px-2 text-center group" data-aos="fade-up" data-aos-delay="0">
+             <div class="relative w-full md:w-1/4 px-2 text-center group mb-8 md:mb-0" data-aos="fade-up" data-aos-delay="0">
                  <div class="w-6 h-6 bg-amber-500 rounded-full mx-auto mb-4 border-4 border-slate-900 relative z-10 shadow-[0_0_10px_rgba(245,158,11,0.5)] group-hover:scale-125 transition-transform duration-300"></div>
-                 <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-full mb-2 text-amber-400 text-2xl opacity-90 group-hover:-translate-y-[120%] transition-transform duration-300">
+                 <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-full mb-2 text-amber-400 text-2xl opacity-90 group-hover:-translate-y-[120%] transition-transform duration-300 hidden md:block">
                     <i class="fas fa-coins"></i>
                  </div>
-                 <h3 class="text-white font-bold text-xl mb-2 pt-2 group-hover:text-amber-400 transition-colors" data-key="flywheel.steps.0.title">Consulting Brings Revenue</h3>
-                 <p class="text-slate-500 text-base leading-relaxed" data-key="flywheel.steps.0.description">We build systems and empower teams that solve actual industry problems.</p>
+                 <h3 class="text-white font-bold text-lg sm:text-xl mb-2 pt-2 group-hover:text-amber-400 transition-colors" data-key="flywheel.steps.0.title">Consulting Brings Revenue</h3>
+                 <p class="text-slate-500 text-sm sm:text-base leading-relaxed" data-key="flywheel.steps.0.description">We build systems and empower teams that solve actual industry problems.</p>
              </div>
 
              <!-- Step 2 -->
-             <div class="relative w-full md:w-1/4 px-2 text-center group" data-aos="fade-up" data-aos-delay="100">
+             <div class="relative w-full md:w-1/4 px-2 text-center group mb-8 md:mb-0" data-aos="fade-up" data-aos-delay="100">
                  <div class="w-6 h-6 bg-amber-500 rounded-full mx-auto mb-4 border-4 border-slate-900 relative z-10 shadow-[0_0_10px_rgba(245,158,11,0.5)] group-hover:scale-125 transition-transform duration-300"></div>
-                 <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-full mb-2 text-amber-400 text-2xl opacity-90 group-hover:-translate-y-[120%] transition-transform duration-300">
+                 <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-full mb-2 text-amber-400 text-2xl opacity-90 group-hover:-translate-y-[120%] transition-transform duration-300 hidden md:block">
                     <i class="fas fa-flask"></i>
                  </div>
-                 <h3 class="text-white font-bold text-xl mb-2 pt-2 group-hover:text-amber-400 transition-colors" data-key="flywheel.steps.1.title">Revenue Funds Research</h3>
-                 <p class="text-slate-500 text-base leading-relaxed" data-key="flywheel.steps.1.description">We reinvest profits into "blue sky" exploration without needing immediate ROI.</p>
+                 <h3 class="text-white font-bold text-lg sm:text-xl mb-2 pt-2 group-hover:text-amber-400 transition-colors" data-key="flywheel.steps.1.title">Revenue Funds Research</h3>
+                 <p class="text-slate-500 text-sm sm:text-base leading-relaxed" data-key="flywheel.steps.1.description">We reinvest profits into "blue sky" exploration without needing immediate ROI.</p>
              </div>
 
              <!-- Step 3 -->
-             <div class="relative w-full md:w-1/4 px-2 text-center group" data-aos="fade-up" data-aos-delay="200">
+             <div class="relative w-full md:w-1/4 px-2 text-center group mb-8 md:mb-0" data-aos="fade-up" data-aos-delay="200">
                  <div class="w-6 h-6 bg-amber-500 rounded-full mx-auto mb-4 border-4 border-slate-900 relative z-10 shadow-[0_0_10px_rgba(245,158,11,0.5)] group-hover:scale-125 transition-transform duration-300"></div>
-                 <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-full mb-2 text-amber-400 text-2xl opacity-90 group-hover:-translate-y-[120%] transition-transform duration-300">
+                 <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-full mb-2 text-amber-400 text-2xl opacity-90 group-hover:-translate-y-[120%] transition-transform duration-300 hidden md:block">
                     <i class="fas fa-star"></i>
                  </div>
-                 <h3 class="text-white font-bold text-xl mb-2 pt-2 group-hover:text-amber-400 transition-colors" data-key="flywheel.steps.2.title">Research Builds Reputation</h3>
-                 <p class="text-slate-500 text-base leading-relaxed" data-key="flywheel.steps.2.description">We publish SOTA open-source work. This builds technical authority and trust.</p>
+                 <h3 class="text-white font-bold text-lg sm:text-xl mb-2 pt-2 group-hover:text-amber-400 transition-colors" data-key="flywheel.steps.2.title">Research Builds Reputation</h3>
+                 <p class="text-slate-500 text-sm sm:text-base leading-relaxed" data-key="flywheel.steps.2.description">We publish SOTA open-source work. This builds technical authority and trust.</p>
              </div>
 
              <!-- Step 4 -->
              <div class="relative w-full md:w-1/4 px-2 text-center group" data-aos="fade-up" data-aos-delay="300">
                  <div class="w-6 h-6 bg-amber-500 rounded-full mx-auto mb-4 border-4 border-slate-900 relative z-10 shadow-[0_0_10px_rgba(245,158,11,0.5)] group-hover:scale-125 transition-transform duration-300"></div>
-                 <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-full mb-2 text-amber-400 text-2xl opacity-90 group-hover:-translate-y-[120%] transition-transform duration-300">
+                 <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-full mb-2 text-amber-400 text-2xl opacity-90 group-hover:-translate-y-[120%] transition-transform duration-300 hidden md:block">
                     <i class="fas fa-magnet"></i>
                  </div>
-                 <h3 class="text-white font-bold text-xl mb-2 pt-2 group-hover:text-amber-400 transition-colors" data-key="flywheel.steps.3.title">Reputation Attracts Clients</h3>
-                 <p class="text-slate-500 text-base leading-relaxed" data-key="flywheel.steps.3.description">Our open work acts as a magnet. Companies want to work with the team that built the models.</p>
+                 <h3 class="text-white font-bold text-lg sm:text-xl mb-2 pt-2 group-hover:text-amber-400 transition-colors" data-key="flywheel.steps.3.title">Reputation Attracts Clients</h3>
+                 <p class="text-slate-500 text-sm sm:text-base leading-relaxed" data-key="flywheel.steps.3.description">Our open work acts as a magnet. Companies want to work with the team that built the models.</p>
              </div>
           </div>
         </div>

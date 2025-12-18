@@ -388,4 +388,16 @@ h1, h2, h3, h4, h5, h6 {
   text-align: center;
 }
 
+/* Mobile-specific word spacing for hero title */
+@media (max-width: 640px) {
+  .hero-title-mobile {
+    word-spacing: -0.2em;
+    letter-spacing: -0.08em !important;
+  }
+  
+  .hero-title-mobile span {
+    word-spacing: -0.2em;
+  }
+}
+
 
