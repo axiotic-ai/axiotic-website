@@ -18,10 +18,19 @@ const RECAPTCHA_SITE_KEY = '6LcB_S8sAAAAAKwHounFNONQvUvqTDVuOCj3rxJF';
 
 // Initialize when DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
-  const contactForm = document.querySelector('#consultation-form');
-  if (contactForm) {
-    contactForm.addEventListener('submit', handleFormSubmit);
+  // Be resilient to markup changes: try id first, then fall back to the form inside #contact-form.
+  const contactForm =
+    document.querySelector('#consultation-form') ??
+    document.querySelector('#contact-form form');
+
+  if (!contactForm) {
+    console.warn(
+      '[contact-form] No form found (expected #consultation-form or #contact-form form).'
+    );
+    return;
   }
+
+  contactForm.addEventListener('submit', handleFormSubmit);
 });
 
 /**
@@ -70,44 +79,42 @@ async function handleFormSubmit(e) {
     }
     
     // Build URL with query parameters (Google Apps Script works better this way)
-    const params = new URLSearchParams({
-      email: email,
-      name: name,
-      notes: notes
-    });
-    
-    if (recaptchaToken) {
-      params.append('recaptcha_token', recaptchaToken);
-    }
-    
-    // Build full URL for debugging
-    const fullUrl = `${GOOGLE_SCRIPT_URL}?${params.toString()}`;
+    // IMPORTANT:
+    // - Our Apps Script setup guide uses `doPost` and expects JSON.
+    // - Cross-origin CORS from Apps Script is often not enabled, so we send using
+    //   `mode: "no-cors"` with `Content-Type: text/plain` to avoid preflight and CORS failures.
+    // - This means we can't reliably read the response in the browser; we treat a resolved
+    //   fetch as "sent" and recommend checking the Apps Script "Executions" tab for debugging.
+    const payload = {
+      email,
+      name,
+      notes,
+      recaptcha_token: recaptchaToken,
+      page_url: window.location.href,
+      submitted_at: new Date().toISOString(),
+    };
+
     console.log('=== FORM SUBMISSION DEBUG ===');
-    console.log('URL:', fullUrl);
-    console.log('Email:', email);
-    console.log('Name:', name);
-    console.log('Notes:', notes);
-    console.log('reCAPTCHA Token:', recaptchaToken ? 'Present' : 'Not present');
-    
-    // Use a hidden iframe approach - more reliable with Google Apps Script
-    // This avoids CORS issues and works better with Web Apps
-    const iframe = document.createElement('iframe');
-    iframe.style.display = 'none';
-    iframe.style.width = '0';
-    iframe.style.height = '0';
-    iframe.src = fullUrl;
-    
-    // Add iframe to page temporarily
-    document.body.appendChild(iframe);
-    
-    // Wait a moment for the request to complete
-    setTimeout(() => {
-      document.body.removeChild(iframe);
-      console.log('Request sent via iframe. Check Google Apps Script Executions tab.');
-      console.log('=== END DEBUG ===');
-      showMessage('Thank you! We\'ll be in touch soon.', 'success');
-      form.reset();
-    }, 1000);
+    console.log('POST URL:', GOOGLE_SCRIPT_URL);
+    console.log('Payload:', payload);
+
+    await fetch(GOOGLE_SCRIPT_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: {
+        'Content-Type': 'text/plain;charset=utf-8',
+      },
+      body: JSON.stringify(payload),
+    });
+
+    console.log('Request sent via fetch(no-cors). Check Google Apps Script Executions tab.');
+    console.log('=== END DEBUG ===');
+
+    showMessage(
+      "Thank you! We'll be in touch soon. If you don't hear back, email contact@axiotic.ai.",
+      'success'
+    );
+    form.reset();
     
   } catch (error) {
     console.error('Error sending form:', error);
