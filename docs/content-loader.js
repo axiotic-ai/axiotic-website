@@ -1,20 +1,83 @@
 // content-loader.js
 
+// Simple HTML sanitizer to prevent XSS attacks
+function sanitizeHTML(html) {
+  const allowedTags = ['br', 'em', 'strong', 'b', 'i'];
+  const tempDiv = document.createElement('div');
+  tempDiv.textContent = html; // First escape everything
+  
+  // Then selectively allow safe tags
+  let sanitized = tempDiv.innerHTML;
+  allowedTags.forEach(tag => {
+    const openRegex = new RegExp(`&lt;${tag}&gt;`, 'gi');
+    const closeRegex = new RegExp(`&lt;/${tag}&gt;`, 'gi');
+    sanitized = sanitized.replace(openRegex, `<${tag}>`);
+    sanitized = sanitized.replace(closeRegex, `</${tag}>`);
+  });
+  
+  return sanitized;
+}
+
+// Show loading indicator
+function showLoading() {
+  // Add a subtle loading class to body
+  document.body.classList.add('content-loading');
+}
+
+// Hide loading indicator
+function hideLoading() {
+  document.body.classList.remove('content-loading');
+}
+
+// Show error message to user
+function showError(message) {
+  const errorDiv = document.createElement('div');
+  errorDiv.className = 'fixed top-20 left-1/2 -translate-x-1/2 bg-red-500/90 text-white px-6 py-4 rounded-lg shadow-lg z-50 max-w-md text-center';
+  errorDiv.innerHTML = `
+    <p class="font-semibold mb-2">Content Loading Error</p>
+    <p class="text-sm">${sanitizeHTML(message)}</p>
+    <p class="text-xs mt-2">Please refresh the page or contact us at <a href="mailto:contact@axiotic.ai" class="underline">contact@axiotic.ai</a></p>
+  `;
+  document.body.appendChild(errorDiv);
+  
+  // Auto-remove after 10 seconds
+  setTimeout(() => {
+    errorDiv.style.transition = 'opacity 0.5s';
+    errorDiv.style.opacity = '0';
+    setTimeout(() => errorDiv.remove(), 500);
+  }, 10000);
+}
+
 async function loadContent() {
+  showLoading();
+  
   try {
     const response = await fetch('content.yaml');
+    
+    if (!response.ok) {
+      throw new Error(`Failed to load content: ${response.status} ${response.statusText}`);
+    }
+    
     const yamlText = await response.text();
+    
+    if (!yamlText.trim()) {
+      throw new Error('Content file is empty');
+    }
+    
     const content = jsyaml.load(yamlText);
+    
+    if (!content) {
+      throw new Error('Failed to parse content');
+    }
 
     // Helper: Safely set text content to avoid HTML injection
     const setText = (element, text) => {
       if (element) element.textContent = text;
     };
     
-    // Helper: Safely set HTML content (only for trusted sources or simple formatting)
-    // Note: In a production app, use a sanitizer. Here we assume content.yaml is trusted.
+    // Helper: Safely set HTML content with sanitization
     const setHTML = (element, html) => {
-      if (element) element.innerHTML = html;
+      if (element) element.innerHTML = sanitizeHTML(html);
     };
 
     // 1. Populate Text Elements with data-key attributes
@@ -50,10 +113,16 @@ async function loadContent() {
 
     // 2. Render Research Pillars (Design 16: Asymmetric Cards with Offset Icon)
     const researchGrid = document.getElementById('research-pillars-grid');
-    if (researchGrid && content.research.pillars) {
+    if (researchGrid && content.research && content.research.pillars) {
       researchGrid.innerHTML = content.research.pillars.map((pillar, index) => {
         // Use icon directly from content.yaml (should be Font Awesome class like "fa-bullseye")
         const iconClass = pillar.icon.startsWith('fa-') ? pillar.icon : `fa-${pillar.icon}`;
+        // Sanitize text content
+        const title = document.createElement('div');
+        title.textContent = pillar.title;
+        const description = document.createElement('div');
+        description.textContent = pillar.description;
+        
         return `
         <article 
           class="rounded-xl bg-slate-800 border border-slate-700 p-6 hover:border-amber-400 transition-all relative"
@@ -63,9 +132,9 @@ async function loadContent() {
           <div class="absolute -top-4 -right-4 w-16 h-16 rounded-full bg-gradient-to-br from-amber-400 to-orange-500 shadow-lg border-4 border-slate-900 flex items-center justify-center">
             <i class="fas ${iconClass} text-xl text-white"></i>
           </div>
-          <h3 class="text-lg font-bold text-white mb-2 pr-12">${pillar.title}</h3>
+          <h3 class="text-lg font-bold text-white mb-2 pr-12">${title.innerHTML}</h3>
           <p class="text-sm text-slate-300 leading-relaxed text-left">
-            ${pillar.description}
+            ${description.innerHTML}
           </p>
         </article>
       `;
@@ -77,9 +146,15 @@ async function loadContent() {
 
     // 3. Render Consulting Pillars (Design 18: Light Theme Cards)
     const consultingGrid = document.getElementById('consulting-pillars-grid');
-    if (consultingGrid && content.consulting.pillars) {
+    if (consultingGrid && content.consulting && content.consulting.pillars) {
         consultingGrid.innerHTML = content.consulting.pillars.map((pillar, index) => {
             const iconClass = pillar.icon.startsWith('fa-') ? pillar.icon : `fa-${pillar.icon}`;
+            // Sanitize text content
+            const title = document.createElement('div');
+            title.textContent = pillar.title;
+            const description = document.createElement('div');
+            description.textContent = pillar.description;
+            
             return `
             <article 
               class="rounded-xl bg-white border border-slate-200 p-6 hover:shadow-xl hover:border-amber-400 transition-all relative group"
@@ -90,10 +165,10 @@ async function loadContent() {
                   <div class="w-12 h-12 rounded-lg bg-amber-100 flex items-center justify-center shrink-0 group-hover:bg-amber-400 transition-colors duration-300">
                     <i class="fas ${iconClass} text-xl text-amber-600 group-hover:text-white transition-colors duration-300"></i>
                   </div>
-                  <h3 class="text-lg font-bold text-slate-900 pt-2">${pillar.title}</h3>
+                  <h3 class="text-lg font-bold text-slate-900 pt-2">${title.innerHTML}</h3>
                </div>
               <p class="text-sm text-slate-600 leading-relaxed text-left">
-                ${pillar.description}
+                ${description.innerHTML}
               </p>
             </article>
             `;
@@ -104,27 +179,42 @@ async function loadContent() {
     const flagshipCol1 = document.getElementById('consulting-flagship-col1');
     const flagshipCol2 = document.getElementById('consulting-flagship-col2');
     
-    if (flagshipCol1 && content.consulting.flagship.col1_items) {
-        flagshipCol1.innerHTML = content.consulting.flagship.col1_items.map(item => 
-            `<li>${item}</li>`
-        ).join('');
+    if (flagshipCol1 && content.consulting && content.consulting.flagship && content.consulting.flagship.col1_items) {
+        flagshipCol1.innerHTML = content.consulting.flagship.col1_items.map(item => {
+            const temp = document.createElement('div');
+            temp.textContent = item;
+            return `<li>${temp.innerHTML}</li>`;
+        }).join('');
     }
     
-    if (flagshipCol2 && content.consulting.flagship.col2_items) {
-        flagshipCol2.innerHTML = content.consulting.flagship.col2_items.map(item => 
-            `<li>${item}</li>`
-        ).join('');
+    if (flagshipCol2 && content.consulting && content.consulting.flagship && content.consulting.flagship.col2_items) {
+        flagshipCol2.innerHTML = content.consulting.flagship.col2_items.map(item => {
+            const temp = document.createElement('div');
+            temp.textContent = item;
+            return `<li>${temp.innerHTML}</li>`;
+        }).join('');
     }
 
 
     // 4. Render Team Members (Circular Layout)
     const teamGrid = document.getElementById('team-grid');
-    if (teamGrid && content.team.members) {
+    if (teamGrid && content.team && content.team.members) {
       // Shuffle array for random order on each page load
       const shuffledMembers = [...content.team.members].sort(() => Math.random() - 0.5);
       
       teamGrid.innerHTML = shuffledMembers.map((member, index) => {
-        const photoUrl = member.photo || 'images/default-avatar.png'; 
+        const photoUrl = member.photo || 'images/default-avatar.png';
+        
+        // Sanitize text content
+        const name = document.createElement('div');
+        name.textContent = member.name;
+        const role = document.createElement('div');
+        role.textContent = member.role;
+        const description = document.createElement('div');
+        description.textContent = member.description;
+        const alt = document.createElement('div');
+        alt.textContent = member.name;
+        
         return `
         <article 
           class="text-center group p-4"
@@ -139,18 +229,19 @@ async function loadContent() {
                 <div class="w-full h-full rounded-full overflow-hidden border-4 border-slate-900 bg-slate-800">
                   <img 
                     src="${photoUrl}" 
-                    alt="${member.name}" 
+                    alt="${alt.innerHTML}" 
                     class="w-full h-full object-cover"
                     style="aspect-ratio: 1 / 1;"
+                    loading="lazy"
                   >
                 </div>
             </div>
           </div>
           
-          <h3 class="text-xl font-bold text-white mb-1 group-hover:text-amber-400 transition-colors">${member.name}</h3>
-          <p class="text-amber-500 text-sm font-bold uppercase tracking-wider mb-3">${member.role}</p>
+          <h3 class="text-xl font-bold text-white mb-1 group-hover:text-amber-400 transition-colors">${name.innerHTML}</h3>
+          <p class="text-amber-500 text-sm font-bold uppercase tracking-wider mb-3">${role.innerHTML}</p>
           <p class="text-slate-400 text-sm leading-relaxed">
-            ${member.description}
+            ${description.innerHTML}
           </p>
         </article>
       `;
@@ -163,9 +254,17 @@ async function loadContent() {
         AOS.refresh();
       }
     }, 100);
+    
+    hideLoading();
 
   } catch (error) {
     console.error('Error loading content:', error);
+    hideLoading();
+    
+    // Show user-friendly error message
+    showError('Unable to load website content. This might be a temporary issue with your connection or our server.');
+    
+    // Keep fallback content visible (if any exists in HTML)
   }
 }
 

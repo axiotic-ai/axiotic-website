@@ -46,6 +46,8 @@
           </span>
           <span class="tracking-tight">Axiotic.ai</span>
         </a>
+        
+        <!-- Desktop Navigation -->
         <div class="hidden sm:flex items-center gap-4 text-sm text-slate-200">
           <a href="index.html" class="hover:text-amber-300">Home</a>
           <a href="lab.html" class="hover:text-amber-300">Research Lab</a>
@@ -53,6 +55,30 @@
             >Consulting &amp; Flywheel</a
           >
           <a href="team.html" class="text-amber-300">Team</a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button 
+          id="mobile-menu-button"
+          class="sm:hidden p-2 text-slate-200 hover:text-amber-300 transition"
+          aria-label="Toggle menu"
+        >
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div 
+        id="mobile-menu"
+        class="hidden sm:hidden bg-slate-950/95 backdrop-blur-md border-t border-slate-800"
+      >
+        <div class="px-4 py-3 space-y-3">
+          <a href="index.html" class="block py-2 text-base text-slate-200 hover:text-amber-300 transition">Home</a>
+          <a href="lab.html" class="block py-2 text-base text-slate-200 hover:text-amber-300 transition">Research Lab</a>
+          <a href="consulting.html" class="block py-2 text-base text-slate-200 hover:text-amber-300 transition">Consulting &amp; Flywheel</a>
+          <a href="team.html" class="block py-2 text-base text-amber-300">Team</a>
         </div>
       </div>
     </nav>
@@ -163,6 +189,27 @@
         </footer>
       </div>
     </main>
+
+    <script>
+      // Mobile menu toggle
+      document.addEventListener('DOMContentLoaded', () => {
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        if (mobileMenuButton && mobileMenu) {
+          mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+          });
+
+          // Close menu when clicking on a link
+          mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+              mobileMenu.classList.add('hidden');
+            });
+          });
+        }
+      });
+    </script>
   </body>
   </html>
 
