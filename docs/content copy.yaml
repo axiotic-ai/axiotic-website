@@ -1,0 +1,172 @@
+site:
+  title: "Beyond Scaling via Smarter Learning"
+  nav:
+    brand: "Axiotic AI"
+    links:
+      - text: "Research"
+        href: "#lab"
+      - text: "Consulting"
+        href: "#consulting"
+      - text: "Team"
+        href: "#team"
+    cta:
+      text: "Consult with Us"
+      href: "#contact-form"
+
+hero:
+  title_line1: "Smarter Learning"
+  title_line2: "Not Bigger Models"
+  subtitle_primary: "Axiotic AI is a frontier research lab powering an AI consultancy. We provide bespoke cutting-edge AI systems and the confidence to own and improve them."
+  cta_primary:
+    text: "Request Consulting"
+    href: "#consulting"
+  cta_secondary:
+    text: "Learn About Our Research"
+    href: "#lab"
+
+mission:
+  statement: "We believe intelligence emerges from Structure, Interaction, and Information,<br>Not from piling more parameters on a transformer."
+  statement_part1: "We believe intelligence emerges from Structure, Interaction, and Information,"
+  statement_part2: "Not from piling more parameters on a transformer."
+
+research:
+  header:
+    eyebrow: "Research Lab"
+    title_line1: "Open Research and Science on"
+    title_line2: "Next Generation AI Systems"
+    subtitle: "We research the first-principles of learning—how structure, interaction, and information theory can replace massive parameter counts."
+  pillars:
+  - icon: "fa-bullseye"
+    title: "Better Tasks & Learning Signals"
+    description: "We move beyond next-token prediction by designing training objectives that force models to learn causality, long-horizon structure, and planning. By predicting masked past, present, and future states, we shape learning signals that demand memory and abstraction rather than surface pattern matching."
+
+  - icon: "fa-globe"
+    title: "World Modelling"
+    description: "We build grounded world models that learn the latent structure and dynamics of reality. Using multimodal learning and embodied interaction—often via simulation—we train systems that model causality, physics, and long-term consequences rather than correlations in text."
+
+  - icon: "fa-memory"
+    title: "State, Beliefs & Memory"
+    description: "Intelligence is inherently stateful. We design systems with persistent internal belief states, explicit memory, and conditional recursion—enabling infinite-context learning and internal computation without relying on verbose chain-of-thought traces."
+
+  - icon: "fa-sitemap"
+    title: "Architectures & Hierarchical Attention"
+    description: "Structure is not an implementation detail; it is fundamental to how and what a system learns. We explore new architectural primitives—hierarchical and fractal attention, dense routing, and novel connectivity patterns—where computation is explicitly organized across depth and time, enabling capability to scale without brute force."
+
+  - icon: "fa-dna"
+    title: "Learning Dynamics Beyond Backprop"
+    description: "Backpropagation is powerful but incomplete. We study alternative and complementary learning dynamics, including evolutionary methods, local learning rules, and asynchronous neural updates inspired by biological systems, to improve robustness, generalization, and efficiency."
+
+  - icon: "fa-cogs"
+    title: "AI Flywheels & Self-Improvement"
+    description: "Data must be endogenous. We engineer closed-loop AI systems where models generate, evaluate, and curate their own training data—creating self-reinforcing flywheels that tie deployment directly to continuous learning and improvement."
+
+  commitment:
+    title: "Open Science Commitment"
+    text: "We release code, models, and datasets as openly as licensing allows. The lab exists to push the field forward, not to hide breakthroughs behind proprietary walls."
+
+flywheel:
+  title: "The Axiotic Flywheel"
+  subtitle: "A self-reinforcing loop that funds independent innovation."
+  steps:
+    - icon: "fa-coins"
+      title: "Consulting Brings Revenue"
+      description: "We build systems and empower teams that solve actual industry problems. This work generates value for the world and capital to fund our own compute and talent."
+    - icon: "fa-flask"
+      title: "Revenue Funds Research"
+      description: "We reinvest profits into 'blue sky' exploration—new architectures, evolution, and embodied AI—without needing immediate ROI."
+    - icon: "fa-star"
+      title: "Research Builds Reputation"
+      description: "We publish SOTA open-source work. This builds technical authority and trust: clients hire us because they use our tools."
+    - icon: "fa-magnet"
+      title: "Reputation Attracts Clients"
+      description: "Our open work acts as a magnet. Companies want to work with the team that built the models they rely on, restarting the cycle."
+
+name_origin:
+  title: "Why the name 'Axiotic'?"
+  text: "Pronounced <em>ak-see-OT-ik</em>. From the Greek root <em>axio-</em> (value, worth) and the suffix <em>-tic</em> (generating). <br><br>Axiotic describes something that creates value through alignment with deep principles. Not valuable in a shallow price-tag sense, but valuable because it coheres with a core truth. We strip away the noise to find the axioms of intelligence, building systems that are principled, value-generating, and orienting."
+
+consulting:
+  header:
+    eyebrow: "Consulting"
+    title: "Your AI Capabilities Concierge"
+    subtitle: "We design and ship efficient AI systems: compact models, retrieval pipelines, and training setups paired with the right data generation, flywheel integration and evaluation loops, so that your models are continuously improving."
+  flagship:
+    title: "Flagship Offering: AI Opportunities & Strategy Plan"
+    description: "We start with a consultation to understand your products, data, and constraints, then co‑design an AI Opportunities & Strategy Plan. You get a clear, honest view of where AI can help, where it won't, and what it would take to build systems that actually work. As part of this, we run a focused AI governance audit to surface compliance, privacy, and ethical risks."
+    col1_title: "What We Look At"
+    col1_items:
+      - "Data sources, quality, and coverage for your use cases."
+      - "Infrastructure and integration points for models and RAG."
+      - "Existing teams, skills, and culture around AI work."
+    col2_title: "What You Get"
+    col2_items:
+      - "A prioritized, costed roadmap of concrete AI opportunities-what to build, what to ignore, and in what order."
+      - "A focused AI governance audit surfacing compliance, privacy, and ethical risks."
+      - "Clear options for engagement shape: model/data/eval work, upskilling, hiring, or a combination."
+  pillars:
+    - icon: "🧭"
+      title: "AI Strategy"
+      description: "We work with you to understand your products, data, and constraints, then define where AI will create real value-and where it won't. You leave with a clear, practical AI strategy grounded in what's actually possible."
+    - icon: "🧠"
+      title: "Models, Data & Evaluation Loops"
+      description: "We turn that strategy into working systems: purpose-built AI models, RAG pipelines, AI-flywheels and evaluation loops that learn from real usage and improve over time."
+    - icon: "⚖️"
+      title: "AI Governance & Safety"
+      description: "We put governance frameworks and compliance reviews in place so your AI systems are safe, ethical, and ready to scale with confidence."
+    - icon: "🎓"
+      title: "Education & Upskilling"
+      description: "We run tailored workshops rooted in your AI strategy and systems. Equipping leaders and engineers to make confident decisions and build effectively within your organization's context."
+    - icon: "🧩"
+      title: "Hiring & Org Design"
+      description: "We help you build the right AI team-providing interim Head-of-AI support, designing key roles, and vetting top candidates."
+  why_us:
+    title: "Why Axiotic?"
+    text: "Axiotic AI is a small, senior team of cutting‑edge ML researchers, production engineers, governance experts, and people‑focused operators who have shipped real AI systems. That mix lets us move from frontier ideas to white‑glove, purpose‑built systems, then help you hire, upskill, and govern the teams that run them."
+  contact:
+    title: "Request a Consultation"
+    subtitle: "Share your email; we'll follow up with a short, focused call."
+    button: "Request Consultation"
+
+team:
+  header:
+    eyebrow: "Team"
+    title: "The Axiotic Core Team"
+    subtitle: "An efficient, senior group combining deep research, pragmatic engineering, governance, and education — organized around the Axiotic flywheel."
+  members:
+    - name: "Antreas Antoniou"
+      role: "Co-Founder & Technical Vision"
+      description: "PhD in Meta-Learning (Edinburgh). Principal Scientist (Pieces), Lead Scientist (Malted AI). Expert in LLMs, Multi-Modal Learning, Meta-Learning, Evolutionary Optimization, and Self-Supervised Methods in AI."
+      photo: "team_photos/antreas_antoniou.jpeg"
+    - name: "Sam Jones"
+      role: "Co-Founder & Engineering Lead"
+      description: "Owns delivery and execution: project management, resource allocation, and ensuring consulting work ships on time. Expert in agentic systems, RAG, LLMs and on device AI."
+      photo: "team_photos/sam_jones.jpeg"
+    - name: "Fady Rezk"
+      role: "AI Researcher and Engineer"
+      description: "Specializing in 'scaling down to scale up': efficient architectures, deep learning theory, and on-device AI. PhD from Edinburgh, ex-Samsung AI."
+      photo: "team_photos/fady_rezk.jpeg"
+    - name: "Patryk Bartkowiak"
+      role: "AI Researcher & Engineer"
+      description: "Specializing in privacy-first multimodal frameworks, video generation optimization, and bridging edge/cloud AI. Expert in low-level GPU optimization."
+      photo: "team_photos/patryk.jpeg"
+    - name: "Aristotelis Charalampous"
+      role: "Senior Data Scientist"
+      description: "Specializing in production-ready ML models, scalable pipelines, and bridging research with industry applications (NLP, forecasting, valuation)."
+      photo: "team_photos/aristotelis_charalampous.jpeg"
+    
+    - name: "Andreas Theodorou"
+      role: "Governance & Safety Advisor"
+      description: "AI law, ethics, and grant strategy. Leads governance audits, compliance work, and non‑dilutive funding."
+      photo: "team_photos/andreas_theodorou.jpg"
+   
+    - name: "Laura Bernal"
+      role: "Co-Founder & Commercial Lead"
+      description: "Connects the lab with the broader ecosystem, builds community around open science outputs, and develops and crystallizes messaging for the company, and builds relationships with clients."
+      photo: "team_photos/laura_vergara.webp"
+    - name: "Thomas Woehrle"
+      role: "AI Researcher and Engineer"
+      description: "Research engineer exploring evolution‑inspired AI and open‑ended learning, injecting fresh perspectives into the research program."
+      photo: "team_photos/thomas.jpeg"
+
+footer:
+  copyright: "© 2025 Axiotic.ai"
