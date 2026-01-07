@@ -398,6 +398,11 @@ h1, h2, h3, h4, h5, h6 {
   .hero-title-mobile span {
     word-spacing: -0.2em;
   }
+
+  /* Keep tight mobile typography, but don't collapse the "Not Bigger" space */
+  .hero-title-mobile span[data-key="hero.title_line2"] {
+    word-spacing: normal;
+  }
 }
 
 
