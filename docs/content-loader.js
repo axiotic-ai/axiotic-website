@@ -75,47 +75,71 @@ async function loadContent() {
     // 2.5. Flywheel Steps are now hardcoded in index.html for specific layout (Design 16).
     // The text content is populated by the generic data-key handler above.
 
-    // 3. Render Consulting Pillars (Design 18: Light Theme Cards)
+    // 3. Render Consulting Pillars (2-3 Layout: First 2 cards, then 3 cards)
     const consultingGrid = document.getElementById('consulting-pillars-grid');
     if (consultingGrid && content.consulting.pillars) {
-        consultingGrid.innerHTML = content.consulting.pillars.map((pillar, index) => {
-            const iconClass = pillar.icon.startsWith('fa-') ? pillar.icon : `fa-${pillar.icon}`;
-            return `
-            <article 
-              class="rounded-xl bg-white border border-slate-200 p-6 hover:shadow-xl hover:border-amber-400 transition-all relative group"
-              data-aos="fade-up"
-              data-aos-delay="${index * 100}"
-            >
-               <div class="flex items-start gap-4 mb-3">
-                  <div class="w-12 h-12 rounded-lg bg-amber-100 flex items-center justify-center shrink-0 group-hover:bg-amber-400 transition-colors duration-300">
-                    <i class="fas ${iconClass} text-xl text-amber-600 group-hover:text-white transition-colors duration-300"></i>
+        const pillars = content.consulting.pillars;
+        const firstRow = pillars.slice(0, 2);
+        const secondRow = pillars.slice(2, 5);
+        
+        // Map emoji icons to Font Awesome icons
+        const emojiToFaIcon = {
+            '🧭': 'fa-compass',
+            '🧠': 'fa-cogs',
+            '⚖️': 'fa-balance-scale',
+            '🎓': 'fa-graduation-cap',
+            '🧩': 'fa-users'
+        };
+        
+        const getIconHtml = (icon) => {
+            if (icon.startsWith('fa-')) {
+                return `<i class="fas ${icon} text-xl text-amber-600"></i>`;
+            } else if (emojiToFaIcon[icon]) {
+                return `<i class="fas ${emojiToFaIcon[icon]} text-xl text-amber-600"></i>`;
+            } else {
+                return `<span class="text-xl">${icon}</span>`;
+            }
+        };
+        
+        let html = '';
+        
+        // First row: 2 cards (AI Strategy, Models)
+        if (firstRow.length > 0) {
+            html += `<!-- Row 1: 2 Cards --><div class="grid md:grid-cols-2 gap-6 mb-6" data-aos="fade-up">`;
+            firstRow.forEach((pillar, index) => {
+                const isFirst = index === 0;
+                html += `
+                <div class="service-card rounded-xl bg-gradient-to-br ${isFirst ? 'from-white via-white to-amber-50/80 border-2 border-amber-400/30' : 'from-white via-white to-slate-50/80 border-2 border-slate-300'} p-8 hover:border-amber-500/50 shadow-xl transition-all">
+                  <div class="w-12 h-12 rounded-lg bg-amber-100 flex items-center justify-center mb-4">
+                    ${getIconHtml(pillar.icon)}
                   </div>
-                  <h3 class="text-lg font-bold text-slate-900 pt-2">${pillar.title}</h3>
-               </div>
-              <p class="text-sm text-slate-600 leading-relaxed text-left">
-                ${pillar.description}
-              </p>
-            </article>
-            `;
-        }).join('');
+                  <h3 class="text-xl font-bold mb-4 text-slate-900">${pillar.title}</h3>
+                  <p class="text-slate-700 text-sm leading-relaxed">${pillar.description}</p>
+                </div>
+                `;
+            });
+            html += `</div>`;
+        }
+        
+        // Second row: 3 cards (Governance, Education, Hiring)
+        if (secondRow.length > 0) {
+            html += `<!-- Row 2: 3 Cards --><div class="grid md:grid-cols-3 gap-6" data-aos="fade-up" data-aos-delay="100">`;
+            secondRow.forEach((pillar) => {
+                html += `
+                <div class="service-card rounded-xl bg-gradient-to-br from-white to-slate-50/80 border-2 border-slate-300 p-8 hover:border-amber-500/40 shadow-xl transition-all">
+                  <div class="w-12 h-12 rounded-lg bg-amber-100 flex items-center justify-center mb-4">
+                    ${getIconHtml(pillar.icon)}
+                  </div>
+                  <h3 class="text-xl font-bold mb-4 text-slate-900">${pillar.title}</h3>
+                  <p class="text-slate-700 text-sm leading-relaxed">${pillar.description}</p>
+                </div>
+                `;
+            });
+            html += `</div>`;
+        }
+        
+        consultingGrid.innerHTML = html;
     }
-
-    // 3.5 Render Flagship List Items
-    const flagshipCol1 = document.getElementById('consulting-flagship-col1');
-    const flagshipCol2 = document.getElementById('consulting-flagship-col2');
-    
-    if (flagshipCol1 && content.consulting.flagship.col1_items) {
-        flagshipCol1.innerHTML = content.consulting.flagship.col1_items.map(item => 
-            `<li>${item}</li>`
-        ).join('');
-    }
-    
-    if (flagshipCol2 && content.consulting.flagship.col2_items) {
-        flagshipCol2.innerHTML = content.consulting.flagship.col2_items.map(item => 
-            `<li>${item}</li>`
-        ).join('');
-    }
-
 
     // 4. Render Team Members (Circular Layout)
     const teamGrid = document.getElementById('team-grid');
@@ -124,7 +148,27 @@ async function loadContent() {
       const shuffledMembers = [...content.team.members].sort(() => Math.random() - 0.5);
       
       teamGrid.innerHTML = shuffledMembers.map((member, index) => {
-        const photoUrl = member.photo || 'images/default-avatar.png'; 
+        const photoUrl = member.photo || 'images/default-avatar.png';
+        
+        const linkedinIcon = member.linkedin ? `
+          <a href="${member.linkedin}" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-amber-400 transition-colors" title="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+        ` : '';
+        
+        const scholarIcon = member.scholar ? `
+          <a href="${member.scholar}" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-amber-400 transition-colors" title="Google Scholar">
+            <i class="fas fa-graduation-cap"></i>
+          </a>
+        ` : '';
+        
+        const socialIcons = (linkedinIcon || scholarIcon) ? `
+          <div class="flex items-center justify-center gap-3 mt-3">
+            ${linkedinIcon}
+            ${scholarIcon}
+          </div>
+        ` : '';
+        
         return `
         <article 
           class="text-center group p-4"
@@ -152,6 +196,7 @@ async function loadContent() {
           <p class="text-slate-400 text-sm leading-relaxed">
             ${member.description}
           </p>
+          ${socialIcons}
         </article>
       `;
       }).join('');

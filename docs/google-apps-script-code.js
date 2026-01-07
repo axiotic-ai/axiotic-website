@@ -96,8 +96,14 @@ function processRequest(e) {
     Logger.log('Name: ' + (name || 'Not provided'));
     Logger.log('Notes: ' + (notes || 'Not provided'));
     
-    // Your receiving email address (change if needed)
-    const recipientEmail = 'contact@axiotic.ai';
+    // Send directly to cofounders (bypassing group restrictions)
+    const cofounderEmails = [
+      'antreas@axiotic.ai',
+      'sam@axiotic.ai',
+      'laura@axiotic.ai'
+    ];
+    
+    Logger.log('Sending to cofounders: ' + cofounderEmails.join(', '));
     
     // Create email subject
     const subject = `New Consultation Request${name && name !== 'Not provided' ? ` from ${name}` : ''}`;
@@ -117,24 +123,45 @@ Message: ${notes || 'No message provided'}
 You can reply directly to this email to respond to ${email}
     `.trim();
     
-    // Send email using GmailApp
-    Logger.log('Attempting to send email to: ' + recipientEmail);
+    // Send email using GmailApp to all cofounders
     Logger.log('Subject: ' + subject);
+    Logger.log('From email (replyTo): ' + email);
     
-    try {
-      GmailApp.sendEmail(
-        recipientEmail, 
-        subject, 
-        body, 
-        {
-          replyTo: email,
-          name: name && name !== 'Not provided' ? name : 'Contact Form'
-        }
-      );
-      Logger.log('SUCCESS: Email sent successfully!');
-    } catch (emailError) {
-      Logger.log('ERROR sending email: ' + emailError.toString());
-      throw emailError;
+    // Check what account the script is running as
+    const scriptOwnerEmail = Session.getActiveUser().getEmail();
+    Logger.log('Script is running as: ' + scriptOwnerEmail);
+    
+    // Send to all cofounders
+    let successCount = 0;
+    let failCount = 0;
+    
+    for (let i = 0; i < cofounderEmails.length; i++) {
+      const recipientEmail = cofounderEmails[i];
+      Logger.log('Attempting to send email to: ' + recipientEmail);
+      
+      try {
+        GmailApp.sendEmail(
+          recipientEmail, 
+          subject, 
+          body, 
+          {
+            replyTo: email,
+            name: name && name !== 'Not provided' ? name : 'Contact Form'
+          }
+        );
+        Logger.log('SUCCESS: Sent to ' + recipientEmail);
+        successCount++;
+      } catch (emailError) {
+        Logger.log('ERROR sending to ' + recipientEmail + ': ' + emailError.toString());
+        failCount++;
+      }
+    }
+    
+    Logger.log('Email sending summary: ' + successCount + ' succeeded, ' + failCount + ' failed');
+    Logger.log('Check inboxes and spam folders for: ' + cofounderEmails.join(', '));
+    
+    if (successCount === 0) {
+      throw new Error('Failed to send email to all cofounders');
     }
     
     // Return success response with CORS headers
@@ -195,5 +222,92 @@ function testEmailGet() {
   
   const result = doGet(mockEvent);
   Logger.log(result.getContent());
+}
+
+/**
+ * Test function - send to your personal email to verify email sending works
+ * CHANGE THE EMAIL ADDRESS BELOW TO YOUR PERSONAL EMAIL
+ */
+function testEmailToPersonal() {
+  // CHANGE THIS to your personal email address
+  const testEmail = 'YOUR_PERSONAL_EMAIL@gmail.com';
+  
+  Logger.log('=== TESTING EMAIL SEND ===');
+  Logger.log('Sending test email to: ' + testEmail);
+  
+  try {
+    GmailApp.sendEmail(
+      testEmail,
+      'Test Email from Google Apps Script - Axiotic',
+      'If you receive this email, then GmailApp.sendEmail() is working correctly!\n\nThis means the issue is likely:\n1. Email going to spam folder\n2. contact@axiotic.ai email address issue\n3. Google Workspace group configuration',
+      {
+        name: 'Axiotic Contact Form Test'
+      }
+    );
+    Logger.log('SUCCESS: Test email sent to ' + testEmail);
+    Logger.log('Check your inbox AND spam folder!');
+  } catch (error) {
+    Logger.log('ERROR sending test email: ' + error.toString());
+    Logger.log('Error details: ' + JSON.stringify(error));
+  }
+}
+
+/**
+ * Test function - try sending directly to contact@axiotic.ai to see error
+ */
+function testContactEmail() {
+  const contactEmail = 'contact@axiotic.ai';
+  const scriptOwner = Session.getActiveUser().getEmail();
+  
+  Logger.log('=== TESTING contact@axiotic.ai ===');
+  Logger.log('Script owner (FROM address): ' + scriptOwner);
+  Logger.log('Attempting to send to: ' + contactEmail);
+  Logger.log('FROM: ' + scriptOwner + ' → TO: ' + contactEmail);
+  
+  try {
+    GmailApp.sendEmail(
+      contactEmail,
+      'Test Email to contact@axiotic.ai',
+      'This is a test email from Google Apps Script.\n\nScript owner: ' + scriptOwner + '\n\nIf you receive this, the script can send to contact@axiotic.ai!',
+      {
+        name: 'Axiotic Contact Form Test'
+      }
+    );
+    Logger.log('SUCCESS: Email sent to ' + contactEmail);
+    Logger.log('Check inbox and spam folder!');
+    Logger.log('NOTE: If email doesn\'t arrive, check email routing rules for ' + scriptOwner);
+  } catch (error) {
+    Logger.log('ERROR: ' + error.toString());
+    Logger.log('Error name: ' + error.name);
+    Logger.log('Error message: ' + error.message);
+    
+    // Try MailApp as alternative
+    Logger.log('Trying MailApp as alternative...');
+    try {
+      MailApp.sendEmail({
+        to: contactEmail,
+        subject: 'Test Email to contact@axiotic.ai (via MailApp)',
+        body: 'This is a test email from Google Apps Script using MailApp.\n\nScript owner: ' + scriptOwner,
+        name: 'Axiotic Contact Form Test'
+      });
+      Logger.log('SUCCESS: MailApp worked!');
+    } catch (mailError) {
+      Logger.log('MailApp also failed: ' + mailError.toString());
+    }
+  }
+}
+
+/**
+ * Test function - check what email address the script runs as
+ */
+function checkScriptOwner() {
+  const ownerEmail = Session.getActiveUser().getEmail();
+  Logger.log('=== SCRIPT OWNER CHECK ===');
+  Logger.log('Script is running as: ' + ownerEmail);
+  Logger.log('This is the email address that will appear as the sender');
+  Logger.log('If this is antreas@axiotic.ai and emails aren\'t arriving, check:');
+  Logger.log('1. Email routing rules for ' + ownerEmail);
+  Logger.log('2. Outbound gateway settings');
+  Logger.log('3. Group settings for contact@axiotic.ai');
 }
 

@@ -30,7 +30,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script defer src="particles-init.js"></script>
-    <script defer src="content-loader.js"></script>
+    <script defer src="content-loader.js?v=2"></script>
     <!-- reCAPTCHA v3 -->
     <script src="https://www.google.com/recaptcha/api.js?render=6LcB_S8sAAAAAKwHounFNONQvUvqTDVuOCj3rxJF" async defer></script>
     <script defer src="form-handler.js"></script>
@@ -171,50 +171,22 @@
       </section>
 
       <!-- Consulting Section -->
-      <section id="consulting" class="py-24 bg-slate-900/50 border-t border-slate-800/50">
+      <section id="consulting" class="py-32 border-t border-slate-800/50">
         <div class="max-w-5xl mx-auto px-4 space-y-12">
           <header class="text-center space-y-4" data-aos="fade-up">
-            <p class="text-sm font-semibold uppercase tracking-[0.2em] text-amber-300" data-key="consulting.header.eyebrow">
+            <p class="text-xs font-semibold uppercase tracking-[0.2em] text-amber-300" data-key="consulting.header.eyebrow">
               <!-- Content loaded from YAML -->
             </p>
-            <h2 class="text-5xl sm:text-6xl font-extrabold tracking-tight" data-key="consulting.header.title">
+            <h2 class="text-4xl sm:text-5xl font-extrabold tracking-tight" data-key="consulting.header.title">
               <!-- Content loaded from YAML -->
             </h2>
-            <p class="max-w-2xl mx-auto text-xl text-slate-300" data-key="consulting.header.subtitle">
+            <p class="max-w-2xl mx-auto text-lg text-slate-300 leading-relaxed" data-key="consulting.header.subtitle">
               <!-- Content loaded from YAML -->
             </p>
           </header>
 
-          <!-- Flagship -->
-          <div 
-            class="rounded-xl bg-gradient-to-br from-white to-slate-50/80 border-2 border-slate-300 p-8 hover:border-amber-500/40 shadow-xl transition-all"
-            data-aos="fade-up"
-          >
-            <div class="mb-4">
-              <span class="text-sm font-bold text-amber-600 uppercase tracking-wider" data-key="consulting.flagship.badge"><!-- Content loaded from YAML --></span>
-              <h3 class="text-xl font-bold mt-3 mb-4 text-slate-900" data-key="consulting.flagship.title"><!-- Content loaded from YAML --></h3>
-            </div>
-            <p class="text-slate-700 text-base leading-relaxed mb-6" data-key="consulting.flagship.description">
-              <!-- Content loaded from YAML -->
-            </p>
-            <div class="grid md:grid-cols-2 gap-6">
-              <div>
-                <h4 class="text-sm font-bold text-amber-600 uppercase tracking-wider mb-3" data-key="consulting.flagship.col1_title"><!-- Content loaded from YAML --></h4>
-                <ul class="text-slate-700 text-base space-y-2 list-disc list-inside" id="consulting-flagship-col1">
-                  <!-- Items populated by JS -->
-                </ul>
-              </div>
-              <div>
-                <h4 class="text-sm font-bold text-amber-600 uppercase tracking-wider mb-3" data-key="consulting.flagship.col2_title"><!-- Content loaded from YAML --></h4>
-                <ul class="text-slate-700 text-base space-y-2 list-disc list-inside" id="consulting-flagship-col2">
-                  <!-- Items populated by JS -->
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          <!-- Service Pillars Grid -->
-          <div class="grid gap-6 sm:grid-cols-2" id="consulting-pillars-grid">
+          <!-- Service Cards: 2-3 Layout -->
+          <div id="consulting-pillars-grid">
              <!-- Pillars populated by JS -->
           </div>
 
