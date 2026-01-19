@@ -30,37 +30,25 @@
 **Flywheel Function:** Bridges cutting-edge research and industry applications, specializing in deploying production-ready ML models and scalable data architectures.
 **Background:** Senior Data Scientist at Wargaming & NFT Valuations. Expertise in financial asset valuation, NLP, and demand forecasting.
 
-## 6. Marina Potsi
-**Role:** Machine Learning Engineer
-**Focus:** Computer Vision, Model Optimization, Healthcare AI.
-**Flywheel Function:** Expertise in improving deployed model performance (hybrid CNN/Transformers) and optimizing large-scale training pipelines for real-world impact.
-**Background:** MLE at Malted AI and Kheiron Medical (Breast Cancer Detection). DeepMind Scholar, MSc in AI (Edinburgh).
-
-## 7. Alessandro Speggiorin
-**Role:** Machine Learning Engineer
-**Focus:** Efficient architectures, System optimization, NLP.
-**Flywheel Function:** Develops scalable and cost-effective solutions, bridging research methodologies with production-grade software engineering.
-**Background:** MLE at Malted AI, former Research Assistant (NLP) at University of Glasgow. MSc in AI (Edinburgh, Distinction).
-
-## 8. Andreas Theodorou
+## 6. Andreas Theodorou
 **Role:** Governance & Safety
 **Focus:** AI law, ethics, grant strategy.
 **Flywheel Function:** Leads governance audits, compliance work, and non-dilutive funding initiatives.
 **Background:** PhD in AI, 5 years as Lecturer/Professor. Deep expertise in AI Law, Ethics, and Safety.
 
-## 9. Pavlos Andreadis
+## 7. Pavlos Andreadis
 **Role:** Education & Upskilling
 **Focus:** Corporate training, workshops, internal upskilling.
 **Flywheel Function:** Designs and delivers upskilling programs for executives and technical teams.
 **Background:** PhD in ML. Career educator and theoretical ML expert.
 
-## 10. Laura Vergara
+## 8. Laura Vergara
 **Role:** Community & Biz Dev
 **Focus:** Business strategy, community building, networking.
 **Flywheel Function:** Connects the lab with the broader ecosystem, builds community around open science outputs, and nurtures client relationships.
 **Background:** Former Chief of Staff at Malted AI, Venture Builder Incubator Manager.
 
-## 11. Thomas Woerhle
+## 9. Thomas Woerhle
 **Role:** Evolutionary AI
 **Focus:** Evolutionary algorithms, open-ended learning.
 **Flywheel Function:** Research engineer exploring evolution-inspired AI and open-ended learning, injecting fresh perspectives into the research program.
