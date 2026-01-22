@@ -132,7 +132,7 @@ team:
   header:
     eyebrow: "Team"
     title: "The Axiotic Core Team"
-    subtitle: "A small senior group combining deep research, pragmatic engineering, governance, and education, organized around the Axiotic flywheel."
+    subtitle: "A senior team with deep roots at the University of Edinburgh, with additional expertise from the University of Bath and UPC Barcelona, combining frontier research, pragmatic engineering, and governance."
   members:
     - name: "Antreas Antoniou"
       role: "Co Founder & Technical Vision"
